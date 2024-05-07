@@ -1,0 +1,26 @@
+/* tipografie */
+/* Tablets and smaller */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px; /* Decrease base font size */
+  }
+
+  h1 {
+    font-size: 1.75rem; /* Adjust heading size */
+  }
+
+  p {
+    font-size: 0.875rem; /* Smaller text size */
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 480px) {
+  html {
+    font-size: 12px; /* Even smaller base font size */
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Adjust for very small screens */
+  }
+}
