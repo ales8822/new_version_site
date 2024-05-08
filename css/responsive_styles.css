@@ -1,5 +1,80 @@
-/* tipografie */
-/* Tablets and smaller */
+/* ---------------------------------------------------------------------------------------------------------------
+  
+  
+                                          stiluri Tablets
+  
+  ------------------------------------------------------------------------------------------------------------------ */
+
+@media (max-width: 991px) {
+  .nav-menu {
+    position: fixed;
+    inset: 0 0 0 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: min(30vh, 160px) 30vw;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(32px);
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .nav-menu[data-visible="true"] {
+    transform: translateX(0);
+  }
+
+  .mob-nav-toggle {
+    display: block;
+    position: absolute;
+    width: 2rem;
+    aspect-ratio: 1;
+    top: 15px;
+    right: 2rem;
+    background-image: url("../img/menu-burger.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    z-index: 9990;
+  }
+
+  .mob-nav-toggle[aria-extended="true"] {
+    background-image: url("../img/close-burger.svg");
+  }
+  .nav,
+  .nav-interna {
+    width: 100vw;
+  }
+
+  .nav-link {
+    padding-top: 20px;
+  }
+
+  .nav-link:hover {
+    box-shadow: none;
+  }
+  .nav-logo-container {
+    margin-right: auto;
+    width: 85px;
+  }
+  .brand {
+    background-position: center;
+  }
+  .container-nr-tel {
+    position: absolute;
+    left: 50%;
+    top: 19px;
+    transform: translateX(-50%);
+    font-size: 14px;
+  }
+}
+
+/* ---------------------------------------------------------------------------------------------------------------
+  
+  
+                                          smaller tablets 768
+  
+  ------------------------------------------------------------------------------------------------------------------ */
 @media (max-width: 768px) {
   html {
     font-size: 14px; /* Decrease base font size */
@@ -12,9 +87,46 @@
   p {
     font-size: 0.875rem; /* Smaller text size */
   }
-}
 
-/* Mobile Phones */
+  .nav-logo-container {
+    width: 75px;
+  }
+
+  .form-wrapper {
+    flex-direction: column;
+  }
+  .form-wrapper .left-col {
+    width: 100vw;
+    height: 33vh;
+  }
+  .form-wrapper .right-col {
+    width: 100vw;
+
+    flex: auto;
+  }
+
+  input,
+  textarea,
+  label {
+    width: 85vw;
+  }
+  .form-text {
+    width: 100%;
+  }
+  #error,
+  #success-msg {
+    width: 100%;
+  }
+  .close-form {
+    background-image: url(../img/close-burger.svg);
+  }
+}
+/* ---------------------------------------------------------------------------------------------------------------
+  
+  
+                                          mobile phones 480
+  
+  ------------------------------------------------------------------------------------------------------------------ */
 @media (max-width: 480px) {
   html {
     font-size: 12px; /* Even smaller base font size */
@@ -22,5 +134,16 @@
 
   h1 {
     font-size: 1.5rem; /* Adjust for very small screens */
+  }
+  .nav-logo-container {
+    width: 60px;
+  }
+  .container-nr-tel {
+    top: 19px;
+
+    font-size: 12px;
+  }
+  .right-col {
+    padding: 2em;
   }
 }
