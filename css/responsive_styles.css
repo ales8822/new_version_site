@@ -28,8 +28,10 @@
     display: block;
     position: absolute;
     width: 2rem;
+    min-width: 48px;
+    min-height: 48px;
     aspect-ratio: 1;
-    top: 15px;
+    /* top: 15px; */
     right: 2rem;
     background-image: url("../img/menu-burger.svg");
     background-repeat: no-repeat;
@@ -145,5 +147,18 @@
   }
   .right-col {
     padding: 2em;
+  }
+}
+
+@media (height < 500px) {
+  .linkuri-sociale-hero::before,
+  .linkuri-sociale-hero::after {
+    display: none;
+  }
+
+  .form-wrapper {
+    max-height: none;
+    height: 150vh;
+    top: 0;
   }
 }
