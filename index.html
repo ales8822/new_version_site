@@ -84,103 +84,256 @@
     <!-- -------------------------------------------------------------------------------------------------------------------------------------------------- -->
     <!-- ----------------------------------------------------------------- Sectiunea Hero ----------------------------------------------------------------- -->
     <!-- -------------------------------------------------------------------------------------------------------------------------------------------------- -->
-    <div class="header">
-      <!-- Navigarea principala -->
-      <div class="nav-interna flex">
-        <!-- logo -->
-        <div class="nav-logo-container">
-          <a href="index.html" class="brand"></a>
+    <div id="hero">
+      <div class="header">
+        <!-- Navigarea principala -->
+        <div class="nav-interna flex">
+          <!-- logo -->
+          <div class="nav-logo-container">
+            <a href="index.html" class="brand"></a>
+          </div>
+          <div class="container-nr-tel nav-bar-tel" style="letter-spacing: 2px">
+            <i class="fa fa-phone"></i>&nbsp;(+373)-123456789
+          </div>
+          <!-- buton hamburger pentru navigatie pe mobile -->
+          <button
+            class="mob-nav-toggle"
+            type="button"
+            aria-extended="false"
+          ></button>
+          <!-- navigatia principala -->
+          <nav role="navigation" class="nav-menu" data-visible="false">
+            <a href="#home" class="nav-link">Acasa</a>
+            <a href="#despreNoi" class="nav-link">Despre noi</a>
+            <a href="#evenimente" class="nav-link">Evenimente</a>
+            <a href="#contact" class="nav-link">Contacteaza-ne</a>
+            <a href="#" class="nav-link">Altele</a>
+          </nav>
         </div>
-        <div class="container-nr-tel" style="letter-spacing: 2px">
-          <i class="fa fa-phone"></i>&nbsp;(+373)-123456789
+        <!-- sfirsit navigarea principala-->
+        <!-- linkuri sociale -->
+        <div class="linkuri-sociale-hero flex-column">
+          <a href="#" title="" class="mob-square-btn flex"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="#" title="" class="mob-square-btn flex"
+            ><i class="fa-brands fa-square-instagram"></i
+          ></a>
+          <a href="#" title="" class="mob-square-btn flex"
+            ><i class="fa-brands fa-tiktok"></i
+          ></a>
         </div>
-        <!-- buton hamburger pentru navigatie pe mobile -->
-        <button
-          class="mob-nav-toggle"
-          type="button"
-          aria-extended="false"
-        ></button>
-        <!-- navigatia principala -->
-        <nav role="navigation" class="nav-menu" data-visible="false">
-          <a href="#home" class="nav-link">Acasa</a>
-          <a href="#evenimente" class="nav-link">Evenimente</a>
-          <a href="#contact" class="nav-link">Contacteaza-ne</a>
-          <a href="#" class="nav-link">Altele</a>
-        </nav>
+        <!--Continut sectiune hero-->
+        <div class="inner-header flex">
+          <div class="hero-text">
+            <h1>Gimnaziul Mitoc</h1>
+            <h3>împreuna construim viitorul</h3>
+          </div>
+          <a href="#" class="contact-btn flex" onclick="show_form()">
+            <!-- iconita email -->
+            <i class="fa fa-envelope fa-lg"></i>&nbsp;&nbsp;CONTACTEAZĂ-NE
+          </a>
+          <div
+            class="container-nr-tel center-tel"
+            style="letter-spacing: 2px; font-size: 0.75rem; padding-top: 1rem"
+          >
+            <i class="fa fa-phone"></i>&nbsp;(+373)-123456789
+          </div>
+        </div>
+        <!-- sfirsit continut sectiune hero-->
+        <!--Container valuri-->
+        <div>
+          <svg
+            id="wave1"
+            class="waves"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28"
+            preserveAspectRatio="none"
+            shape-rendering="auto"
+          >
+            <defs>
+              <path
+                id="gentle-wave"
+                d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+              />
+            </defs>
+            <g class="parallax">
+              <use
+                xlink:href="#gentle-wave"
+                x="48"
+                y="0"
+                fill="rgba(255,255,255,0.7)"
+              />
+              <use
+                xlink:href="#gentle-wave"
+                x="48"
+                y="3"
+                fill="rgba(255,255,255,0.5)"
+              />
+              <use
+                xlink:href="#gentle-wave"
+                x="48"
+                y="5"
+                fill="rgba(255,255,255,0.3)"
+              />
+              <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+            </g>
+          </svg>
+          <!-- --------------------------------------------------------------end svg ---------------------------------    -->
+          <!-- ------------------------------------------------------------ progress bar ------------------------------------------- -->
+          <div class="progress-container">
+            <div class="message" id="ongoing-lesson-message"></div>
+            <div class="progress-bar flex" id="progress-bar"></div>
+          </div>
+        </div>
+        <!-- End valuri-->
       </div>
-      <!-- sfirsit navigarea principala-->
-      <!-- linkuri sociale -->
-      <div class="linkuri-sociale-hero flex-column">
-        <a href="#" title="" class="mob-square-btn flex"
-          ><i class="fa-brands fa-facebook"></i
-        ></a>
-
-        <a href="#" title="" class="mob-square-btn flex"
-          ><i class="fa-brands fa-square-instagram"></i
-        ></a>
-
-        <a href="#" title="" class="mob-square-btn flex"
-          ><i class="fa-brands fa-tiktok"></i
-        ></a>
+      <img src="./img/arrow.svg" alt="" class="arrow" />
+      <!-- -----------------------------------------------------------------statistici --------------------------------------------------->
+      <div class="statistici flex">
+        <div class="container-card flex">
+          <div class="stat-i-container">
+            <i class="fa-solid fa-chalkboard-user"></i>
+          </div>
+          <div class="card">
+            <!-- text card -->
+            <div class="thumb-titlu">
+              <p class="number">22</p>
+              <p class="titlu">Învățători</p>
+            </div>
+            <div class="info-adjectiv">experimentați</div>
+          </div>
+        </div>
+        <div class="container-card flex">
+          <div class="stat-i-container">
+            <i class="fa-solid fa-children"></i>
+          </div>
+          <div class="card">
+            <div class="thumb-titlu">
+              <p class="number">132</p>
+              <p class="titlu">elevi</p>
+            </div>
+            <div class="info-adjectiv">entuziasmați</div>
+          </div>
+        </div>
+        <div class="container-card flex">
+          <div class="stat-i-container">
+            <i class="fa-solid fa-building"></i>
+          </div>
+          <div class="card">
+            <div class="thumb-titlu">
+              <p class="number">56</p>
+              <p class="titlu">Săli</p>
+            </div>
+            <div class="info-adjectiv">dotate</div>
+          </div>
+        </div>
+        <div class="container-card flex">
+          <div class="stat-i-container">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <div class="card">
+            <div class="thumb-titlu">
+              <p class="number">40</p>
+              <p class="titlu">Ani</p>
+            </div>
+            <div class="info-adjectiv">experiență</div>
+          </div>
+        </div>
+        <!-- nu stiu de ce dar daca sterg "corrector" se strica statistica- nu e pe centru -->
+        <div class="corrector"></div>
       </div>
-      <!--Continut sectiune hero-->
-      <div class="inner-header flex">
-        <h1>Gimnaziul Mitoc</h1>
-        <br />
-        <h3>împreuna construim viitorul</h3>
-        <a href="#" class="contact-btn flex" onclick="show_form()">
-          <!-- iconita email -->
-          <i class="fa fa-envelope fa-lg"></i>&nbsp;&nbsp;CONTACTEAZĂ-NE
-        </a>
-      </div>
-      <!-- sfirsit continut sectiune hero-->
-      <!--Container valuri-->
-      <div>
-        <svg
-          class="waves"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 24 150 28"
-          preserveAspectRatio="none"
-          shape-rendering="auto"
-        >
-          <defs>
-            <path
-              id="gentle-wave"
-              d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
-            />
-          </defs>
-          <g class="parallax">
-            <use
-              xlink:href="#gentle-wave"
-              x="48"
-              y="0"
-              fill="rgba(255,255,255,0.7)"
-            />
-            <use
-              xlink:href="#gentle-wave"
-              x="48"
-              y="3"
-              fill="rgba(255,255,255,0.5)"
-            />
-            <use
-              xlink:href="#gentle-wave"
-              x="48"
-              y="5"
-              fill="rgba(255,255,255,0.3)"
-            />
-            <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
-          </g>
-        </svg>
-      </div>
-      <!-- End valuri-->
+      <!-- ----------------------------------------------------------------- end statistici --------------------------------------------------->
     </div>
     <!-- --------------------------------------------------------------- End sectiunea hero ------------------------------------------------------------------------ -->
+    <!-- -------------------------------------------------------------------------------------------------------------------------------- -->
+    <!--                                                              sectiunea despre noi                                                -->
+    <!-- -------------------------------------------------------------------------------------------------------------------------------- -->
 
-    <!--Content starts-->
-    <div class="content flex">
-      <p>By.Goodkatz | Free to use</p>
+    <div id="despreNoi" class="container-sectiune flex">
+      <div class="about-us-img flex">
+        <img src="./img/img-despre/about.png" alt="" />
+      </div>
+      <div class="about-us flex-column">
+        <img
+          class="about-us-img-sm"
+          src="./img/img-despre/about-figuri_noBG.png"
+          alt=""
+        />
+        <h2 class="titlu-sectiune">Despre noi</h2>
+        <p class="text-about-us">Bine ai venit în lumea Gimnaziului Mitoc!</p>
+      </div>
     </div>
-    <!--Content ends-->
+    <!-- -------------------------------------------------------------------------------------------------------------------------------- -->
+    <!--                                                              sectiunea evenimente                                                -->
+    <!-- -------------------------------------------------------------------------------------------------------------------------------- -->
+    <div id="evenimente" class="container-sectiune flex-column">
+      <!-- container eveniment -->
+      <div class="container-eveniment">
+        <div class="eveniment">
+          <div class="titlu">02.05.2023</div>
+          <h2 class="black-text">Cay sociis nato que penatibus et</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            varius enim in eros elementum tristique. Lorem ipsum dolor sit, amet
+            consectetur adipisicing elit. Soluta neque nesciunt corrupti
+            adipisci dolor minus eaque, consequatur omnis aspernatur, dolorem
+            reprehenderit dicta, expedita aliquid ratione unde id odio modi
+            maiores!
+          </p>
+        </div>
+        <div class="imagine-eveniment">
+          <img
+            src="./img/img-evenimente/directoarea.jpg"
+            width="341"
+            alt=""
+            class="imagine"
+          />
+        </div>
+      </div>
+      <!-- container eveniment invers stilat -->
+      <div class="container-eveniment invers">
+        <div class="eveniment">
+          <div class="titlu">8.09.2023</div>
+          <h2 class="black-text">Amet Ipsum</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            varius enim in eros elementum tristique. Lorem ipsum dolor, sit amet
+            consectetur adipisicing elit. Reiciendis vitae hic architecto
+            numquam obcaecati facilis sint eum esse, assumenda enim dicta nobis
+            dolor, nulla beatae autem quasi? Quae, in tenetur!
+          </p>
+        </div>
+        <div class="imagine-eveniment">
+          <img
+            src="./img/img-evenimente/primarul.jpg"
+            width="341"
+            alt=""
+            class="imagine"
+          />
+        </div>
+      </div>
+      <!-- container eveniment -->
+      <div class="container-eveniment">
+        <div class="eveniment">
+          <div class="titlu">15.09.2023</div>
+          <h2 class="black-text">Magna Porta Sit Bibendum</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            varius enim in eros elementum tristique.
+          </p>
+        </div>
+        <div class="imagine-eveniment">
+          <img
+            src="./img/img-evenimente/craciun.jpg"
+            width="341"
+            alt=""
+            class="imagine"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- ------------------------------------------------ end sectiunea evenimente -------------------------------------------------------------------- -->
   </body>
 </html>

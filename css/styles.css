@@ -1,6 +1,7 @@
 :root {
   --first-colour: #543ab7;
   --second-colour: #00acc1;
+  --p-max-width: 500px;
 }
 
 /* tipografie */
@@ -12,6 +13,7 @@ body {
   font-size: 1rem; /* Equals the base font size, e.g., 16px */
   line-height: 1.6; /* Adjusts the spacing between lines of text */
   overflow-x: hidden;
+  background: linear-gradient(60deg, #543ab7 0%, #00acc1 100%);
 }
 
 h1 {
@@ -74,19 +76,31 @@ button,
   min-width: 48px;
   min-height: 48px;
 }
-
+.container-sectiune {
+  display: flex;
+  max-width: 100vw;
+  margin: 0 auto;
+  padding: 2em;
+}
 /* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
                                                                     Navigation styles
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-.nav-interna {
+#hero {
   position: relative;
+  height: 100vh;
+  background-color: #fff;
+}
+.nav-interna {
+  position: sticky;
+  top: 0;
   justify-content: space-between;
   width: 100vw;
   height: 5vh;
   min-height: 50px;
-  margin: 1.5em 0;
+  padding-top: 10px;
+  z-index: 9999;
 }
 
 .mob-nav-toggle {
@@ -160,28 +174,180 @@ button,
   color: #fff;
   font-size: 20px;
 }
+.nav-bar-tel {
+  display: none;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                                                                    despre noi
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+#despreNoi {
+  max-height: 100vh;
+  color: #f1f1f1;
+  position: relative;
+  overflow: hidden;
+}
+.about-us-img {
+  max-height: 600px;
+  width: 40%;
+}
+
+.about-us-img > img {
+  width: 100%;
+  max-width: 100%;
+}
+
+.about-us-img-sm {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  max-height: 100%;
+  z-index: -1;
+  opacity: 0.25;
+}
+
+.titlu-sectiune {
+  font-weight: 700;
+  width: 100%;
+  text-align: left;
+  padding-left: 1rem;
+}
+#despreNoi p {
+  max-width: 800px;
+  font-size: 1.25rem;
+}
+.text-about-us::after {
+  content: " Suntem o comunitate dedicată excelenței în educație și formării individuale a fiecărui elev. Fondată pe o bogată tradiție și valori puternice, Gimnaziul Mitoc este mai mult decât o școală - este un loc în care fiecare copil este încurajat să-și descopere pasiunile, să-și exploreze potențialul și să-și dezvolte caracterul. Prin programe educaționale inovatoare, cadre didactice dedicate și resurse moderne, ne străduim să oferim fiecărui elev o experiență educațională memorabilă și relevantă pentru lumea de astăzi. Alătură-te nouă în călătoria către excelență și descoperă ce înseamnă să fii parte din familia Gimnaziului Mitoc. Aici, fiecare elev contează!";
+}
+.text-about-us {
+  text-align: justify;
+  padding: 1em;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                                                                    Statistici
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+.statistici {
+  width: 50%;
+  min-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--second-colour);
+}
+.container-card {
+  gap: 1rem;
+}
+.container-card > .stat-i-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  align-self: stretch;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  height: 100%;
+}
+
+.thumb-titlu {
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 600;
+  text-align: center;
+  display: inline-block;
+  border-bottom: 1px solid var(--first-colour);
+}
+
+.number {
+  color: #005f66;
+  font-size: 2vw;
+  display: inline-block;
+}
+.titlu {
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 1rem;
+  display: inline-block;
+}
+.info-adjectiv {
+  margin-top: 10px;
+}
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                                                                    progress bar
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+.progress-container {
+  display: none;
+  width: 100%;
+  background-color: #fff;
+  padding: 0 20px;
+}
+
+.message {
+  padding-top: 20px;
+  text-align: center;
+  color: var(--second-colour);
+  font-size: 1.25rem;
+}
+.progress-bar {
+  height: 30px;
+  border-radius: 5px;
+  background: linear-gradient(60deg, #543ab7 0%, #00acc1 100%);
+  justify-content: space-between;
+  position: relative;
+  color: white;
+  overflow: hidden;
+}
+
+.progress-bar div {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  line-height: 30px;
+  font-size: 14px;
+}
+
+.elapsed {
+  left: 0;
+  width: auto;
+  padding-left: 5px;
+}
+
+.remaining {
+  right: 0;
+  width: auto;
+  padding-right: 5px;
+}
+
 /* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
                                                                     Header styles
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-body {
-  background: linear-gradient(
-    60deg,
-    rgba(84, 58, 183, 1) 0%,
-    rgba(0, 172, 193, 1) 100%
-  );
-  color: white;
-}
+
 .header {
   position: relative;
   text-align: center;
-  /* background: linear-gradient(
+  background: linear-gradient(
     60deg,
-    rgba(84, 58, 183, 1) 0%,
-    100%
+    var(--first-colour) 0%,
+    var(--second-colour) 100%
   );
-  color: white; */
+  color: white;
 }
 /* .logo {
   width: 100px;
@@ -199,44 +365,6 @@ body {
   padding: 0;
 }
 
-.waves {
-  position: relative;
-  width: 100%;
-  height: 15vh;
-  margin-bottom: -7px; /*Fix for safari gap*/
-  min-height: 100px;
-  max-height: 150px;
-}
-
-.content {
-  position: relative;
-  height: 20vh;
-  text-align: center;
-  background-color: white;
-}
-
-/* Animation */
-
-.parallax > use {
-  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
-}
-.parallax > use:nth-child(1) {
-  animation-delay: -2s;
-  animation-duration: 7s;
-}
-.parallax > use:nth-child(2) {
-  animation-delay: -3s;
-  animation-duration: 10s;
-}
-.parallax > use:nth-child(3) {
-  animation-delay: -4s;
-  animation-duration: 13s;
-}
-.parallax > use:nth-child(4) {
-  animation-delay: -5s;
-  animation-duration: 20s;
-}
-/* ------------------------------------------------------------------------    end waves ------------------------------------------------------------------ */
 /* 
 stiluri butnul de contact 
 */
@@ -264,6 +392,124 @@ stiluri butnul de contact
   background-position: right center;
 }
 
+.arrow {
+  margin-left: auto;
+  margin-right: auto;
+  display: none; /*pina ce*/
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  right: 0;
+  z-index: 8999;
+  animation: bounce 1s infinite alternate;
+}
+@keyframes bounce {
+  0% {
+    bottom: 0; /* Start position */
+  }
+  100% {
+    bottom: 2%; /* End position */
+  }
+}
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                                                                    Waves
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+#wave1 {
+  transition: opacity 3s ease-out;
+}
+.waves {
+  position: relative;
+  width: 100%;
+  height: 15vh;
+  min-height: 100px;
+  max-height: 150px;
+}
+.rotated180 {
+  /* transform: rotate(180deg); */
+}
+.rotated180 > .parallax > use {
+  animation: none;
+}
+
+/* Animation */
+
+.parallax > use {
+  animation: move-forever 25s cubic-bezier(0.55, 0.5, 0.45, 0.5) infinite;
+}
+.parallax > use:nth-child(1) {
+  animation-delay: -2s;
+  animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+  animation-delay: -3s;
+  animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+  animation-delay: -4s;
+  animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+  animation-delay: -5s;
+  animation-duration: 20s;
+}
+/* ------------------------------------------------------------------------    end waves ------------------------------------------------------------------ */
+
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                                                                    Stiluri sectiune evenimente
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+#evenimente {
+  visibility: hidden;
+  background-color: #fff;
+  color: #7c7979;
+}
+.eveniment {
+  width: 50vw;
+  max-width: 500px;
+  border: 1px #000;
+  flex: none;
+  padding-left: 4vw;
+  padding-right: 4vw;
+}
+
+.imagine {
+  flex: none;
+}
+
+.black-text {
+  color: #000;
+}
+
+.container-eveniment {
+  width: 90vw;
+  border: 1px #000;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  padding-left: 10vw;
+  padding-right: 10vw;
+  display: flex;
+}
+
+.container-eveniment.invers {
+  flex-direction: row-reverse;
+}
+
+.imagine-eveniment {
+  width: 50vw;
+  max-width: 500px;
+  border: 1px #000;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
 @keyframes move-forever {
   0% {
     transform: translate3d(-90px, 0, 0);
@@ -275,7 +521,7 @@ stiluri butnul de contact
 /*Shrinking for mobile*/
 @media (max-width: 768px) {
   .waves {
-    height: 40px;
+    height: 70px;
     min-height: 40px;
   }
   .content {

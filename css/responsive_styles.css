@@ -1,3 +1,9 @@
+@media (width < 1280px) {
+  .text-about-us::after {
+    content: "  Fondată pe o bogată tradiție și valori puternice, Gimnaziul Mitoc este mai mult decât o școală - este un loc în care fiecare copil este încurajat să-și descopere pasiunile, să-și exploreze potențialul și să-și dezvolte caracterul. Prin programe educaționale inovatoare, cadre didactice dedicate și resurse moderne, ne străduim să oferim fiecărui elev o experiență educațională memorabilă și relevantă pentru lumea de astăzi. Alătură-te nouă în călătoria către excelență și descoperă ce înseamnă să fii parte din familia Gimnaziului Mitoc. Aici, fiecare elev contează!";
+  }
+}
+
 /* ---------------------------------------------------------------------------------------------------------------
   
   
@@ -5,7 +11,7 @@
   
   ------------------------------------------------------------------------------------------------------------------ */
 
-@media (max-width: 991px) {
+@media (width < 991px) {
   .nav-menu {
     position: fixed;
     inset: 0 0 0 10%;
@@ -69,15 +75,53 @@
     transform: translateX(-50%);
     font-size: 14px;
   }
+  .nav-bar-tel {
+    display: block;
+  }
+  .center-tel {
+    display: none;
+  }
+
+  .about-us-img {
+    display: none;
+  }
+  .about-us-img-sm {
+    display: block;
+  }
+
+  .container-eveniment {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .container-eveniment.logos {
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
 }
 
+/* random */
+@media (width < 860px) {
+  .statistici {
+    justify-content: space-around;
+    min-width: 100vw;
+  }
+  .container-card {
+    flex-direction: column;
+  }
+  .info-adjectiv {
+    display: none;
+  }
+}
 /* ---------------------------------------------------------------------------------------------------------------
   
   
                                           smaller tablets 768
   
   ------------------------------------------------------------------------------------------------------------------ */
-@media (max-width: 768px) {
+@media (width < 768px) {
   html {
     font-size: 14px; /* Decrease base font size */
   }
@@ -88,12 +132,15 @@
 
   p {
     font-size: 0.875rem; /* Smaller text size */
+    padding: 1rem;
   }
 
   .nav-logo-container {
     width: 75px;
   }
-
+  /* .header {
+    height: 100vh;
+  } */
   .form-wrapper {
     flex-direction: column;
   }
@@ -122,6 +169,13 @@
   .close-form {
     background-image: url(../img/close-burger.svg);
   }
+
+  .info-adjectiv {
+    display: block;
+  }
+  .container-eveniment {
+    flex-direction: row;
+  }
 }
 /* ---------------------------------------------------------------------------------------------------------------
   
@@ -147,6 +201,44 @@
   }
   .right-col {
     padding: 2em;
+  }
+  .info-adjectiv {
+    display: none;
+  }
+  .thumb-titlu {
+    display: flex;
+    flex-direction: column;
+    border: none;
+  }
+  .number {
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  .container-eveniment,
+  .container-eveniment.invers {
+    flex-direction: column;
+  }
+
+  .imagine-eveniment {
+    width: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  .eveniment {
+    width: 100vw;
+  }
+}
+
+/* ---------------------------------------------------------------------------------------------------------------
+  
+  
+                                          dupa inaltime
+  
+  ------------------------------------------------------------------------------------------------------------------ */
+
+@media (height < 750px) {
+  .info-adjectiv {
+    display: none;
   }
 }
 
