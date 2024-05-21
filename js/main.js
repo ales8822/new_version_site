@@ -184,7 +184,6 @@ function updateProgressBar() {
 function getCurrentLessonIndex(lessons, currentTime) {
   for (let i = 0; i < lessons.length; i++) {
     const lessonStart = parseTime(lessons[i].start);
-    console.log(lessonStart);
 
     const lessonEnd = parseTime(lessons[i].end);
     if (currentTime >= lessonStart && currentTime < lessonEnd) {
@@ -228,3 +227,42 @@ function revealOrHideSection() {
   }
 }
 // ---------------------------------------------------------- end hide second section---------------------------------------------------------------------------------
+// JavaScript code to apply position: sticky on scroll
+
+// Get the navigation bar element
+const navBar = document.querySelector(".nav-interna");
+
+// Get the initial offset position of the navigation bar
+const navBarOffsetTop = navBar.offsetTop;
+
+// Flag to track whether the user has scrolled back to the top
+let isAtTop = true;
+
+// Function to apply sticky behavior to the navigation bar
+function makeNavBarSticky() {
+  if (window.scrollY >= navBarOffsetTop) {
+    // Apply position: sticky when the scroll position exceeds the navigation bar's original position
+    navBar.style.position = "sticky";
+    navBar.style.top = "0";
+    isAtTop = false; // Update the flag when not at the top
+  } else {
+    // If the user has scrolled back to the top
+    if (isAtTop) {
+      // Set position to absolute
+      navBar.style.position = "absolute";
+    } else {
+      // If not at the top, set position to fixed
+      navBar.style.position = "fixed";
+    }
+  }
+}
+
+// Event listener for the scroll event
+window.addEventListener("scroll", makeNavBarSticky);
+
+// Event listener for detecting when the user scrolls back to the top
+window.addEventListener("wheel", function (event) {
+  if (window.scrollY === 0) {
+    isAtTop = true; // Update the flag when the user scrolls back to the top
+  }
+});

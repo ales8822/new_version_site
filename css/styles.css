@@ -65,7 +65,7 @@ button,
   text-align: center;
 }
 .flex-column {
-  /*Flexbox for containers*/
+  /*Flexbox for containers, column orientation*/
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -93,16 +93,25 @@ button,
   background-color: #fff;
 }
 .nav-interna {
-  position: sticky;
+  position: absolute;
   top: 0;
   justify-content: space-between;
   width: 100vw;
   height: 5vh;
+  color: #fff;
   min-height: 50px;
   padding-top: 10px;
   z-index: 9999;
 }
-
+.corrector-header {
+  position: relative;
+  justify-content: space-between;
+  width: 100vw;
+  height: 5vh;
+  color: #fff;
+  min-height: 50px;
+  padding-top: 10px;
+}
 .mob-nav-toggle {
   display: none;
 }
@@ -475,13 +484,16 @@ stiluri butnul de contact
   padding-left: 4vw;
   padding-right: 4vw;
 }
-
+.eveniment > p {
+  padding: 1rem;
+}
 .imagine {
   flex: none;
 }
 
 .black-text {
   color: #000;
+  padding: 1rem;
 }
 
 .container-eveniment {

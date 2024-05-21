@@ -80,37 +80,38 @@
       </div>
     </div>
     <!-- ---------------------------------------------------------------- sfirsit forma de contact ---------------------------------------------------- -->
-
+    <!-- Navigarea principala -->
+    <div class="nav-interna flex">
+      <!-- logo -->
+      <div class="nav-logo-container">
+        <a href="index.html" class="brand"></a>
+      </div>
+      <div class="container-nr-tel nav-bar-tel" style="letter-spacing: 2px">
+        <i class="fa fa-phone"></i>&nbsp;(+373)-123456789
+      </div>
+      <!-- buton hamburger pentru navigatie pe mobile -->
+      <button
+        class="mob-nav-toggle"
+        type="button"
+        aria-extended="false"
+      ></button>
+      <!-- navigatia principala -->
+      <nav role="navigation" class="nav-menu" data-visible="false">
+        <a href="#home" class="nav-link">Acasa</a>
+        <a href="#despreNoi" class="nav-link">Despre noi</a>
+        <a href="#evenimente" class="nav-link">Evenimente</a>
+        <a href="#contact" class="nav-link">Contacteaza-ne</a>
+        <a href="#" class="nav-link">Altele</a>
+      </nav>
+    </div>
+    <!-- sfirsit navigarea principala-->
     <!-- -------------------------------------------------------------------------------------------------------------------------------------------------- -->
     <!-- ----------------------------------------------------------------- Sectiunea Hero ----------------------------------------------------------------- -->
     <!-- -------------------------------------------------------------------------------------------------------------------------------------------------- -->
     <div id="hero">
       <div class="header">
-        <!-- Navigarea principala -->
-        <div class="nav-interna flex">
-          <!-- logo -->
-          <div class="nav-logo-container">
-            <a href="index.html" class="brand"></a>
-          </div>
-          <div class="container-nr-tel nav-bar-tel" style="letter-spacing: 2px">
-            <i class="fa fa-phone"></i>&nbsp;(+373)-123456789
-          </div>
-          <!-- buton hamburger pentru navigatie pe mobile -->
-          <button
-            class="mob-nav-toggle"
-            type="button"
-            aria-extended="false"
-          ></button>
-          <!-- navigatia principala -->
-          <nav role="navigation" class="nav-menu" data-visible="false">
-            <a href="#home" class="nav-link">Acasa</a>
-            <a href="#despreNoi" class="nav-link">Despre noi</a>
-            <a href="#evenimente" class="nav-link">Evenimente</a>
-            <a href="#contact" class="nav-link">Contacteaza-ne</a>
-            <a href="#" class="nav-link">Altele</a>
-          </nav>
-        </div>
-        <!-- sfirsit navigarea principala-->
+        <!-- deoarece am scos navigatia din header pentru a o face sticky , toate stilurile sau stricat , de aceia adaugam un div cu aceleasi propritati ca nav -->
+        <div class="corrector-header"></div>
         <!-- linkuri sociale -->
         <div class="linkuri-sociale-hero flex-column">
           <a href="#" title="" class="mob-square-btn flex"
