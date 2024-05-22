@@ -4,10 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GMitoc</title>
+    <!-- js biblioteca pentru font awesome -->
     <script
       src="https://kit.fontawesome.com/94742d7e37.js"
       crossorigin="anonymous"
     ></script>
+    <!-- js biblioteca pentru swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- biblioteca css pentru font awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,12 +22,25 @@
       href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
       rel="stylesheet"
     />
+    <!-- biblioteca css pentru swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <!-- stilurile reset -->
     <link rel="stylesheet" href="./css/reset.css" />
+    <!-- stilurile mele -->
     <link rel="stylesheet" href="./css/styles.css" />
+    <!-- stiluri forma de contact -->
     <link rel="stylesheet" href="./css/form_styles.css" />
+    <!-- stilurile pentru responsivnes -->
     <link rel="stylesheet" href="./css/responsive_styles.css" />
-
+    <!-- javascript pentru swiper -->
+    <script src="./js/class.js" defer></script>
+    <!-- js general -->
     <script src="./js/main.js" defer></script>
+<!-- pentru scrol la upcoming events -->
+    <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
   </head>
   <body>
     <!-- -------------------------------------------------------------------------------------------------------------------------------------------------- -->
@@ -266,9 +283,179 @@
         <p class="text-about-us">Bine ai venit în lumea Gimnaziului Mitoc!</p>
       </div>
     </div>
+
+    <!-- -------------------------------------------------------------------------------------------------------------------------------- -->
+    <!--                                                              sectiunea evenimente urmatoare                                        -->
+    <!-- -------------------------------------------------------------------------------------------------------------------------------- -->
+    <div id="upcoming-events" class="container-sectiune flex">
+        <section class="timeline">
+            <div class="container">
+                <div class="timeline-item">
+                    <!-- cercul de pe axa timpului -->
+                    <div class="timeline-img"></div>
+                    <div class="timeline-content timeline-card js--fadeInLeft">
+                        
+                        <div class="timeline-img-header flex-column">
+                            <img src="./img/img-upcoming/olimpiada-matematica.png" alt="">
+                            <h2>Olimpiada la Matematică</h2>
+                        </div>
+                        <div class="date">25 mai 2024</div>
+                        <p>Pregătiți-vă pentru olimpiada anuală de matematică. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla veritatis fugiat ducimus reiciendis blanditiis recusandae, quas, minima assumenda aut quia quisquam et corporis! Debitis sit odit nostrum ipsum vero ratione.</p>
+                        <a class="bnt-more" href="javascript:void(0)">More</a>
+                    </div>
+                </div> 
+                <div class="timeline-item">
+                    <div class="timeline-img"></div>
+                    <div class="timeline-content timeline-card js--fadeInRight">
+                        <div class="timeline-img-header">
+                            <img src="./img/img-upcoming/muzeu-natural.png" alt="">
+                            <h2>Excursie Școlară</h2>
+                        </div>
+                        <div class="date">26 mai 2024</div>
+                        <p>Excursie la muzeul de științe naturale. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolorem sint distinctio provident voluptatibus minus, asperiores saepe delectus! Aspernatur pariatur vel sit harum quod dicta adipisci nesciunt dolor iure perspiciatis!</p>
+                        <a class="bnt-more" href="javascript:void(0)">More</a>
+                    </div>
+                </div>   
+                <div class="timeline-item">
+                    <div class="timeline-img"></div>
+                    <div class="timeline-content timeline-card js--fadeInLeft">
+                        <div class="timeline-img-header">
+                            <img src="./img/img-upcoming/test_geometrie.png" alt="">
+                            <h2>Test de Geometrie</h2>
+                        </div>
+                        <div class="date">30 mai 2024</div>
+                        <p>Pregătiți-vă pentru testul de geometrie.</p>
+                        <a class="bnt-more" href="javascript:void(0)">More</a>
+                    </div>
+                </div>   
+                <div class="timeline-item">
+                    <div class="timeline-img"></div>
+                    <div class="timeline-content js--fadeInRight">
+                        <div class="timeline-img-header">
+                            <img src="./img/img-upcoming/seara-talentelor.png" alt="">
+                            <h2>Seara Talentelor</h2>
+                        </div>
+                        <div class="date">15 iunie 2024</div>
+                        <p>O oportunitate pentru elevi de a-și prezenta talentele artistice.</p>
+                        <a class="bnt-more" href="javascript:void(0)">More</a>
+                    </div>
+                </div>   
+                <div class="timeline-item">
+                    <div class="timeline-img"></div>
+                    <div class="timeline-content timeline-card js--fadeInLeft">
+                        <div class="timeline-img-header">
+                            <img src="./img/img-upcoming/bal.png" alt="">
+                            <h2>Balul de absolvire</h2>
+                        </div>
+                        <div class="date">29 iunie 2024</div>
+                        <p>Dragi absolvenți ai clasei a 9-a, părinți, profesori și prieteni,
+
+                            Suntem încântați să vă invităm să vă alăturați nouă într-o seară de sărbătoare și emoție, în cadrul balului de absolvire al clasei a 9-a a Gimnaziului Mitoc. Această ocazie specială marchează sfârșitul unei etape importante în viața noastră școlară și începutul unei noi aventuri. Ne dorim să celebrăm împreună parcursul nostru academic și să creăm amintiri de neuitat în cadrul acestui eveniment deosebit.</p>
+                        <a class="bnt-more" href="javascript:void(0)">More</a>
+                    </div>
+                </div>   
+            </div>
+        </section>
+      </div>
+    </div>
     <!-- -------------------------------------------------------------------------------------------------------------------------------- -->
     <!--                                                              sectiunea evenimente                                                -->
     <!-- -------------------------------------------------------------------------------------------------------------------------------- -->
+
+    <div id="" class="container-sectiune flex">
+      <div class="slider-container">
+        <h2>Evenimente și anunțuri</h2>
+        <div class="swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./img/img-upcoming/olimpiada-matematica.png" />
+              <div class="slide-overlay">
+                <h3>Eveniment: Olimpiada de Matematică</h3>
+                <p>Data: 25 mai 2024</p>
+                <p>
+                  Descriere: Pregătiți-vă pentru olimpiada anuală de matematică.
+                </p>
+                <button>Detalii <i class="fa-solid fa-circle-info"></i></button>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/img-upcoming/test_geometrie.png" />
+              <div class="slide-overlay">
+                <h3>Examen: Test de Geometrie</h3>
+                <p>Data: 30 mai 2024</p>
+                <p>Descriere: Pregătiți-vă pentru testul de geometrie.</p>
+                <button>
+                  Listen Now <i class="fa-solid fa-circle-info"></i>
+                </button>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/img-upcoming/muzeu-natural.png" />
+              <div class="slide-overlay">
+                <h3>Anunț: Excursie Școlară</h3>
+                <p>Data: 10 iunie 2024</p>
+                <p>Descriere: Excursie la muzeul de științe naturale.</p>
+                <button>Detalii <i class="fa-solid fa-circle-info"></i></button>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/img-upcoming/seara-talentelor.png" />
+              <div class="slide-overlay">
+                <h3>Eveniment: Seara Talentelor</h3>
+                <p>Data: 15 iunie 2024</p>
+                <p>
+                  Descriere: O oportunitate pentru elevi de a-și prezenta
+                  talentele artistice.
+                </p>
+                <button>
+                  Listen Now <i class="fa-solid fa-circle-info"></i>
+                </button>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/20c8fdd5-9f4a-4917-ae90-0239a52e8334"
+              />
+              <div class="slide-overlay">
+                <h2>Smooth Jazz Journey</h2>
+                <button>
+                  Listen Now <i class="fa-solid fa-circle-info"></i>
+                </button>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/95b52c32-f5da-4fe6-956d-a5ed118bbdd2"
+              />
+              <div class="slide-overlay">
+                <h2>Olimpiada de Matematică</h2>
+                <p>Data: 25 mai 2024</p>
+                <p>
+                  Descriere: Pregătiți-vă pentru olimpiada anuală de matematică.
+                </p>
+                <button>Detalii <i class="fa-solid fa-circle-info"></i></button>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/df461a99-2fb3-4d55-ac16-2e0c6dd783e1"
+              />
+              <div class="slide-overlay">
+                <h2>Uplifting Rhythms</h2>
+                <button>
+                  Listen Now <i class="fa-solid fa-circle-info"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- -------------------------------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- ----------------------------------------------------------------- evenimente care au fost deja ----------------------------------------------------------------- -->
+    <!-- -------------------------------------------------------------------------------------------------------------------------------------------------- -->
     <div id="evenimente" class="container-sectiune flex-column">
       <!-- container eveniment -->
       <div class="container-eveniment">

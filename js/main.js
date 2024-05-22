@@ -266,3 +266,55 @@ window.addEventListener("wheel", function (event) {
     isAtTop = true; // Update the flag when the user scrolls back to the top
   }
 });
+
+// for timeline
+document.addEventListener("DOMContentLoaded", function () {
+  const sr = ScrollReveal();
+
+  const timelineContent = document.querySelectorAll(".timeline-content");
+  const windowWidth = window.innerWidth;
+
+  if (windowWidth < 768) {
+    timelineContent.forEach((item) => {
+      if (item.classList.contains("js--fadeInLeft")) {
+        item.classList.remove("js--fadeInLeft");
+        item.classList.add("js--fadeInRight");
+      }
+    });
+
+    sr.reveal(".js--fadeInRight", {
+      origin: "right",
+      distance: "300px",
+      easing: "ease-in-out",
+      duration: 800,
+    });
+  } else {
+    sr.reveal(".js--fadeInLeft", {
+      origin: "left",
+      distance: "300px",
+      easing: "ease-in-out",
+      duration: 800,
+    });
+
+    sr.reveal(".js--fadeInRight", {
+      origin: "right",
+      distance: "300px",
+      easing: "ease-in-out",
+      duration: 800,
+    });
+  }
+
+  sr.reveal(".js--fadeInLeft", {
+    origin: "left",
+    distance: "300px",
+    easing: "ease-in-out",
+    duration: 800,
+  });
+
+  sr.reveal(".js--fadeInRight", {
+    origin: "right",
+    distance: "300px",
+    easing: "ease-in-out",
+    duration: 800,
+  });
+});

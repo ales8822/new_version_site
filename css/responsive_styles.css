@@ -253,3 +253,162 @@
     top: 0;
   }
 }
+
+/* ---------------------------------------------------------------------------------------------------------------
+  
+  
+                                          swiper
+  
+  ------------------------------------------------------------------------------------------------------------------ */
+
+@media (max-width: 1250px) {
+  .swiper-slide {
+    width: 500px;
+  }
+
+  .swiper-slide img {
+    border-radius: 16px;
+    height: 280px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .content {
+    grid-template-columns: 60% 40%;
+  }
+
+  .left-content {
+    padding: 40px 20px 20px;
+  }
+
+  .swiper-slide {
+    width: 410px;
+  }
+
+  .swiper-slide img {
+    height: 220px;
+  }
+}
+
+@media (max-width: 910px) {
+  .swiper-slide {
+    width: 350px;
+  }
+
+  .swiper-slide img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 825px) {
+  .swiper-slide {
+    width: 320px;
+  }
+
+  .swiper-slide img {
+    height: 200px;
+  }
+
+  .slide-overlay {
+    row-gap: 8px;
+    padding: 12px 36px;
+  }
+
+  .slide-overlay button {
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 700px) {
+  .slide-overlay {
+    row-gap: 12px;
+    padding: 20px 30px;
+  }
+
+  .swiper-slide {
+    width: 420px;
+  }
+}
+
+@media (max-width: 580px) {
+  .swiper-slide {
+    width: 340px;
+  }
+
+  .swiper-slide img {
+    height: 180px;
+  }
+}
+
+@media (max-width: 450px) {
+  .swiper-slide {
+    width: 320px;
+  }
+
+  .slide-overlay {
+    row-gap: 8px;
+    padding: 12px 36px;
+  }
+}
+
+/* upcoming events */
+
+@media (min-width: 576px) {
+  .container {
+    width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1140px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #upcoming-events {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .timeline::before {
+    left: 50px;
+  }
+  .timeline .timeline-img {
+    left: 50px;
+  }
+  .timeline .timeline-content {
+    max-width: 100%;
+    width: auto;
+    margin-left: 70px;
+  }
+  .timeline .timeline-item:nth-child(even) .timeline-content {
+    float: none;
+  }
+  .timeline .timeline-item:nth-child(odd) .timeline-content::after {
+    content: "";
+    position: absolute;
+    border-style: solid;
+    width: 0;
+    height: 0;
+    top: 30px;
+    left: -15px;
+    border-width: 10px 15px 10px 0;
+    border-color: transparent #f5f5f5 transparent transparent;
+  }
+  .date {
+    left: 0;
+    right: auto;
+  }
+}
