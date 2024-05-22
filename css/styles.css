@@ -550,10 +550,13 @@ stiluri butnul de contact
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 
 #upcoming-events {
-  background-color: #eee;
-  /* background: url("../img/img-upcoming/bg.jpeg"); */
+  background: url("../img/img-upcoming/bg.png") no-repeat center center fixed;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  padding: 100px 0;
 }
 section {
   padding: 100px 0;
