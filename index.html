@@ -39,9 +39,8 @@
     <script src="./js/class.js" defer></script>
     <!-- js general -->
     <script src="./js/main.js" defer></script>
-<!-- pentru scrol la upcoming events -->
+    <!-- pentru scrol la upcoming events -->
     <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-
   </head>
   <body>
     <!-- -------------------------------------------------------------------------------------------------------------------------------------------------- -->
@@ -115,7 +114,7 @@
       ></button>
       <!-- navigatia principala -->
       <nav role="navigation" class="nav-menu" data-visible="false">
-        <a href="#home" class="nav-link">Acasa</a>
+        <a href="#hero" class="nav-link">Acasa</a>
         <a href="#despreNoi" class="nav-link">Despre noi</a>
         <a href="#evenimente" class="nav-link">Evenimente</a>
         <a href="#contact" class="nav-link">Contacteaza-ne</a>
@@ -288,79 +287,102 @@
     <!-- -------------------------------------------------------------------------------------------------------------------------------- -->
     <!--                                                              sectiunea evenimente urmatoare                                        -->
     <!-- -------------------------------------------------------------------------------------------------------------------------------- -->
-    <div id="upcoming-events" class="container-sectiune flex parallax-section">
-        <section class="timeline paralax-content">
-            <div class="container">
-                <div class="timeline-item">
-                    <!-- cercul de pe axa timpului -->
-                    <div class="timeline-img"></div>
-                    <div class="timeline-content timeline-card js--fadeInLeft">
-                        
-                        <div class="timeline-img-header flex-column">
-                            <img src="./img/img-upcoming/olimpiada-matematica.png" alt="">
-                            <h2>Olimpiada la Matematică</h2>
-                        </div>
-                        <div class="date">25 mai 2024</div>
-                        <p>Pregătiți-vă pentru olimpiada anuală de matematică. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla veritatis fugiat ducimus reiciendis blanditiis recusandae, quas, minima assumenda aut quia quisquam et corporis! Debitis sit odit nostrum ipsum vero ratione.</p>
-                        <a class="bnt-more" href="javascript:void(0)">More</a>
-                    </div>
-                </div> 
-                <div class="timeline-item">
-                    <div class="timeline-img"></div>
-                    <div class="timeline-content timeline-card js--fadeInRight">
-                        <div class="timeline-img-header">
-                            <img src="./img/img-upcoming/muzeu-natural.png" alt="">
-                            <h2>Excursie Școlară</h2>
-                        </div>
-                        <div class="date">26 mai 2024</div>
-                        <p>Excursie la muzeul de științe naturale. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolorem sint distinctio provident voluptatibus minus, asperiores saepe delectus! Aspernatur pariatur vel sit harum quod dicta adipisci nesciunt dolor iure perspiciatis!</p>
-                        <a class="bnt-more" href="javascript:void(0)">More</a>
-                    </div>
-                </div>   
-                <div class="timeline-item">
-                    <div class="timeline-img"></div>
-                    <div class="timeline-content timeline-card js--fadeInLeft">
-                        <div class="timeline-img-header">
-                            <img src="./img/img-upcoming/test_geometrie.png" alt="">
-                            <h2>Test de Geometrie</h2>
-                        </div>
-                        <div class="date">30 mai 2024</div>
-                        <p>Pregătiți-vă pentru testul de geometrie.</p>
-                        <a class="bnt-more" href="javascript:void(0)">More</a>
-                    </div>
-                </div>   
-                <div class="timeline-item">
-                    <div class="timeline-img"></div>
-                    <div class="timeline-content js--fadeInRight">
-                        <div class="timeline-img-header">
-                            <img src="./img/img-upcoming/seara-talentelor.png" alt="">
-                            <h2>Seara Talentelor</h2>
-                        </div>
-                        <div class="date">15 iunie 2024</div>
-                        <p>O oportunitate pentru elevi de a-și prezenta talentele artistice.</p>
-                        <a class="bnt-more" href="javascript:void(0)">More</a>
-                    </div>
-                </div>   
-                <div class="timeline-item">
-                    <div class="timeline-img"></div>
-                    <div class="timeline-content timeline-card js--fadeInLeft">
-                        <div class="timeline-img-header">
-                            <img src="./img/img-upcoming/bal.png" alt="">
-                            <h2>Balul de absolvire</h2>
-                        </div>
-                        <div class="date">29 iunie 2024</div>
-                        <p>Dragi absolvenți ai clasei a 9-a, părinți, profesori și prieteni,
-
-                            Suntem încântați să vă invităm să vă alăturați nouă într-o seară de sărbătoare și emoție, în cadrul balului de absolvire al clasei a 9-a a Gimnaziului Mitoc. Această ocazie specială marchează sfârșitul unei etape importante în viața noastră școlară și începutul unei noi aventuri. Ne dorim să celebrăm împreună parcursul nostru academic și să creăm amintiri de neuitat în cadrul acestui eveniment deosebit.</p>
-                        <a class="bnt-more" href="javascript:void(0)">More</a>
-                    </div>
-                </div>   
+    <div
+      id="upcoming-events"
+      class="container-sectiune flex parallax-container"
+    >
+      <section class="timeline">
+        <div class="container">
+          <div class="timeline-item">
+            <!-- cercul de pe axa timpului -->
+            <div class="timeline-img"></div>
+            <div class="timeline-content timeline-card js--fadeInLeft">
+              <div class="timeline-img-header flex-column">
+                <img src="./img/img-upcoming/olimpiada-matematica.png" alt="" />
+                <h2>Olimpiada la Matematică</h2>
+              </div>
+              <div class="date">25 mai 2024</div>
+              <p>
+                Pregătiți-vă pentru olimpiada anuală de matematică. Lorem ipsum
+                dolor sit amet consectetur adipisicing elit. Nulla veritatis
+                fugiat ducimus reiciendis blanditiis recusandae, quas, minima
+                assumenda aut quia quisquam et corporis! Debitis sit odit
+                nostrum ipsum vero ratione.
+              </p>
+              <a class="bnt-more" href="javascript:void(0)">More</a>
             </div>
-        </section>
-      </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-img"></div>
+            <div class="timeline-content timeline-card js--fadeInRight">
+              <div class="timeline-img-header">
+                <img src="./img/img-upcoming/muzeu-natural.png" alt="" />
+                <h2>Excursie Școlară</h2>
+              </div>
+              <div class="date">26 mai 2024</div>
+              <p>
+                Excursie la muzeul de științe naturale. Lorem ipsum dolor sit
+                amet, consectetur adipisicing elit. Beatae dolorem sint
+                distinctio provident voluptatibus minus, asperiores saepe
+                delectus! Aspernatur pariatur vel sit harum quod dicta adipisci
+                nesciunt dolor iure perspiciatis!
+              </p>
+              <a class="bnt-more" href="javascript:void(0)">More</a>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-img"></div>
+            <div class="timeline-content timeline-card js--fadeInLeft">
+              <div class="timeline-img-header">
+                <img src="./img/img-upcoming/test_geometrie.png" alt="" />
+                <h2>Test de Geometrie</h2>
+              </div>
+              <div class="date">30 mai 2024</div>
+              <p>Pregătiți-vă pentru testul de geometrie.</p>
+              <a class="bnt-more" href="javascript:void(0)">More</a>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-img"></div>
+            <div class="timeline-content js--fadeInRight">
+              <div class="timeline-img-header">
+                <img src="./img/img-upcoming/seara-talentelor.png" alt="" />
+                <h2>Seara Talentelor</h2>
+              </div>
+              <div class="date">15 iunie 2024</div>
+              <p>
+                O oportunitate pentru elevi de a-și prezenta talentele
+                artistice.
+              </p>
+              <a class="bnt-more" href="javascript:void(0)">More</a>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-img"></div>
+            <div class="timeline-content timeline-card js--fadeInLeft">
+              <div class="timeline-img-header">
+                <img src="./img/img-upcoming/bal.png" alt="" />
+                <h2>Balul de absolvire</h2>
+              </div>
+              <div class="date">29 iunie 2024</div>
+              <p>
+                Dragi absolvenți ai clasei a 9-a, părinți, profesori și
+                prieteni, Suntem încântați să vă invităm să vă alăturați nouă
+                într-o seară de sărbătoare și emoție, în cadrul balului de
+                absolvire al clasei a 9-a a Gimnaziului Mitoc. Această ocazie
+                specială marchează sfârșitul unei etape importante în viața
+                noastră școlară și începutul unei noi aventuri. Ne dorim să
+                celebrăm împreună parcursul nostru academic și să creăm amintiri
+                de neuitat în cadrul acestui eveniment deosebit.
+              </p>
+              <a class="bnt-more" href="javascript:void(0)">More</a>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
     <!-- -------------------------------------------------------------------------------------------------------------------------------- -->
-    <!--                                                              sectiunea evenimente                                                -->
+    <!--                                                              sectiunea evenimente swiper                                        -->
     <!-- -------------------------------------------------------------------------------------------------------------------------------- -->
 
     <div id="" class="container-sectiune flex">
@@ -455,74 +477,253 @@
     </div>
 
     <!-- -------------------------------------------------------------------------------------------------------------------------------------------------- -->
-    <!-- ----------------------------------------------------------------- evenimente care au fost deja ----------------------------------------------------------------- -->
+    <!-- ----------------------------------------------------------------- evenimente care au fost deja --------------------------------------------------- -->
     <!-- -------------------------------------------------------------------------------------------------------------------------------------------------- -->
-    <div id="evenimente" class="container-sectiune flex-column">
-      <!-- container eveniment -->
-      <div class="container-eveniment">
-        <div class="eveniment">
-          <div class="titlu">02.05.2023</div>
-          <h2 class="black-text">Cay sociis nato que penatibus et</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            varius enim in eros elementum tristique. Lorem ipsum dolor sit, amet
-            consectetur adipisicing elit. Soluta neque nesciunt corrupti
-            adipisci dolor minus eaque, consequatur omnis aspernatur, dolorem
-            reprehenderit dicta, expedita aliquid ratione unde id odio modi
-            maiores!
-          </p>
+    <div id="evenimente" class="parallax-container">
+      <div class="container-sectiune flex-column">
+        <!-- container eveniment 1 -->
+        <div class="container-eveniment">
+          <div class="eveniment flex-column">
+            <div class="titlu">02.05.2023</div>
+            <h2 class="black-text">Cay sociis nato que penatibus et</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse varius enim in eros elementum tristique. Lorem ipsum
+              dolor sit, amet consectetur adipisicing elit. Soluta neque
+              nesciunt corrupti adipisci dolor minus eaque, consequatur omnis
+              aspernatur, dolorem reprehenderit dicta, expedita aliquid ratione
+              unde id odio modi maiores!
+            </p>
+          </div>
+          <div class="imagine-eveniment flex-column">
+            <img
+              id="primaryImage1"
+              src="./img/img-evenimente/directoarea.jpg"
+              width="341"
+              alt=""
+              class="imagine"
+              onclick="openFullScreenGallery(1)"
+            />
+            <div class="mini-gallery-container">
+              <button
+                class="gallery-nav"
+                id="prevBtn1"
+                onclick="navigateGallery(1, -1)"
+              >
+                &lt;
+              </button>
+              <div class="mini-gallery" id="miniGallery1">
+                <img
+                  src="./img/img-evenimente/craciun.jpg"
+                  width="100"
+                  alt=""
+                  class="thumbnail"
+                  onclick="changePrimaryImage(1, this)"
+                />
+                <img
+                  src="./img/img-evenimente/directoarea.jpg"
+                  width="100"
+                  alt=""
+                  class="thumbnail"
+                  onclick="changePrimaryImage(1, this)"
+                />
+                <img
+                  src="./img/img-evenimente/primarul.jpg"
+                  width="100"
+                  alt=""
+                  class="thumbnail"
+                  onclick="changePrimaryImage(1, this)"
+                />
+              </div>
+              <button
+                class="gallery-nav"
+                id="nextBtn1"
+                onclick="navigateGallery(1, 1)"
+              >
+                &gt;
+              </button>
+            </div>
+          </div>
         </div>
-        <div class="imagine-eveniment">
-          <img
-            src="./img/img-evenimente/directoarea.jpg"
-            width="341"
-            alt=""
-            class="imagine"
-          />
+        <!-- end container eveniment 1 -->
+        <!-- container eveniment 2 invers -->
+        <div class="container-eveniment invers">
+          <div class="eveniment flex-column">
+            <div class="titlu">8.09.2023</div>
+            <h2 class="black-text">Amet Ipsum</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse varius enim in eros elementum tristique. Lorem ipsum
+              dolor, sit amet consectetur adipisicing elit. Reiciendis vitae hic
+              architecto numquam obcaecati facilis sint eum esse, assumenda enim
+              dicta nobis dolor, nulla beatae autem quasi? Quae, in tenetur!
+            </p>
+          </div>
+          <div class="imagine-eveniment flex-column">
+            <img
+              id="primaryImage2"
+              src="./img/img-evenimente/primarul.jpg"
+              width="341"
+              alt=""
+              class="imagine"
+              onclick="openFullScreenGallery(2)"
+            />
+            <div class="mini-gallery-container">
+              <button
+                class="gallery-nav"
+                id="prevBtn2"
+                onclick="navigateGallery(2, -1)"
+              >
+                &lt;
+              </button>
+              <div class="mini-gallery" id="miniGallery2">
+                <img
+                  src="./img/img-evenimente/primarul.jpg"
+                  width="100"
+                  alt=""
+                  class="thumbnail"
+                  onclick="changePrimaryImage(2, this)"
+                />
+                <img
+                  src="./img/img-evenimente/directoarea.jpg"
+                  width="100"
+                  alt=""
+                  class="thumbnail"
+                  onclick="changePrimaryImage(2, this)"
+                />
+                <img
+                  src="./img/img-evenimente/craciun.jpg"
+                  width="100"
+                  alt=""
+                  class="thumbnail"
+                  onclick="changePrimaryImage(2, this)"
+                />
+              </div>
+              <button
+                class="gallery-nav"
+                id="nextBtn2"
+                onclick="navigateGallery(2, 1)"
+              >
+                &gt;
+              </button>
+            </div>
+          </div>
         </div>
+        <!-- end container eveniment 2 invers -->
+        <!-- container eveniment 3 -->
+        <div class="container-eveniment">
+          <div class="eveniment flex-column">
+            <div class="titlu">22.08.2023</div>
+            <h2 class="black-text">Cay sociis nato que penatibus et</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Suspendisse varius enim in eros elementum tristique. Lorem ipsum
+              dolor sit, amet consectetur adipisicing elit. Soluta neque
+              nesciunt corrupti adipisci dolor minus eaque, consequatur omnis
+              aspernatur, dolorem reprehenderit dicta, expedita aliquid ratione
+              unde id odio modi maiores!
+            </p>
+          </div>
+          <div class="imagine-eveniment flex-column">
+            <img
+              id="primaryImage3"
+              src="./img/img-evenimente/directoarea.jpg"
+              width="341"
+              alt=""
+              class="imagine"
+              onclick="openFullScreenGallery(3)"
+            />
+            <div class="mini-gallery-container">
+              <button
+                class="gallery-nav"
+                id="prevBtn3"
+                onclick="navigateGallery(3, -1)"
+              >
+                &lt;
+              </button>
+              <div class="mini-gallery" id="miniGallery3">
+                <img
+                  src="./img/img-evenimente/craciun.jpg"
+                  width="100"
+                  alt=""
+                  class="thumbnail"
+                  onclick="changePrimaryImage(3, this)"
+                />
+                <img
+                  src="./img/img-evenimente/directoarea.jpg"
+                  width="100"
+                  alt=""
+                  class="thumbnail"
+                  onclick="changePrimaryImage(3, this)"
+                />
+                <img
+                  src="./img/img-evenimente/primarul.jpg"
+                  width="100"
+                  alt=""
+                  class="thumbnail"
+                  onclick="changePrimaryImage(3, this)"
+                />
+              </div>
+              <button
+                class="gallery-nav"
+                id="nextBtn1"
+                onclick="navigateGallery(3, 1)"
+              >
+                &gt;
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- end container eveniment 1 -->
       </div>
-      <!-- container eveniment invers stilat -->
-      <div class="container-eveniment invers">
-        <div class="eveniment">
-          <div class="titlu">8.09.2023</div>
-          <h2 class="black-text">Amet Ipsum</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            varius enim in eros elementum tristique. Lorem ipsum dolor, sit amet
-            consectetur adipisicing elit. Reiciendis vitae hic architecto
-            numquam obcaecati facilis sint eum esse, assumenda enim dicta nobis
-            dolor, nulla beatae autem quasi? Quae, in tenetur!
-          </p>
-        </div>
-        <div class="imagine-eveniment">
+      <!-- end container evenimente trecute -->
+      <!-- galeria full screen evenimente trecute -->
+      <div id="fullScreenGallery" class="full-screen-gallery">
+        <span class="close" onclick="closeFullScreenGallery()">
           <img
-            src="./img/img-evenimente/primarul.jpg"
-            width="341"
-            alt=""
-            class="imagine"
+            src="./img/close-burger.svg"
+            alt="close"
+            width="32px"
+            height="32px"
           />
-        </div>
-      </div>
-      <!-- container eveniment -->
-      <div class="container-eveniment">
-        <div class="eveniment">
-          <div class="titlu">15.09.2023</div>
-          <h2 class="black-text">Magna Porta Sit Bibendum</h2>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            varius enim in eros elementum tristique.
-          </p>
-        </div>
-        <div class="imagine-eveniment">
-          <img
-            src="./img/img-evenimente/craciun.jpg"
-            width="341"
-            alt=""
-            class="imagine"
-          />
+        </span>
+        <button
+          class="gallery-nav-full"
+          id="prevFullBtn"
+          onclick="navigateFullScreenGallery(-1)"
+        >
+          &lt;
+        </button>
+        <img class="full-screen-image" id="fullScreenImage" />
+        <button
+          class="gallery-nav-full"
+          id="nextFullBtn"
+          onclick="navigateFullScreenGallery(1)"
+        >
+          &gt;
+        </button>
+        <div class="mini-gallery-container full-screen-mini-gallery">
+          <button
+            class="gallery-nav"
+            id="prevMiniFullBtn"
+            onclick="navigateMiniFullScreenGallery(-1)"
+          >
+            &lt;
+          </button>
+          <div class="mini-gallery" id="miniGalleryFullScreen">
+            <!-- Thumbnails will be dynamically added here -->
+          </div>
+          <button
+            class="gallery-nav"
+            id="nextMiniFullBtn"
+            onclick="navigateMiniFullScreenGallery(1)"
+          >
+            &gt;
+          </button>
         </div>
       </div>
     </div>
-    <!-- ------------------------------------------------ end sectiunea evenimente -------------------------------------------------------------------- -->
+    <!-- end galeria full screen evenimete trecute -->
+    <!-- ------------------------------------------------ end sectiunea evenimente care au fost -------------------------------------------------------------------- -->
   </body>
 </html>

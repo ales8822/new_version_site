@@ -121,151 +121,37 @@ const emailIsValid = (email) => {
 submitBtn.addEventListener("click", validate);
 
 // ------------------------------------------------------------------------ end show contact form --------------------------------------------------------------
-// --------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-//                                                                         show ongoing lesson
 
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------
-document.addEventListener("DOMContentLoaded", function () {
-  updateProgressBar();
-  setInterval(updateProgressBar, 1000); // Update progress bar every second
-});
-
-function updateProgressBar() {
-  const currentTime = new Date();
-  const dayOfWeek = currentTime.getDay(); // 0 for Sunday, 1 for Monday, ..., 6 for Saturday
-
-  // Check if it's a weekend (Saturday or Sunday)
-  if (dayOfWeek === 0 || dayOfWeek === 6) {
-    document.getElementById("progress-bar").style.width = "0%";
-    document.getElementById("ongoing-lesson-message").textContent =
-      "Weekend - No lessons";
-    return;
-  }
-
-  const lessons = [
-    { start: "17:00", end: "17:45", name: "Lesson 1" },
-    { start: "17:45", end: "17:59:59", name: "Breack 1" },
-    { start: "18:00", end: "18:45", name: "Lesson 2" },
-    { start: "18:45", end: "19:00", name: "Breack 2" },
-    { start: "19:00", end: "19:45", name: "Lesson 3" },
-    // Add more lesson times here
-  ];
-
-  const currentLessonIndex = getCurrentLessonIndex(lessons, currentTime);
-
-  if (currentLessonIndex === -1) {
-    document.getElementById("progress-bar").style.width = "100%";
-    document.getElementById("ongoing-lesson-message").textContent =
-      "Today's lessons finish";
-    return;
-  }
-
-  const currentLesson = lessons[currentLessonIndex];
-  const lessonStart = parseTime(currentLesson.start);
-  const lessonEnd = parseTime(currentLesson.end);
-  const elapsedTime = currentTime - lessonStart;
-  const totalDuration = lessonEnd - lessonStart;
-  const remainingTime = totalDuration - elapsedTime;
-
-  const progressPercent = (elapsedTime / totalDuration) * 100;
-  const progressBar = document.getElementById("progress-bar");
-  progressBar.style.width = progressPercent + "%";
-
-  // Calculate elapsed and remaining minutes
-  const elapsedMinutes = Math.floor(elapsedTime / (1000 * 60));
-  const remainingMinutes = Math.floor(remainingTime / (1000 * 60));
-
-  progressBar.innerHTML = `<div class="elapsed">${elapsedMinutes} min</div><div class="remaining">${remainingMinutes} min</div>`;
-  document.getElementById("ongoing-lesson-message").textContent =
-    "Current lesson: " + currentLesson.name;
-}
-
-function getCurrentLessonIndex(lessons, currentTime) {
-  for (let i = 0; i < lessons.length; i++) {
-    const lessonStart = parseTime(lessons[i].start);
-
-    const lessonEnd = parseTime(lessons[i].end);
-    if (currentTime >= lessonStart && currentTime < lessonEnd) {
-      return i;
-    }
-  }
-  return -1; // No ongoing lesson
-}
-
-function parseTime(timeString) {
-  const currentTime = new Date();
-  const [hours, minutes] = timeString.split(":").map(Number);
-  return new Date(
-    currentTime.getFullYear(),
-    currentTime.getMonth(),
-    currentTime.getDate(),
-    hours,
-    minutes
-  );
-}
-// ---------------------------------------------------------- end ongoing lesson---------------------------------------------------------------------------------
-
+// -----------------------------------------------------------------------sticky navbar-----------------------------------------------------------------------------
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------
-// hide the second section ( on smaller screen can be seen a part on hero section)
-// --------------------------------------------------------------------------------------------------------------------------------------------------------------
-document.addEventListener("DOMContentLoaded", function () {
-  window.addEventListener("scroll", revealOrHideSection);
-});
+document.addEventListener("DOMContentLoaded", () => {
+  const navBar = document.querySelector(".nav-interna");
+  const heroSection = document.getElementById("hero");
 
-function revealOrHideSection() {
-  var section = document.getElementById("evenimente");
-  var sectionPosition = section.getBoundingClientRect().top;
-  var screenHeight = window.innerHeight;
-  var scrollPosition = window.scrollY || window.pageYOffset; // For cross-browser compatibility
+  // Function to handle scroll event
+  function handleScroll() {
+    const heroBottom = heroSection.getBoundingClientRect().bottom;
 
-  // If section is in viewport and not at the top of the page
-  if (sectionPosition < screenHeight && scrollPosition !== 0) {
-    section.style.visibility = "visible";
-  } else {
-    section.style.visibility = "hidden";
-  }
-}
-// ---------------------------------------------------------- end hide second section---------------------------------------------------------------------------------
-// JavaScript code to apply position: sticky on scroll
-
-// Get the navigation bar element
-const navBar = document.querySelector(".nav-interna");
-
-// Get the initial offset position of the navigation bar
-const navBarOffsetTop = navBar.offsetTop;
-
-// Flag to track whether the user has scrolled back to the top
-let isAtTop = true;
-
-// Function to apply sticky behavior to the navigation bar
-function makeNavBarSticky() {
-  if (window.scrollY >= navBarOffsetTop) {
-    // Apply position: sticky when the scroll position exceeds the navigation bar's original position
-    navBar.style.position = "sticky";
-    navBar.style.top = "0";
-    isAtTop = false; // Update the flag when not at the top
-  } else {
-    // If the user has scrolled back to the top
-    if (isAtTop) {
-      // Set position to absolute
-      navBar.style.position = "absolute";
-    } else {
-      // If not at the top, set position to fixed
+    if (heroBottom <= 0) {
+      // User has scrolled past the hero section
       navBar.style.position = "fixed";
+      navBar.style.background =
+        "linear-gradient(60deg, #543ab7 0%, #00acc1 100%)";
+    } else {
+      // User is within the hero section
+      navBar.style.position = "absolute";
+      navBar.style.background = "transparent";
     }
   }
-}
 
-// Event listener for the scroll event
-window.addEventListener("scroll", makeNavBarSticky);
+  // Add the scroll event listener
+  window.addEventListener("scroll", handleScroll);
 
-// Event listener for detecting when the user scrolls back to the top
-window.addEventListener("wheel", function (event) {
-  if (window.scrollY === 0) {
-    isAtTop = true; // Update the flag when the user scrolls back to the top
-  }
+  // Initial call to handleScroll to set the initial state correctly
+  handleScroll();
 });
+// ----------------------------------------------------------- end sticky navbar---------------------------------------------------------------------------------------------------
 
 // for timeline
 document.addEventListener("DOMContentLoaded", function () {
@@ -317,4 +203,86 @@ document.addEventListener("DOMContentLoaded", function () {
     easing: "ease-in-out",
     duration: 800,
   });
+});
+
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------
+// ----------------------------------------------------------------------- evenimente care au fost---------------------------------------------------------------
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------
+document.addEventListener("DOMContentLoaded", () => {
+  const fullScreenImage = document.getElementById("fullScreenImage");
+  const fullScreenGallery = document.getElementById("fullScreenGallery");
+  const miniGalleryFullScreen = document.getElementById(
+    "miniGalleryFullScreen"
+  );
+  let currentGalleryIndex = 0;
+  let currentImageIndex = 0;
+
+  function changePrimaryImage(galleryIndex, element) {
+    const primaryImage = document.getElementById(`primaryImage${galleryIndex}`);
+    primaryImage.src = element.src;
+    fullScreenImage.src = element.src;
+    currentGalleryIndex = galleryIndex;
+    currentImageIndex = Array.from(
+      document.querySelectorAll(`#miniGallery${galleryIndex} .thumbnail`)
+    ).indexOf(element);
+  }
+
+  function openFullScreenGallery(galleryIndex) {
+    // schimbam z-index ca sa nu fie deasupra la galerie
+    const navBar = document.querySelector(".nav-interna");
+    // index mai mic ca la sectiune, la inchidere il corectam inapoi
+    navBar.style.zIndex = "98";
+    currentGalleryIndex = galleryIndex;
+    const primaryImage = document.getElementById(`primaryImage${galleryIndex}`);
+    fullScreenImage.src = primaryImage.src;
+    fullScreenGallery.style.display = "flex";
+
+    // Clear and add thumbnails to full-screen mini-gallery
+    miniGalleryFullScreen.innerHTML = "";
+    document
+      .querySelectorAll(`#miniGallery${galleryIndex} .thumbnail`)
+      .forEach((thumb) => {
+        const clone = thumb.cloneNode(true);
+        clone.onclick = () => changePrimaryImage(galleryIndex, clone);
+        miniGalleryFullScreen.appendChild(clone);
+      });
+  }
+
+  function closeFullScreenGallery(galleryIndex) {
+    // schimbam z-index inapoi
+    const navBar = document.querySelector(".nav-interna");
+
+    navBar.style.zIndex = "100";
+    currentGalleryIndex = galleryIndex;
+    fullScreenGallery.style.display = "none";
+  }
+
+  function navigateGallery(galleryIndex, direction) {
+    const gallery = document.getElementById(`miniGallery${galleryIndex}`);
+    const scrollAmount = (gallery.clientWidth / 2) * direction;
+    gallery.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  }
+
+  function navigateFullScreenGallery(direction) {
+    const thumbnails = document.querySelectorAll(
+      `#miniGallery${currentGalleryIndex} .thumbnail`
+    );
+    currentImageIndex =
+      (currentImageIndex + direction + thumbnails.length) % thumbnails.length;
+    changePrimaryImage(currentGalleryIndex, thumbnails[currentImageIndex]);
+  }
+
+  function navigateMiniFullScreenGallery(direction) {
+    const gallery = document.getElementById("miniGalleryFullScreen");
+    const scrollAmount = (gallery.clientWidth / 2) * direction;
+    gallery.scrollBy({ left: scrollAmount, behavior: "smooth" });
+  }
+
+  // Attach functions to the window object to make them globally accessible
+  window.navigateGallery = navigateGallery;
+  window.navigateFullScreenGallery = navigateFullScreenGallery;
+  window.navigateMiniFullScreenGallery = navigateMiniFullScreenGallery;
+  window.changePrimaryImage = changePrimaryImage;
+  window.closeFullScreenGallery = closeFullScreenGallery;
+  window.openFullScreenGallery = openFullScreenGallery;
 });
