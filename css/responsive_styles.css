@@ -178,6 +178,18 @@
   #upcoming-events {
     padding: 0;
   }
+
+  .gaseste-ne {
+    flex-direction: column;
+  }
+  .adresa {
+    width: 100vw;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .harta {
+    width: 100vw;
+  }
 }
 /* ---------------------------------------------------------------------------------------------------------------
   
