@@ -35,8 +35,6 @@
     <link rel="stylesheet" href="./css/form_styles.css" />
     <!-- stilurile pentru responsivnes -->
     <link rel="stylesheet" href="./css/responsive_styles.css" />
-    <!-- javascript pentru swiper -->
-    <script src="./js/class.js" defer></script>
     <!-- js general -->
     <script src="./js/main.js" defer></script>
     <!-- pentru scrol la upcoming events -->
@@ -382,13 +380,13 @@
       </section>
     </div>
     <!-- -------------------------------------------------------------------------------------------------------------------------------- -->
-    <!--                                                              sectiunea evenimente swiper                                        -->
+    <!--                                                              sectiunea info  swiper                                              -->
     <!-- -------------------------------------------------------------------------------------------------------------------------------- -->
 
     <div id="" class="container-sectiune flex">
       <div class="slider-container">
         <h2>Evenimente și anunțuri</h2>
-        <div class="swiper">
+        <div id="info_swiper" class="swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <img src="./img/img-upcoming/olimpiada-matematica.png" />
@@ -436,38 +434,48 @@
               </div>
             </div>
             <div class="swiper-slide">
-              <img
-                src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/20c8fdd5-9f4a-4917-ae90-0239a52e8334"
-              />
+              <img src="./img/img-upcoming/seara-talentelor.png" />
               <div class="slide-overlay">
-                <h2>Smooth Jazz Journey</h2>
+                <h3>Eveniment: Seara Talentelor</h3>
+                <p>Data: 15 iunie 2024</p>
+                <p>
+                  Descriere: O oportunitate pentru elevi de a-și prezenta
+                  talentele artistice.
+                </p>
                 <button>
                   Listen Now <i class="fa-solid fa-circle-info"></i>
                 </button>
               </div>
             </div>
             <div class="swiper-slide">
-              <img
-                src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/95b52c32-f5da-4fe6-956d-a5ed118bbdd2"
-              />
+              <img src="./img/img-upcoming/muzeu-natural.png" />
               <div class="slide-overlay">
-                <h2>Olimpiada de Matematică</h2>
+                <h3>Anunț: Excursie Școlară</h3>
+                <p>Data: 10 iunie 2024</p>
+                <p>Descriere: Excursie la muzeul de științe naturale.</p>
+                <button>Detalii <i class="fa-solid fa-circle-info"></i></button>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/img-upcoming/test_geometrie.png" />
+              <div class="slide-overlay">
+                <h3>Examen: Test de Geometrie</h3>
+                <p>Data: 30 mai 2024</p>
+                <p>Descriere: Pregătiți-vă pentru testul de geometrie.</p>
+                <button>
+                  Listen Now <i class="fa-solid fa-circle-info"></i>
+                </button>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/img-upcoming/olimpiada-matematica.png" />
+              <div class="slide-overlay">
+                <h3>Eveniment: Olimpiada de Matematică</h3>
                 <p>Data: 25 mai 2024</p>
                 <p>
                   Descriere: Pregătiți-vă pentru olimpiada anuală de matematică.
                 </p>
                 <button>Detalii <i class="fa-solid fa-circle-info"></i></button>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <img
-                src="https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/df461a99-2fb3-4d55-ac16-2e0c6dd783e1"
-              />
-              <div class="slide-overlay">
-                <h2>Uplifting Rhythms</h2>
-                <button>
-                  Listen Now <i class="fa-solid fa-circle-info"></i>
-                </button>
               </div>
             </div>
           </div>
@@ -479,251 +487,313 @@
     <!-- -------------------------------------------------------------------------------------------------------------------------------------------------- -->
     <!-- ----------------------------------------------------------------- evenimente care au fost deja --------------------------------------------------- -->
     <!-- -------------------------------------------------------------------------------------------------------------------------------------------------- -->
-    <div id="evenimente" class="parallax-container">
-      <div class="container-sectiune flex-column">
-        <!-- container eveniment 1 -->
-        <div class="container-eveniment">
-          <div class="eveniment flex-column">
-            <div class="titlu">02.05.2023</div>
-            <h2 class="black-text">Cay sociis nato que penatibus et</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse varius enim in eros elementum tristique. Lorem ipsum
-              dolor sit, amet consectetur adipisicing elit. Soluta neque
-              nesciunt corrupti adipisci dolor minus eaque, consequatur omnis
-              aspernatur, dolorem reprehenderit dicta, expedita aliquid ratione
-              unde id odio modi maiores!
-            </p>
-          </div>
-          <div class="imagine-eveniment flex-column">
-            <img
-              id="primaryImage1"
-              src="./img/img-evenimente/directoarea.jpg"
-              width="341"
-              alt=""
-              class="imagine"
-              onclick="openFullScreenGallery(1)"
-            />
-            <div class="mini-gallery-container">
-              <button
-                class="gallery-nav"
-                id="prevBtn1"
-                onclick="navigateGallery(1, -1)"
-              >
-                &lt;
-              </button>
-              <div class="mini-gallery" id="miniGallery1">
-                <img
-                  src="./img/img-evenimente/craciun.jpg"
-                  width="100"
-                  alt=""
-                  class="thumbnail"
-                  onclick="changePrimaryImage(1, this)"
-                />
-                <img
-                  src="./img/img-evenimente/directoarea.jpg"
-                  width="100"
-                  alt=""
-                  class="thumbnail"
-                  onclick="changePrimaryImage(1, this)"
-                />
-                <img
-                  src="./img/img-evenimente/primarul.jpg"
-                  width="100"
-                  alt=""
-                  class="thumbnail"
-                  onclick="changePrimaryImage(1, this)"
-                />
-              </div>
-              <button
-                class="gallery-nav"
-                id="nextBtn1"
-                onclick="navigateGallery(1, 1)"
-              >
-                &gt;
-              </button>
+    <div id="evenimente" class="parallax-container flex-column">
+      <!-- container eveniment 1 -->
+      <div class="container-eveniment">
+        <div class="eveniment flex-column">
+          <div class="titlu">02.05.2023</div>
+          <h2 class="black-text">Cay sociis nato que penatibus et</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            varius enim in eros elementum tristique. Lorem ipsum dolor sit, amet
+            consectetur adipisicing elit. Soluta neque nesciunt corrupti
+            adipisci dolor minus eaque, consequatur omnis aspernatur, dolorem
+            reprehenderit dicta, expedita aliquid ratione unde id odio modi
+            maiores!
+          </p>
+        </div>
+        <div class="imagine-eveniment swiper flex-column">
+          <div class="swiper-wrapper event-swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                src="./img/img-evenimente/directoarea.jpg"
+                width="341"
+                alt=""
+                class="imagine"
+                onclick="openFullScreenGallery(1)"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/img-evenimente/directoarea.jpg"
+                width="341"
+                alt=""
+                class="imagine"
+                onclick="openFullScreenGallery(1)"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/img-evenimente/directoarea.jpg"
+                width="341"
+                alt=""
+                class="imagine"
+                onclick="openFullScreenGallery(1)"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/img-evenimente/primarul.jpg"
+                width="341"
+                alt=""
+                class="imagine"
+                onclick="openFullScreenGallery(1)"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/img-evenimente/craciun.jpg"
+                width="341"
+                alt=""
+                class="imagine"
+                onclick="openFullScreenGallery(1)"
+              />
             </div>
           </div>
-        </div>
-        <!-- end container eveniment 1 -->
-        <!-- container eveniment 2 invers -->
-        <div class="container-eveniment invers">
-          <div class="eveniment flex-column">
-            <div class="titlu">8.09.2023</div>
-            <h2 class="black-text">Amet Ipsum</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse varius enim in eros elementum tristique. Lorem ipsum
-              dolor, sit amet consectetur adipisicing elit. Reiciendis vitae hic
-              architecto numquam obcaecati facilis sint eum esse, assumenda enim
-              dicta nobis dolor, nulla beatae autem quasi? Quae, in tenetur!
-            </p>
-          </div>
-          <div class="imagine-eveniment flex-column">
-            <img
-              id="primaryImage2"
-              src="./img/img-evenimente/primarul.jpg"
-              width="341"
-              alt=""
-              class="imagine"
-              onclick="openFullScreenGallery(2)"
-            />
-            <div class="mini-gallery-container">
-              <button
-                class="gallery-nav"
-                id="prevBtn2"
-                onclick="navigateGallery(2, -1)"
-              >
-                &lt;
-              </button>
-              <div class="mini-gallery" id="miniGallery2">
-                <img
-                  src="./img/img-evenimente/primarul.jpg"
-                  width="100"
-                  alt=""
-                  class="thumbnail"
-                  onclick="changePrimaryImage(2, this)"
-                />
-                <img
-                  src="./img/img-evenimente/directoarea.jpg"
-                  width="100"
-                  alt=""
-                  class="thumbnail"
-                  onclick="changePrimaryImage(2, this)"
-                />
-                <img
-                  src="./img/img-evenimente/craciun.jpg"
-                  width="100"
-                  alt=""
-                  class="thumbnail"
-                  onclick="changePrimaryImage(2, this)"
-                />
-              </div>
-              <button
-                class="gallery-nav"
-                id="nextBtn2"
-                onclick="navigateGallery(2, 1)"
-              >
-                &gt;
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- end container eveniment 2 invers -->
-        <!-- container eveniment 3 -->
-        <div class="container-eveniment">
-          <div class="eveniment flex-column">
-            <div class="titlu">22.08.2023</div>
-            <h2 class="black-text">Cay sociis nato que penatibus et</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse varius enim in eros elementum tristique. Lorem ipsum
-              dolor sit, amet consectetur adipisicing elit. Soluta neque
-              nesciunt corrupti adipisci dolor minus eaque, consequatur omnis
-              aspernatur, dolorem reprehenderit dicta, expedita aliquid ratione
-              unde id odio modi maiores!
-            </p>
-          </div>
-          <div class="imagine-eveniment flex-column">
-            <img
-              id="primaryImage3"
-              src="./img/img-evenimente/directoarea.jpg"
-              width="341"
-              alt=""
-              class="imagine"
-              onclick="openFullScreenGallery(3)"
-            />
-            <div class="mini-gallery-container">
-              <button
-                class="gallery-nav"
-                id="prevBtn3"
-                onclick="navigateGallery(3, -1)"
-              >
-                &lt;
-              </button>
-              <div class="mini-gallery" id="miniGallery3">
-                <img
-                  src="./img/img-evenimente/craciun.jpg"
-                  width="100"
-                  alt=""
-                  class="thumbnail"
-                  onclick="changePrimaryImage(3, this)"
-                />
-                <img
-                  src="./img/img-evenimente/directoarea.jpg"
-                  width="100"
-                  alt=""
-                  class="thumbnail"
-                  onclick="changePrimaryImage(3, this)"
-                />
-                <img
-                  src="./img/img-evenimente/primarul.jpg"
-                  width="100"
-                  alt=""
-                  class="thumbnail"
-                  onclick="changePrimaryImage(3, this)"
-                />
-              </div>
-              <button
-                class="gallery-nav"
-                id="nextBtn1"
-                onclick="navigateGallery(3, 1)"
-              >
-                &gt;
-              </button>
-            </div>
-          </div>
-        </div>
-        <!-- end container eveniment 1 -->
-      </div>
-      <!-- end container evenimente trecute -->
-      <!-- galeria full screen evenimente trecute -->
-      <div id="fullScreenGallery" class="full-screen-gallery">
-        <span class="close" onclick="closeFullScreenGallery()">
-          <img
-            src="./img/close-burger.svg"
-            alt="close"
-            width="32px"
-            height="32px"
-          />
-        </span>
-        <button
-          class="gallery-nav-full"
-          id="prevFullBtn"
-          onclick="navigateFullScreenGallery(-1)"
-        >
-          &lt;
-        </button>
-        <img class="full-screen-image" id="fullScreenImage" />
-        <button
-          class="gallery-nav-full"
-          id="nextFullBtn"
-          onclick="navigateFullScreenGallery(1)"
-        >
-          &gt;
-        </button>
-        <div class="mini-gallery-container full-screen-mini-gallery">
-          <button
-            class="gallery-nav"
-            id="prevMiniFullBtn"
-            onclick="navigateMiniFullScreenGallery(-1)"
+          <!-- end swiper-wrapper -->
+          <div class="swiper-pagination"></div>
+
+          <svg
+            class="swiper-button-prev"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
           >
-            &lt;
-          </button>
-          <div class="mini-gallery" id="miniGalleryFullScreen">
-            <!-- Thumbnails will be dynamically added here -->
-          </div>
-          <button
-            class="gallery-nav"
-            id="nextMiniFullBtn"
-            onclick="navigateMiniFullScreenGallery(1)"
+            <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <path
+              d="M512 256A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM271 135c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-87 87 87 87c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L167 273c-9.4-9.4-9.4-24.6 0-33.9L271 135z"
+            />
+          </svg>
+          <svg
+            class="swiper-button-next"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
           >
-            &gt;
-          </button>
+            <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <path
+              d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM241 377c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l87-87-87-87c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L345 239c9.4 9.4 9.4 24.6 0 33.9L241 377z"
+            />
+          </svg>
         </div>
+
+        <!-- end swiper-container -->
       </div>
+
+      <!-- end container eveniment 1 -->
+      <!-- container eveniment 2 -->
+      <div class="container-eveniment invers">
+        <div class="eveniment flex-column">
+          <div class="titlu">02.05.2023</div>
+          <h2 class="black-text">Cay sociis nato que penatibus et</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            varius enim in eros elementum tristique. Lorem ipsum dolor sit, amet
+            consectetur adipisicing elit. Soluta neque nesciunt corrupti
+            adipisci dolor minus eaque, consequatur omnis aspernatur, dolorem
+            reprehenderit dicta, expedita aliquid ratione unde id odio modi
+            maiores!
+          </p>
+        </div>
+        <div class="imagine-eveniment swiper flex-column">
+          <div class="swiper-wrapper event-swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                src="./img/img-evenimente/directoarea.jpg"
+                width="341"
+                alt=""
+                class="imagine"
+                onclick="openFullScreenGallery(1)"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/img-evenimente/directoarea.jpg"
+                width="341"
+                alt=""
+                class="imagine"
+                onclick="openFullScreenGallery(1)"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/img-evenimente/directoarea.jpg"
+                width="341"
+                alt=""
+                class="imagine"
+                onclick="openFullScreenGallery(1)"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/img-evenimente/primarul.jpg"
+                width="341"
+                alt=""
+                class="imagine"
+                onclick="openFullScreenGallery(1)"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/img-evenimente/craciun.jpg"
+                width="341"
+                alt=""
+                class="imagine"
+                onclick="openFullScreenGallery(1)"
+              />
+            </div>
+          </div>
+          <!-- end swiper-wrapper -->
+          <div class="swiper-pagination"></div>
+
+          <svg
+            class="swiper-button-prev"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+          >
+            <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <path
+              d="M512 256A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM271 135c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-87 87 87 87c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L167 273c-9.4-9.4-9.4-24.6 0-33.9L271 135z"
+            />
+          </svg>
+          <svg
+            class="swiper-button-next"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+          >
+            <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <path
+              d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM241 377c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l87-87-87-87c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L345 239c9.4 9.4 9.4 24.6 0 33.9L241 377z"
+            />
+          </svg>
+        </div>
+
+        <!-- end swiper-container -->
+      </div>
+
+      <!-- end container eveniment 2 -->
+      ->
+      <!-- container eveniment 3 -->
+      <div class="container-eveniment">
+        <div class="eveniment flex-column">
+          <div class="titlu">02.05.2023</div>
+          <h2 class="black-text">Cay sociis nato que penatibus et</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            varius enim in eros elementum tristique. Lorem ipsum dolor sit, amet
+            consectetur adipisicing elit. Soluta neque nesciunt corrupti
+            adipisci dolor minus eaque, consequatur omnis aspernatur, dolorem
+            reprehenderit dicta, expedita aliquid ratione unde id odio modi
+            maiores!
+          </p>
+        </div>
+        <div class="imagine-eveniment swiper flex-column">
+          <div class="swiper-wrapper event-swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                src="./img/img-evenimente/directoarea.jpg"
+                width="341"
+                alt=""
+                class="imagine"
+                onclick="openFullScreenGallery(1)"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/img-evenimente/directoarea.jpg"
+                width="341"
+                alt=""
+                class="imagine"
+                onclick="openFullScreenGallery(1)"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/img-evenimente/directoarea.jpg"
+                width="341"
+                alt=""
+                class="imagine"
+                onclick="openFullScreenGallery(1)"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/img-evenimente/primarul.jpg"
+                width="341"
+                alt=""
+                class="imagine"
+                onclick="openFullScreenGallery(1)"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/img-evenimente/craciun.jpg"
+                width="341"
+                alt=""
+                class="imagine"
+                onclick="openFullScreenGallery(1)"
+              />
+            </div>
+          </div>
+          <!-- end swiper-wrapper -->
+          <div class="swiper-pagination"></div>
+
+          <svg
+            class="swiper-button-prev"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+          >
+            <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <path
+              d="M512 256A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM271 135c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-87 87 87 87c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L167 273c-9.4-9.4-9.4-24.6 0-33.9L271 135z"
+            />
+          </svg>
+          <svg
+            class="swiper-button-next"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 512 512"
+          >
+            <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <path
+              d="M0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM241 377c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9l87-87-87-87c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L345 239c9.4 9.4 9.4 24.6 0 33.9L241 377z"
+            />
+          </svg>
+        </div>
+
+        <!-- end swiper-container -->
+      </div>
+
+      <!-- end container eveniment 3 -->
     </div>
-    <!-- end galeria full screen evenimete trecute -->
     <!-- ------------------------------------------------ end sectiunea evenimente care au fost -------------------------------------------------------------------- -->
+
+    <!-- -------------------------------------------------------------------------------
+
+                sectiunea contacteaza-ne
+
+ -------------------------------------------------------------------------------  -->
+    <section id="contact" class="gaseste-ne">
+      <!-- adresa -->
+      <div class="adresa">
+        <div class="adr-ico"></div>
+
+        <div class="adr-info">
+          <p class="titlu-adresa">Gaseste-ne</p>
+          <p>Address: s.Mitoc, Orhei, Moldova</p>
+          <p>Phone: +373123456789</p>
+          <p>Email: info@gimnaziulmitoc.md</p>
+        </div>
+      </div>
+      <!-- harta -->
+      <div class="harta">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2701.2716342049325!2d28.780613376712758!3d47.387132703106715!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40cbeee921738c13%3A0x188c7887dfe0f576!2sGimnaziul%20Mitoc!5e0!3m2!1sen!2snl!4v1708437747290!5m2!1sen!2snl"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
   </body>
 </html>

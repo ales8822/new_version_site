@@ -3,8 +3,6 @@
 const navMenu = document.querySelector(".nav-menu");
 const navToggle = document.querySelector(".mob-nav-toggle");
 const navLinks = document.querySelectorAll(".nav-link");
-console.log(navToggle);
-console.log(navMenu);
 
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
@@ -31,6 +29,61 @@ document.addEventListener("DOMContentLoaded", function () {
   links.forEach((link) => {
     link.addEventListener("click", smoothScroll);
   });
+
+  //   info-swiper initializare
+  var swiper1 = new Swiper("#info_swiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    loop: true,
+    speed: 400,
+    slidesPerView: "auto",
+    // autoplay: {
+    //   delay: 3000,
+    //   disableOnInteraction: false,
+    // },
+    coverflowEffect: {
+      rotate: 1,
+      stretch: 150,
+      depth: 150,
+      modifier: 1,
+      slideShadows: false,
+    },
+    keyboard: {
+      enabled: true,
+    },
+    on: {
+      click(event) {
+        swiper.slideTo(this.clickedIndex);
+      },
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+  //   end swiper
+
+  //   info-swiper initializare
+  var event_swiper = new Swiper(".imagine-eveniment", {
+    effect: "slide",
+    grabCursor: true,
+    centeredSlides: true,
+    loop: true,
+    speed: 400,
+    slidesPerView: "auto",
+    spaceBetween: 30,
+
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+  //   end swiper
 });
 
 function smoothScroll(event) {
@@ -208,81 +261,3 @@ document.addEventListener("DOMContentLoaded", function () {
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------
 // ----------------------------------------------------------------------- evenimente care au fost---------------------------------------------------------------
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------
-document.addEventListener("DOMContentLoaded", () => {
-  const fullScreenImage = document.getElementById("fullScreenImage");
-  const fullScreenGallery = document.getElementById("fullScreenGallery");
-  const miniGalleryFullScreen = document.getElementById(
-    "miniGalleryFullScreen"
-  );
-  let currentGalleryIndex = 0;
-  let currentImageIndex = 0;
-
-  function changePrimaryImage(galleryIndex, element) {
-    const primaryImage = document.getElementById(`primaryImage${galleryIndex}`);
-    primaryImage.src = element.src;
-    fullScreenImage.src = element.src;
-    currentGalleryIndex = galleryIndex;
-    currentImageIndex = Array.from(
-      document.querySelectorAll(`#miniGallery${galleryIndex} .thumbnail`)
-    ).indexOf(element);
-  }
-
-  function openFullScreenGallery(galleryIndex) {
-    // schimbam z-index ca sa nu fie deasupra la galerie
-    const navBar = document.querySelector(".nav-interna");
-    // index mai mic ca la sectiune, la inchidere il corectam inapoi
-    navBar.style.zIndex = "98";
-    currentGalleryIndex = galleryIndex;
-    const primaryImage = document.getElementById(`primaryImage${galleryIndex}`);
-    fullScreenImage.src = primaryImage.src;
-    fullScreenGallery.style.display = "flex";
-
-    // Clear and add thumbnails to full-screen mini-gallery
-    miniGalleryFullScreen.innerHTML = "";
-    document
-      .querySelectorAll(`#miniGallery${galleryIndex} .thumbnail`)
-      .forEach((thumb) => {
-        const clone = thumb.cloneNode(true);
-        clone.onclick = () => changePrimaryImage(galleryIndex, clone);
-        miniGalleryFullScreen.appendChild(clone);
-      });
-  }
-
-  function closeFullScreenGallery(galleryIndex) {
-    // schimbam z-index inapoi
-    const navBar = document.querySelector(".nav-interna");
-
-    navBar.style.zIndex = "100";
-    currentGalleryIndex = galleryIndex;
-    fullScreenGallery.style.display = "none";
-  }
-
-  function navigateGallery(galleryIndex, direction) {
-    const gallery = document.getElementById(`miniGallery${galleryIndex}`);
-    const scrollAmount = (gallery.clientWidth / 2) * direction;
-    gallery.scrollBy({ left: scrollAmount, behavior: "smooth" });
-  }
-
-  function navigateFullScreenGallery(direction) {
-    const thumbnails = document.querySelectorAll(
-      `#miniGallery${currentGalleryIndex} .thumbnail`
-    );
-    currentImageIndex =
-      (currentImageIndex + direction + thumbnails.length) % thumbnails.length;
-    changePrimaryImage(currentGalleryIndex, thumbnails[currentImageIndex]);
-  }
-
-  function navigateMiniFullScreenGallery(direction) {
-    const gallery = document.getElementById("miniGalleryFullScreen");
-    const scrollAmount = (gallery.clientWidth / 2) * direction;
-    gallery.scrollBy({ left: scrollAmount, behavior: "smooth" });
-  }
-
-  // Attach functions to the window object to make them globally accessible
-  window.navigateGallery = navigateGallery;
-  window.navigateFullScreenGallery = navigateFullScreenGallery;
-  window.navigateMiniFullScreenGallery = navigateMiniFullScreenGallery;
-  window.changePrimaryImage = changePrimaryImage;
-  window.closeFullScreenGallery = closeFullScreenGallery;
-  window.openFullScreenGallery = openFullScreenGallery;
-});
