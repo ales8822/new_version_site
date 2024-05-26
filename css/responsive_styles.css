@@ -178,6 +178,24 @@
   #upcoming-events {
     padding: 0;
   }
+  .container-eveniment {
+    flex-direction: column;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .container-eveniment.invers {
+    flex-direction: column;
+  }
+  .eveniment {
+    width: 100%;
+    max-width: 100%;
+  }
+  .imagine-eveniment {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
 
   .gaseste-ne {
     flex-direction: column;
@@ -352,6 +370,11 @@
 
   .swiper-slide img {
     height: 180px;
+  }
+  .imagine-eveniment > svg {
+    fill: #313131;
+    opacity: 0.7;
+    z-index: 300;
   }
 }
 
