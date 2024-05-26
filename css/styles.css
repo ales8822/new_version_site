@@ -897,8 +897,12 @@ section {
   height: 30vh;
   display: flex;
   align-content: center;
-  justify-content: center;
+  justify-content: space-around;
   /* padding: 47px 20px 36px 81px; */
+  background: url("../img/find_us.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   text-align: left;
 }
 .adresa p {
