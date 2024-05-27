@@ -191,10 +191,12 @@ document.addEventListener("DOMContentLoaded", () => {
       navBar.style.position = "fixed";
       navBar.style.background =
         "linear-gradient(60deg, #543ab7 0%, #00acc1 100%)";
+      //   navBar.style.borderBottom = "1px solid #f8f8f8";
     } else {
       // User is within the hero section
       navBar.style.position = "absolute";
       navBar.style.background = "transparent";
+      navBar.style.borderBottom = "none";
     }
   }
 
