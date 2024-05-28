@@ -1,1 +1,2 @@
 - check on smaller height if the contact-form aligns bottom and not overlaping
+- navigation on hover and section where you are

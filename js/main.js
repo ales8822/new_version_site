@@ -10,8 +10,10 @@ const navLinks = document.querySelectorAll(".nav-link");
 
 navLinks.forEach((link) => {
   link.addEventListener("click", () => {
-    navMenu.setAttribute("data-visible", "false");
-    navToggle.setAttribute("aria-extended", "false");
+    if (link.id !== "clasa-drop-link") {
+      navMenu.setAttribute("data-visible", "false");
+      navToggle.setAttribute("aria-extended", "false");
+    }
   });
 });
 
@@ -100,6 +102,87 @@ function smoothScroll(event) {
     behavior: "smooth",
   });
 }
+
+// dropdown
+
+// Selectează toate elementele cu clasa "dropdown"
+const dropdowns = document.querySelectorAll(".dropdown");
+
+// Selectează link-ul principal din fiecare dropdown
+const mainLink = document.querySelectorAll(".dropdown a");
+
+// Așteaptă ca conținutul DOM să fie complet încărcat
+document.addEventListener("DOMContentLoaded", function () {
+  // Parcurge fiecare element dropdown
+  dropdowns.forEach((dropdown) => {
+    // Adaugă un ascultător de evenimente de click pentru fiecare dropdown
+    dropdown.addEventListener("click", function (event) {
+      // Schimbă culoarea de fundal a dropdown-ului când este apăsat
+      dropdown.style.background = "rgba(0, 0, 0, 0.1)";
+
+      // Schimbă bordura de jos a link-ului principal când dropdown-ul este apăsat
+      mainLink[0].style.borderBottom = "2px solid rgba(0, 0, 0, 0.1)";
+
+      // Împiedică evenimentul de click să se propage la document
+      event.stopPropagation();
+
+      // Găsește conținutul dropdown-ului în dropdown-ul apăsat
+      const dropdownContent = this.querySelector(".dropdown-content");
+
+      // Verifică lățimea ferestrei pentru responsivitate
+      if (window.innerWidth <= 991) {
+        // Comută afișarea conținutului dropdown-ului pentru ecrane mai mici
+        toggleDropdown(dropdownContent);
+
+        // Setează poziția dropdown-ului la static pentru ecrane mai mici
+        dropdown.style.position = "static";
+      } else {
+        // Setează poziția dropdown-ului la relativ pentru ecrane mai mari
+        dropdown.style.position = "relative";
+
+        // Comută afișarea conținutului dropdown-ului pentru ecrane mai mari
+        if (
+          dropdownContent.style.display === "none" ||
+          dropdownContent.style.display === ""
+        ) {
+          closeAllDropdowns();
+          dropdownContent.style.display = "flex";
+        } else {
+          dropdownContent.style.display = "none";
+
+          // Resetează culoarea de fundal a dropdown-ului când este închis
+          dropdown.style.background = "transparent";
+
+          // Resetează bordura de jos a link-ului principal când se închide dropdown-ul
+          mainLink[0].style.borderBottom = "none";
+        }
+      }
+    });
+  });
+
+  // Funcție pentru a comuta afișarea conținutului dropdown-ului
+  function toggleDropdown(dropdownContent) {
+    dropdownContent.style.display =
+      dropdownContent.style.display === "flex" ? "none" : "flex";
+  }
+
+  // Funcție pentru a închide toate dropdown-urile
+  function closeAllDropdowns() {
+    dropdowns.forEach((dropdown) => {
+      dropdown.querySelector(".dropdown-content").style.display = "none";
+    });
+  }
+
+  // Închide dropdown-urile când se face clic în afara lor
+  window.onclick = function (event) {
+    if (!event.target.matches(".dropdown")) {
+      dropdowns[0].style.background = "transparent";
+      mainLink[0].style.borderBottom = "none";
+      closeAllDropdowns();
+    }
+  };
+});
+
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //                                                                  show contact form

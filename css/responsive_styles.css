@@ -26,11 +26,9 @@
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
   }
-
   .nav-menu[data-visible="true"] {
     transform: translateX(0);
   }
-
   .mob-nav-toggle {
     display: block;
     position: absolute;
@@ -69,6 +67,38 @@
   .brand {
     background-position: center;
   }
+  .dropdown-content {
+    background-color: rgba(85, 139, 211, 0.8);
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    min-width: 50%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .dropdown-content a:first-child {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .dropdown-content a {
+    min-width: 48px;
+    min-height: 48px;
+    width: 100%;
+    height: 5vh;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+
+  #close-dropdown-menu {
+    display: block;
+
+    top: 5rem;
+    font-size: 2rem;
+  }
+
   .container-nr-tel {
     position: absolute;
     left: 50%;
