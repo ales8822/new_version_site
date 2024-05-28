@@ -100,6 +100,9 @@
     margin-top: 5vh;
     margin-bottom: 5vh;
   }
+  .adr-info > p {
+    font-size: 0.8rem;
+  }
 }
 
 /* random */
@@ -197,16 +200,19 @@
     margin-bottom: 30px;
   }
 
-  .gaseste-ne {
-    flex-direction: column;
-  }
   .adresa {
-    width: 100vw;
+    width: 100%;
+    max-width: 100%;
     margin-top: 20px;
     margin-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid #6b6b6b;
   }
   .harta {
     width: 100vw;
+  }
+  .adr-info > p {
+    font-size: 1rem;
   }
 }
 /* ---------------------------------------------------------------------------------------------------------------

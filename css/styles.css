@@ -926,6 +926,7 @@ section {
 .adress-info {
   width: 100%;
   justify-content: space-around;
+  padding: 1rem;
 }
 .adress-info p {
   text-align: left;
@@ -939,9 +940,6 @@ section {
 }
 .adr-info {
   height: 100%;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
 }
 
 /* ---------------------------------------------------------------------------
@@ -951,16 +949,13 @@ section {
 ------------------------------------------------------------------------------ */
 .footer {
   background-color: #1b1b1b;
-  justify-content: center;
-  align-items: center;
-  display: flex;
 }
 
 .footer-link {
   color: #6b6b6b;
   margin-left: 15px;
   margin-right: 15px;
-  font-size: 12px;
+  font-size: 1.25rem;
   text-decoration: none;
 }
 
