@@ -513,7 +513,7 @@
                 width="341"
                 alt=""
                 class="imagine"
-                onclick="openFullScreenGallery(1)"
+                onclick="openFullScreenGallery(0,0)"
               />
             </div>
             <div class="swiper-slide">
@@ -522,7 +522,7 @@
                 width="341"
                 alt=""
                 class="imagine"
-                onclick="openFullScreenGallery(1)"
+                onclick="openFullScreenGallery(0,1)"
               />
             </div>
             <div class="swiper-slide">
@@ -531,7 +531,7 @@
                 width="341"
                 alt=""
                 class="imagine"
-                onclick="openFullScreenGallery(1)"
+                onclick="openFullScreenGallery(0,2)"
               />
             </div>
             <div class="swiper-slide">
@@ -540,7 +540,7 @@
                 width="341"
                 alt=""
                 class="imagine"
-                onclick="openFullScreenGallery(1)"
+                onclick="openFullScreenGallery(0,3)"
               />
             </div>
             <div class="swiper-slide">
@@ -549,7 +549,7 @@
                 width="341"
                 alt=""
                 class="imagine"
-                onclick="openFullScreenGallery(1)"
+                onclick="openFullScreenGallery(0,4)"
               />
             </div>
           </div>
@@ -604,25 +604,7 @@
                 width="341"
                 alt=""
                 class="imagine"
-                onclick="openFullScreenGallery(1)"
-              />
-            </div>
-            <div class="swiper-slide">
-              <img
-                src="./img/img-evenimente/directoarea.jpg"
-                width="341"
-                alt=""
-                class="imagine"
-                onclick="openFullScreenGallery(1)"
-              />
-            </div>
-            <div class="swiper-slide">
-              <img
-                src="./img/img-evenimente/directoarea.jpg"
-                width="341"
-                alt=""
-                class="imagine"
-                onclick="openFullScreenGallery(1)"
+                onclick="openFullScreenGallery(1,0)"
               />
             </div>
             <div class="swiper-slide">
@@ -631,7 +613,16 @@
                 width="341"
                 alt=""
                 class="imagine"
-                onclick="openFullScreenGallery(1)"
+                onclick="openFullScreenGallery(1,1)"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/img-evenimente/directoarea.jpg"
+                width="341"
+                alt=""
+                class="imagine"
+                onclick="openFullScreenGallery(1,2)"
               />
             </div>
             <div class="swiper-slide">
@@ -640,7 +631,7 @@
                 width="341"
                 alt=""
                 class="imagine"
-                onclick="openFullScreenGallery(1)"
+                onclick="openFullScreenGallery(1,3)"
               />
             </div>
           </div>
@@ -691,38 +682,20 @@
           <div class="swiper-wrapper event-swiper-wrapper">
             <div class="swiper-slide">
               <img
-                src="./img/img-evenimente/directoarea.jpg"
-                width="341"
-                alt=""
-                class="imagine"
-                onclick="openFullScreenGallery(1)"
-              />
-            </div>
-            <div class="swiper-slide">
-              <img
-                src="./img/img-evenimente/directoarea.jpg"
-                width="341"
-                alt=""
-                class="imagine"
-                onclick="openFullScreenGallery(1)"
-              />
-            </div>
-            <div class="swiper-slide">
-              <img
-                src="./img/img-evenimente/directoarea.jpg"
-                width="341"
-                alt=""
-                class="imagine"
-                onclick="openFullScreenGallery(1)"
-              />
-            </div>
-            <div class="swiper-slide">
-              <img
                 src="./img/img-evenimente/primarul.jpg"
                 width="341"
                 alt=""
                 class="imagine"
-                onclick="openFullScreenGallery(1)"
+                onclick="openFullScreenGallery(2,0)"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/img-evenimente/directoarea.jpg"
+                width="341"
+                alt=""
+                class="imagine"
+                onclick="openFullScreenGallery(2,1)"
               />
             </div>
             <div class="swiper-slide">
@@ -731,7 +704,7 @@
                 width="341"
                 alt=""
                 class="imagine"
-                onclick="openFullScreenGallery(1)"
+                onclick="openFullScreenGallery(2,2)"
               />
             </div>
           </div>
@@ -765,6 +738,23 @@
 
       <!-- end container eveniment 3 -->
     </div>
+    <!-- Full-screen gallery container -->
+    <div id="fullScreenGallery" class="full-screen-gallery">
+      <span class="close-gallery" onclick="closeFullScreenGallery()"
+        ><img src="./img/close-burger.svg" alt="close" />
+      </span>
+      <div class="gallery-content">
+        <img
+          id="galleryImage"
+          class="gallery-image"
+          src=""
+          alt="Full-screen image"
+        />
+        <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+        <a class="next" onclick="changeSlide(1)">&#10095;</a>
+      </div>
+    </div>
+    <!-- end full-screen gallery container -->
     <!-- ------------------------------------------------ end sectiunea evenimente care au fost -------------------------------------------------------------------- -->
 
     <!-- -------------------------------------------------------------------------------

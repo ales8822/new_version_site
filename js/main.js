@@ -1,4 +1,8 @@
-// primary navigation
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//                                                                  primary navigation
+
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 const navMenu = document.querySelector(".nav-menu");
 const navToggle = document.querySelector(".mob-nav-toggle");
@@ -30,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
     link.addEventListener("click", smoothScroll);
   });
 
-  //   info-swiper initializare
+  // -------------------------------------------------------------------------- info-swiper initializare
   var swiper1 = new Swiper("#info_swiper", {
     effect: "coverflow",
     grabCursor: true,
@@ -83,9 +87,9 @@ document.addEventListener("DOMContentLoaded", function () {
       clickable: true,
     },
   });
-  //   end swiper
+  // ---------------------------------------------------------------------------------------------  end swiper
 });
-
+// smooth scroll pentru likuri
 function smoothScroll(event) {
   event.preventDefault();
   const targetId = event.currentTarget.getAttribute("href").substring(1);
@@ -176,7 +180,9 @@ submitBtn.addEventListener("click", validate);
 // ------------------------------------------------------------------------ end show contact form --------------------------------------------------------------
 
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------
-// -----------------------------------------------------------------------sticky navbar-----------------------------------------------------------------------------
+
+//                                                                  sticky nav bar
+
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", () => {
   const navBar = document.querySelector(".nav-interna");
@@ -206,9 +212,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initial call to handleScroll to set the initial state correctly
   handleScroll();
 });
-// ----------------------------------------------------------- end sticky navbar---------------------------------------------------------------------------------------------------
+// ----------------------------------------------------------- end sticky navbar--------------------------------------------------------------------------------
 
-// for timeline
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//                                                                  time line
+
+// --------------------------------------------------------------------------------------------------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", function () {
   const sr = ScrollReveal();
 
@@ -259,7 +269,66 @@ document.addEventListener("DOMContentLoaded", function () {
     duration: 800,
   });
 });
+// ----------------------------------------------------------- end time-line------------------------------------------------------------------------------------
 
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------
-// ----------------------------------------------------------------------- evenimente care au fost---------------------------------------------------------------
+
+//                                                                  evenimente trecute
+
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------
+// full screen gallery
+
+let currentSlideIndex = 0;
+let currentEventIndex = -1;
+const events = {
+  0: [
+    "./img/img-evenimente/directoarea.jpg",
+    "./img/img-evenimente/directoarea.jpg",
+    "./img/img-evenimente/directoarea.jpg",
+    "./img/img-evenimente/primarul.jpg",
+    "./img/img-evenimente/craciun.jpg",
+  ],
+  1: [
+    "./img/img-evenimente/directoarea.jpg",
+    "./img/img-evenimente/primarul.jpg",
+    "./img/img-evenimente/directoarea.jpg",
+    "./img/img-evenimente/craciun.jpg",
+  ],
+  2: [
+    "./img/img-evenimente/primarul.jpg",
+    "./img/img-evenimente/directoarea.jpg",
+    "./img/img-evenimente/craciun.jpg",
+  ],
+};
+function openFullScreenGallery(eventIndex, imageIndex) {
+  console.log(eventIndex, imageIndex);
+
+  currentEventIndex = eventIndex;
+
+  currentSlideIndex = imageIndex;
+  const gallery = document.getElementById("fullScreenGallery");
+  const galleryImage = document.getElementById("galleryImage");
+
+  gallery.style.display = "block";
+  galleryImage.src = events[currentEventIndex][currentSlideIndex];
+  console.log(events[currentEventIndex][currentSlideIndex]);
+}
+
+function closeFullScreenGallery() {
+  const gallery = document.getElementById("fullScreenGallery");
+  gallery.style.display = "none";
+  currentEventIndex = -1;
+}
+
+function changeSlide(n) {
+  currentSlideIndex += n;
+
+  if (currentSlideIndex >= events[currentEventIndex].length) {
+    currentSlideIndex = 0;
+  } else if (currentSlideIndex < 0) {
+    currentSlideIndex = events[currentEventIndex].length - 1;
+  }
+
+  const galleryImage = document.getElementById("galleryImage");
+  galleryImage.src = events[currentEventIndex][currentSlideIndex];
+}
