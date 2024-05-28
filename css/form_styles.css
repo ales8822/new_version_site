@@ -10,6 +10,7 @@
   width: 100vw;
   height: 100vh;
   max-height: 100vh;
+  /* min-height: 700px; */
   position: absolute;
   bottom: 0px;
   left: 0px;
@@ -17,12 +18,14 @@
   color: var(--primary-color);
   backdrop-filter: blur(5px);
   z-index: 9998;
+  /* overflow: scroll; */
 }
 
 .left-col {
   position: relative;
   width: 45vw;
   height: 100vh;
+  /* min-height: 700px; */
   background: linear-gradient(
     60deg,
     rgba(84, 58, 183, 1) 0%,

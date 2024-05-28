@@ -112,6 +112,10 @@
   .center-tel {
     display: none;
   }
+
+  .fa-envelope-open-text {
+    top: clamp(235px, 50%, 50%);
+  }
   /* stiluri despre noi */
   .about-us-img {
     display: none;
@@ -175,9 +179,11 @@
   /* stiluri forma de contact */
   .form-wrapper {
     flex-direction: column;
+    /* padding-top: 5vh; */
   }
   .form-wrapper .left-col {
     width: 100vw;
+    min-height: 135px;
     height: 33vh;
   }
   .form-wrapper .right-col {
@@ -185,7 +191,12 @@
 
     flex: auto;
   }
-
+  .fa-envelope-open-text {
+    top: clamp(50%, 50%, 50%);
+  }
+  .form-wrapper > .left-col > .nav-logo-container {
+    top: -1rem;
+  }
   input,
   textarea,
   label {
@@ -201,6 +212,7 @@
   .close-form {
     background-image: url(../img/close-burger.svg);
   }
+
   /* stiluri statistici */
   .info-adjectiv {
     display: block;
@@ -296,8 +308,20 @@
   h1 {
     font-size: 1.5rem; /* Adjust for very small screens */
   }
-  .nav-logo-container {
+  .form-wrapper > .left-col > .nav-logo-container {
     width: 60px;
+    /* top: 3.5rem; */
+  }
+  .form-wrapper .left-col > .nav-logo-container > .brand {
+    position: relative;
+    width: 100px;
+    top: 7vh;
+  }
+  .close-form {
+    top: 10vh;
+  }
+  .fa-envelope-open-text {
+    top: 60%;
   }
   .container-nr-tel {
     top: 19px;
@@ -355,7 +379,7 @@
 
   .form-wrapper {
     max-height: none;
-    height: 150vh;
+    /* height: 150vh; */
     top: 0;
   }
 }

@@ -19,7 +19,6 @@ navLinks.forEach((link) => {
 
 navToggle.addEventListener("click", () => {
   const visibil = navMenu.getAttribute("data-visible");
-  console.log(visibil);
   if (visibil === "false") {
     navMenu.setAttribute("data-visible", "true");
     navToggle.setAttribute("aria-extended", "true");
@@ -243,19 +242,30 @@ const validate = (e) => {
   }
 
   errorElement.innerHTML = "";
-  successMsg.innerHTML = "Muțumim pentru mesaj! Vom reveni în curând.";
+  //   successMsg.innerHTML = "Muțumim pentru mesaj! Vom reveni în curând.";
 
-  e.preventDefault();
-  setTimeout(function () {
-    successMsg.innerHTML = "";
-    document.getElementById("contact-form").reset();
-  }, 6000);
-
+  sendEmail(name.value, email.value, message.value);
   return true;
 };
 
 const emailIsValid = (email) => {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+};
+
+const sendEmail = (name, email, message) => {
+  const xhr = new XMLHttpRequest();
+  xhr.open("POST", "http://school-site.atwebpages.com/send_email.php", true);
+  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+      successMsg.innerHTML = xhr.responseText;
+      setTimeout(function () {
+        successMsg.innerHTML = "";
+        document.getElementById("contact-form").reset();
+      }, 6000);
+    }
+  };
+  xhr.send(`name=${name}&email=${email}&message=${message}`);
 };
 
 submitBtn.addEventListener("click", validate);
