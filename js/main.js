@@ -425,3 +425,19 @@ function changeSlide(n) {
   const galleryImage = document.getElementById("galleryImage");
   galleryImage.src = events[currentEventIndex][currentSlideIndex];
 }
+
+// svg waves not loading until touch of the screen problem
+document.addEventListener("DOMContentLoaded", function () {
+  // Function to force SVG re-render
+  function forceSVGRerender() {
+    const svgs = document.querySelectorAll("svg");
+    svgs.forEach((svg) => {
+      svg.style.display = "none";
+      svg.getBoundingClientRect(); // Force reflow
+      svg.style.display = "block";
+    });
+  }
+
+  // Call the function to force re-render
+  forceSVGRerender();
+});
