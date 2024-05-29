@@ -19,6 +19,7 @@
       href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
       rel="stylesheet"
     />
+    <script src="./js/orarClaseleGimnaziale.js" defer></script>
     <script src="./js/class.js" defer></script>
     <link
       rel="stylesheet"
@@ -74,47 +75,24 @@
             </li>
           </ul>
         </div>
-
-        <!-- <ul>
-          <li class="nav-item">
-            <a href="#">
-              <i class="fa fa-user nav-icon"></i>
-              <span class="nav-text">Profile</span>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="#">
-              <i class="fa fa-gear nav-icon"></i>
-              <span class="nav-text">Settings</span>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="#">
-              <i class="fa fa-right-from-bracket nav-icon"></i>
-              <span class="nav-text">Logout</span>
-            </a>
-          </li>
-        </ul> -->
       </nav>
       <!-- ---------------------------------------------------------------end navigation ------------------------------------------------------- -->
 
       <!-- -------------------------------------------------------------------------------------------------------------------------------------------------- -->
       <!-- -----------------------------------------------------------------continut ----------------------------------------------------------------- -->
       <!-- -------------------------------------------------------------------------------------------------------------------------------------------------- -->
-      <section class="content">
+      <div class="content">
         <!-- ---------------------- partea stinga continut ---------- -->
         <div class="left-content">
-          <section id="class-overview">
+          <div id="class-overview">
             <h1>Clasa a VII-a</h1>
             <p>
               <strong>Motoul clasei:</strong> "Explorăm, învățăm, creștem
               împreună!"
             </p>
-          </section>
+          </div>
 
-          <section id="upcoming-events">
+          <div id="upcoming-events">
             <div class="slider-container">
               <h2>Evenimente și anunțuri</h2>
               <div class="swiper">
@@ -183,9 +161,9 @@
                 <div class="swiper-pagination"></div>
               </div>
             </div>
-          </section>
+          </div>
 
-          <section id="recent-activities">
+          <div id="recent-activities">
             <h2>Recent Activities</h2>
             <ul>
               <li>
@@ -196,38 +174,38 @@
                 18, 2024
               </li>
             </ul>
-          </section>
+          </div>
 
-          <section id="attendance-summary">
+          <div id="attendance-summary">
             <h2>Attendance Summary</h2>
             <p><strong>Total Students:</strong> 30</p>
             <p><strong>Present:</strong> 28</p>
             <p><strong>Absent:</strong> 2</p>
-          </section>
+          </div>
 
-          <section id="grades-performance">
+          <div id="grades-performance">
             <h2>Grades and Performance</h2>
             <ul>
               <li><strong>Algebra Test:</strong> Average Grade: B+</li>
               <li><strong>Geometry Quiz:</strong> Average Grade: A-</li>
             </ul>
-          </section>
+          </div>
 
-          <section id="class-resources">
+          <div id="class-resources">
             <h2>Resources and Materials</h2>
             <ul>
               <li><a href="textbook.pdf">Download Mathematics Textbook</a></li>
               <li><a href="worksheets.zip">Download Worksheets</a></li>
             </ul>
-          </section>
+          </div>
 
-          <section id="class-schedule">
+          <div id="class-schedule">
             <h2>Class Schedule</h2>
             <p><strong>Today:</strong> Algebra - 8:00 AM to 9:00 AM</p>
             <p><strong>Next Class:</strong> Geometry - 9:00 AM to 10:00 AM</p>
-          </section>
+          </div>
 
-          <section id="communication-feedback">
+          <div id="communication-feedback">
             <h2>Communication and Feedback</h2>
             <p>
               <strong>Messages from Teacher:</strong> Please prepare for the
@@ -237,25 +215,26 @@
               <strong>Feedback:</strong>
               <a href="feedback-form.html">Submit Feedback</a>
             </p>
-          </section>
+          </div>
 
-          <section id="student-highlights">
+          <div id="student-highlights">
             <h2>Student Highlights</h2>
             <p><strong>Top Scorer:</strong> Jane Doe - Algebra Test</p>
             <p>
               <strong>Featured Project:</strong> John Smith - Science Fair
               Project
             </p>
-          </section>
+          </div>
         </div>
         <!--  ------------ end partea stinga continut ------------ -->
 
         <!--  ---------- partea dreapta continut ------------------- -->
         <div class="right-content">
           <h2>Orarul lectiilor</h2>
+          <div id="schedule-container" class="schedule-section"></div>
         </div>
         <!-- ------------------end partea dreapta continut ---------- -->
-      </section>
+      </div>
       <!-- ------------------------------------------------------------------------ end continut section ------------------------------------------------- -->
     </main>
   </body>

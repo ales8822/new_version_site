@@ -93,14 +93,50 @@ main {
 /* RIGHT CONTENT */
 
 .right-content {
-  display: grid;
-  grid-template-rows: 60% 40%;
   border-radius: 0 15px 15px 0;
   border-left: 1px solid rgba(255, 255, 255, 0.5);
   padding: 30px 20px;
   color: #e5e5e5;
 }
-
+/* orarul */
+.schedule-section {
+  margin: 20px;
+}
+.class-schedule {
+  margin-bottom: 40px;
+}
+.class-title {
+  font-size: 1.8em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.day-schedule {
+  margin-bottom: 20px;
+}
+.day-title {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  padding: 5px 0;
+}
+.highlight {
+  background-color: yellow;
+}
+.past {
+  background-color: lightgray;
+}
+.free-day {
+  background-color: lightgreen;
+  padding: 10px;
+  text-align: center;
+  font-size: 1.2em;
+  font-weight: bold;
+}
 /* SLIDER */
 
 .slider-container {

@@ -1,3 +1,16 @@
+const lessonTimes = [
+  { start: { hour: 8, minute: 0 }, end: { hour: 8, minute: 45 } },
+  { start: { hour: 9, minute: 0 }, end: { hour: 9, minute: 45 } },
+  { start: { hour: 10, minute: 0 }, end: { hour: 10, minute: 45 } },
+  { start: { hour: 11, minute: 0 }, end: { hour: 11, minute: 45 } },
+  { start: { hour: 12, minute: 0 }, end: { hour: 12, minute: 45 } },
+  { start: { hour: 13, minute: 0 }, end: { hour: 13, minute: 45 } },
+  { start: { hour: 14, minute: 0 }, end: { hour: 14, minute: 45 } },
+  { start: { hour: 15, minute: 0 }, end: { hour: 15, minute: 45 } },
+  { start: { hour: 16, minute: 0 }, end: { hour: 16, minute: 45 } },
+  { start: { hour: 17, minute: 0 }, end: { hour: 17, minute: 45 } },
+];
+
 var orarClaseleGimnaziale = [
   {
     clasa: "V-a",
@@ -28,6 +41,10 @@ var orarClaseleGimnaziale = [
         "Limba Franceza",
         "Educatia Fizica",
         "Limba Romana",
+        "test1 leson",
+        "test2 leson",
+        "test3 leson",
+        "test4 leson",
       ],
       Joi: [
         "Limba Romana",

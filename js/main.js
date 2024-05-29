@@ -442,3 +442,5 @@ document.addEventListener("DOMContentLoaded", function () {
   // Call the function to force re-render
   forceSVGRerender();
 });
+
+// orarul lectiilor

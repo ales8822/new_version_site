@@ -176,6 +176,14 @@
   .nav-logo-container {
     width: 75px;
   }
+  .waves {
+    height: 70px;
+    min-height: 40px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
   /* stiluri forma de contact */
   .form-wrapper {
     flex-direction: column;
