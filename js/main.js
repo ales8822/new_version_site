@@ -427,13 +427,14 @@ function changeSlide(n) {
 }
 
 // svg waves not loading until touch of the screen problem
+// selectam toate svg-urile, punem temporar ddisplay none si apoi iarasi display block]
+// deoarece este o problema cu valurile care nu se pornesc pina nu atingi ecranul
 document.addEventListener("DOMContentLoaded", function () {
-  // Function to force SVG re-render
   function forceSVGRerender() {
     const svgs = document.querySelectorAll("svg");
     svgs.forEach((svg) => {
       svg.style.display = "none";
-      svg.getBoundingClientRect(); // Force reflow
+      svg.getBoundingClientRect();
       svg.style.display = "block";
     });
   }
