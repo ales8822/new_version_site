@@ -379,8 +379,9 @@
 
   .form-wrapper {
     max-height: none;
-    /* height: 150vh; */
+    height: 150vh;
     top: 0;
+    overflow-y: scroll;
   }
 }
 

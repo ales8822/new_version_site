@@ -44,6 +44,7 @@
   color: var(--bg-color);
 }
 .right-col {
+  position: relative;
   background: var(--bg-color);
   flex: 1;
   height: 100vh;
