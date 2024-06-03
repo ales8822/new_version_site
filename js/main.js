@@ -375,22 +375,25 @@ let currentSlideIndex = 0;
 let currentEventIndex = -1;
 const events = {
   0: [
+    "./img/img-evenimente/ziua_copiilor.jpg",
+    "./img/img-evenimente/ziua_copiilor2.jpg",
     "./img/img-evenimente/directoarea.jpg",
-    "./img/img-evenimente/directoarea.jpg",
-    "./img/img-evenimente/directoarea.jpg",
-    "./img/img-evenimente/primarul.jpg",
-    "./img/img-evenimente/craciun.jpg",
+    "./img/img-evenimente/ziua_copiilor3.jpg",
+    "./img/img-evenimente/ziua_copiilor4.jpg",
   ],
   1: [
-    "./img/img-evenimente/directoarea.jpg",
-    "./img/img-evenimente/primarul.jpg",
-    "./img/img-evenimente/directoarea.jpg",
-    "./img/img-evenimente/craciun.jpg",
+    "./img/img-evenimente/stiinta.jpg",
+    "./img/img-evenimente/stiinta2.jpg",
+    "./img/img-evenimente/stiinta3.jpg",
+    "./img/img-evenimente/stiinta4.jpg",
+    "./img/img-evenimente/stiinta5.jpg",
   ],
   2: [
-    "./img/img-evenimente/primarul.jpg",
-    "./img/img-evenimente/directoarea.jpg",
-    "./img/img-evenimente/craciun.jpg",
+    "./img/img-evenimente/miciiinv.jpg",
+    "./img/img-evenimente/miciiinv2.jpg",
+    "./img/img-evenimente/miciiinv3.jpg",
+    "./img/img-evenimente/miciiinv4.jpg",
+    "./img/img-evenimente/miciiinv5.jpg",
   ],
 };
 function openFullScreenGallery(eventIndex, imageIndex) {
@@ -427,11 +430,13 @@ function changeSlide(n) {
 }
 
 // svg waves not loading until touch of the screen problem
-// selectam toate svg-urile, punem temporar ddisplay none si apoi iarasi display block]
+// selectam valurile, punem temporar ddisplay none si apoi iarasi display block]
 // deoarece este o problema cu valurile care nu se pornesc pina nu atingi ecranul
 document.addEventListener("DOMContentLoaded", function () {
   function forceSVGRerender() {
     const svgs = document.querySelectorAll("svg");
+    console.log(svgs);
+
     svgs.forEach((svg) => {
       svg.style.display = "none";
       svg.getBoundingClientRect();

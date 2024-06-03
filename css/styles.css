@@ -933,6 +933,8 @@ section {
 }
 
 .full-screen-gallery .gallery-content {
+  display: flex;
+  justify-content: center;
   position: relative;
   top: 50%;
   left: 50%;
