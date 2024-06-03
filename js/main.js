@@ -433,19 +433,16 @@ function changeSlide(n) {
 // selectam valurile, punem temporar ddisplay none si apoi iarasi display block]
 // deoarece este o problema cu valurile care nu se pornesc pina nu atingi ecranul
 document.addEventListener("DOMContentLoaded", function () {
-  function forceSVGRerender() {
-    const svgs = document.querySelectorAll("#wave1");
-    console.log(svgs);
-
-    svgs.forEach((svg) => {
+  function forceSVGRerenderById(id) {
+    const svg = document.getElementById(id);
+    if (svg) {
       svg.style.display = "none";
       svg.getBoundingClientRect();
       svg.style.display = "block";
-    });
+    }
   }
 
-  // Call the function to force re-render
-  forceSVGRerender();
+  // Call the function with the ID of the SVG you want to re-render
+  forceSVGRerenderById("wave1");
 });
-
 // orarul lectiilor
