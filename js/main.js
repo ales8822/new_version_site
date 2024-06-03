@@ -90,17 +90,38 @@ document.addEventListener("DOMContentLoaded", function () {
   });
   // ---------------------------------------------------------------------------------------------  end swiper
 });
-// smooth scroll pentru likuri
+// smooth scroll pentru linkuri
 function smoothScroll(event) {
-  event.preventDefault();
-  const targetId = event.currentTarget.getAttribute("href").substring(1);
-  const targetSection = document.getElementById(targetId);
-  const offsetTop = targetSection.offsetTop;
-  window.scrollTo({
-    top: offsetTop,
-    behavior: "smooth",
-  });
+  const targetHref = event.currentTarget.getAttribute("href");
+
+  // Check if the link is an internal link and not the dropdown link
+  if (
+    targetHref.startsWith("#") &&
+    event.currentTarget.id !== "clasa-drop-link"
+  ) {
+    event.preventDefault();
+    const targetId = targetHref.substring(1);
+    const targetSection = document.getElementById(targetId);
+
+    // Check if the target section exists
+    if (targetSection) {
+      const offsetTop = targetSection.offsetTop;
+      window.scrollTo({
+        top: offsetTop,
+        behavior: "smooth",
+      });
+    }
+  }
 }
+
+// Attach smooth scroll to internal links
+document.addEventListener("DOMContentLoaded", function () {
+  const links = document.querySelectorAll("nav a");
+
+  links.forEach((link) => {
+    link.addEventListener("click", smoothScroll);
+  });
+});
 
 // dropdown
 
