@@ -139,6 +139,10 @@
   .adr-info > p {
     font-size: 0.8rem;
   }
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
 }
 
 /* lungimi random ptr corectie */
@@ -478,7 +482,7 @@
     height: 180px;
   }
   .imagine-eveniment > svg {
-    fill: #313131;
+    /* fill: #313131; */
     opacity: 0.7;
     z-index: 300;
   }

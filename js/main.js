@@ -434,7 +434,7 @@ function changeSlide(n) {
 // deoarece este o problema cu valurile care nu se pornesc pina nu atingi ecranul
 document.addEventListener("DOMContentLoaded", function () {
   function forceSVGRerender() {
-    const svgs = document.querySelectorAll("svg");
+    const svgs = document.querySelectorAll("#wave1");
     console.log(svgs);
 
     svgs.forEach((svg) => {
