@@ -1,89 +1,101 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const scheduleContainer = document.getElementById("schedule-container");
+$(document).ready(function () {
+  // Initialize Swiper
+  var swiper = new Swiper(".mySwiper", {
+    direction: "vertical",
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+  });
+});
+// Get the schedule container element
+var scheduleContainer = $("#schedule-container");
 
-  const currentDate = new Date();
-  const currentDay = capitalize(
-    currentDate.toLocaleDateString("ro-RO", { weekday: "long" })
-  );
+// Get the current date and day
+var currentDate = new Date();
+var currentDay = currentDate.toLocaleDateString("ro-RO", { weekday: "long" });
+currentDay = capitalizeFirstLetter(currentDay);
 
-  function capitalize(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+function capitalizeFirstLetter(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+// Function to check if current time is within a range
+function isCurrentTimeInRange(start, end) {
+  var currentHour = currentDate.getHours();
+  var currentMinutes = currentDate.getMinutes();
+  var currentTime = currentHour * 60 + currentMinutes;
+  var startTime = start.ora * 60 + start.minute;
+  var endTime = end.ora * 60 + end.minute;
+  return currentTime >= startTime && currentTime <= endTime;
+}
+
+// Function to create schedule for a specific class
+function createSchedule(grade) {
+  var clasa = orarClasele.filter(function (c) {
+    return c.clasa === grade;
+  })[0];
+
+  if (!clasa) {
+    scheduleContainer.html("<div>Nu s-a găsit orar pentru " + grade + "</div>");
+    return;
   }
 
-  function isCurrentTimeInRange(start, end) {
-    const currentHour = currentDate.getHours();
-    const currentMinutes = currentDate.getMinutes();
-    const currentTime = currentHour * 60 + currentMinutes;
-    const startTime = start.hour * 60 + start.minute;
-    const endTime = end.hour * 60 + end.minute;
-    return currentTime >= startTime && currentTime <= endTime;
-  }
+  var classDiv = $("<div>").addClass("class-schedule");
 
-  function createSchedule(grade) {
-    const clasa = orarClaseleGimnaziale.find((c) => c.clasa === grade);
-    if (!clasa) {
-      scheduleContainer.innerHTML = `<div>No schedule found for ${grade}</div>`;
-      return;
-    }
+  var classTitle = $("<div>")
+    .addClass("class-title")
+    .text("Clasa " + clasa.clasa);
+  classDiv.append(classTitle);
 
-    const classDiv = document.createElement("div");
-    classDiv.className = "class-schedule";
+  $.each(clasa.orar, function (day, subjects) {
+    var dayDiv = $("<div>").addClass("day-schedule").attr("id", day);
 
-    const classTitle = document.createElement("div");
-    classTitle.className = "class-title";
-    classTitle.textContent = `Clasa ${clasa.clasa}`;
-    classDiv.appendChild(classTitle);
+    var dayTitle = $("<div>").addClass("day-title").text(day);
+    dayDiv.append(dayTitle);
 
-    Object.keys(clasa.orar).forEach((day) => {
-      const dayDiv = document.createElement("div");
-      dayDiv.className = "day-schedule";
-      dayDiv.id = day;
+    var ul = $("<ul>");
 
-      const dayTitle = document.createElement("div");
-      dayTitle.className = "day-title";
-      dayTitle.textContent = day;
-      dayDiv.appendChild(dayTitle);
+    $.each(subjects, function (index, subject) {
+      var li = $("<li>").text(subject);
+      console.log(day);
+      console.log(currentDay);
 
-      const ul = document.createElement("ul");
-      clasa.orar[day].forEach((subject, index) => {
-        const li = document.createElement("li");
-        li.textContent = subject;
+      if (day === currentDay) {
+        var nextLessonStartTime = lessonTimes[index + 1]
+          ? lessonTimes[index + 1].start
+          : null;
+        var currentEndTime = lessonTimes[index].end;
 
-        if (day === currentDay) {
-          if (index < lessonTimes.length) {
-            if (
-              isCurrentTimeInRange(
-                lessonTimes[index].start,
-                lessonTimes[index].end
-              )
-            ) {
-              li.classList.add("highlight");
-            } else if (
-              isCurrentTimeInRange(
-                { hour: 0, minute: 0 },
-                lessonTimes[index].end
-              )
-            ) {
-              li.classList.add("past");
-            }
+        if (index < lessonTimes.length) {
+          if (nextLessonStartTime) {
+            li.addClass("upcoming-lesson");
           }
-        } else if (
-          ["Luni", "Marti", "Miercuri", "Joi", "Vineri"].indexOf(day) <
-          ["Luni", "Marti", "Miercuri", "Joi", "Vineri"].indexOf(currentDay)
-        ) {
-          li.classList.add("past");
+
+          if (isCurrentTimeInRange(lessonTimes[index].start, currentEndTime)) {
+            li.removeClass("upcoming-lesson").addClass("highlight");
+          } else if (
+            isCurrentTimeInRange(currentEndTime, { ora: 23, minute: 59 })
+          ) {
+            li.addClass("past");
+          }
         }
+      } else if (
+        ["Luni", "Marți", "Miercuri", "Joi", "Vineri", "Sâmbătă"].indexOf(day) <
+        ["Luni", "Marți", "Miercuri", "Joi", "Vineri", "Sâmbătă"].indexOf(
+          currentDay
+        )
+      ) {
+        li.addClass("past");
+      }
 
-        ul.appendChild(li);
-      });
-
-      dayDiv.appendChild(ul);
-      classDiv.appendChild(dayDiv);
+      ul.append(li);
     });
 
-    scheduleContainer.appendChild(classDiv);
-  }
+    dayDiv.append(ul);
+    classDiv.append(dayDiv);
+  });
 
-  // Call the function for a specific grade, e.g., "V-a"
-  createSchedule("V-a");
-});
+  scheduleContainer.append(classDiv);
+}
+//   // Create schedule for a specific class, e.g., "VII-a"
+//   createSchedule("VII-a");

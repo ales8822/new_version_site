@@ -85,6 +85,7 @@ button,
   margin: 0 auto;
   padding: 2em;
 }
+
 /* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
                                                                     Navigation styles
@@ -133,8 +134,12 @@ button,
   font-size: 16px;
   font-weight: 400;
   padding: 20px;
+  /* padding-bottom: 0px; */
 }
 
+.nav-link.active {
+  color: #03fc73;
+}
 .nav-link:hover {
   box-shadow: inset 0 -5px var(--tertiary);
 }
@@ -203,8 +208,8 @@ button,
   display: none;
   position: absolute;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.06);
-  backdrop-filter: blur(10px);
+  background-color: rgba(10, 133, 170, 0.8);
+  backdrop-filter: blur(20px);
   min-width: 100%;
   z-index: 1;
   top: 100%;
@@ -217,7 +222,7 @@ button,
   align-items: center;
   justify-content: center;
   text-align: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(247, 245, 245, 0.1);
 }
 .dropdown-content a:hover {
   background-color: rgba(0, 0, 0, 0.1);
@@ -680,7 +685,23 @@ section {
   top: 0;
   right: 0;
 }
+.text {
+  overflow: hidden;
+  max-height: 200px; /* Adjust as needed */
+  transition: max-height 0.5s ease;
+}
 
+.text-container.expanded .text {
+  max-height: 400px;
+}
+.read-more-btn {
+  background-color: transparent;
+  color: #00acc1;
+  position: relative;
+  bottom: -10px;
+  height: 48px;
+  font-weight: 500;
+}
 /* -------------------------------------------------------------------- end upcoming events ----------------------------------------------------------------------------- */
 
 /* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -688,9 +709,82 @@ section {
                                                                     Stiluri swiper
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
-#info-events {
+#recenzii {
   background: linear-gradient(60deg, #543ab7 0%, #00acc1 100%);
+  height: auto;
 }
+
+.recenzie {
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  overflow: hidden;
+  max-width: 100%;
+  width: 500px;
+  /* height: 550px; */
+}
+
+.recenzie-text {
+  position: relative;
+  padding: 1rem;
+  height: 370px;
+  overflow-y: hidden;
+}
+
+.recenzie-text p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 36px;
+  margin: 0;
+  padding: 40px 40px 80px;
+}
+
+.recenzie-text .fa-quote-right {
+  position: absolute;
+  bottom: 1rem;
+  right: 2rem;
+  color: #5e5d5d;
+  font-size: 40px;
+  float: right;
+}
+
+.recenzie-info {
+  background-color: #142728;
+  color: #fff;
+  padding: 40px;
+  text-align: center;
+}
+
+.swiper-slide .recenzie-info img {
+  border-radius: 50%;
+  border: 5px solid #fff;
+  height: 120px;
+  width: 120px;
+  margin-top: -100px;
+}
+
+.recenzie-info h3 {
+  margin: 10px 0;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.recenzie-info h4 {
+  color: #b3b5ef;
+  margin: 0;
+  letter-spacing: 1px;
+}
+.recenzie-info .functie-persoana-recenzie {
+  color: #e4e5fc;
+  margin: 0;
+  letter-spacing: 1px;
+  font-size: 0.6em;
+}
+/* ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+                                                                    Stiluri swiper
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
 .slider-container {
   margin: 0 auto;
   width: 100%;
@@ -741,12 +835,12 @@ section {
   inset: 0;
   width: 100%;
   height: 98%;
-  /* background: linear-gradient(
+  background: linear-gradient(
     240deg,
     transparent,
     transparent,
     rgba(38, 21, 149, 0.8)
-  ); */
+  );
   border-radius: 20px;
   padding: 30px;
 }

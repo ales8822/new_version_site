@@ -1,17 +1,18 @@
 const lessonTimes = [
-  { start: { hour: 8, minute: 0 }, end: { hour: 8, minute: 45 } },
-  { start: { hour: 9, minute: 0 }, end: { hour: 9, minute: 45 } },
-  { start: { hour: 10, minute: 0 }, end: { hour: 10, minute: 45 } },
-  { start: { hour: 11, minute: 0 }, end: { hour: 11, minute: 45 } },
-  { start: { hour: 12, minute: 0 }, end: { hour: 12, minute: 45 } },
-  { start: { hour: 13, minute: 0 }, end: { hour: 13, minute: 45 } },
-  { start: { hour: 14, minute: 0 }, end: { hour: 14, minute: 45 } },
-  { start: { hour: 15, minute: 0 }, end: { hour: 15, minute: 45 } },
-  { start: { hour: 16, minute: 0 }, end: { hour: 16, minute: 45 } },
-  { start: { hour: 17, minute: 0 }, end: { hour: 17, minute: 45 } },
+  { start: { ora: 7, minute: 0 }, end: { ora: 7, minute: 45 } },
+  { start: { ora: 8, minute: 0 }, end: { ora: 8, minute: 45 } },
+  { start: { ora: 9, minute: 0 }, end: { ora: 9, minute: 45 } },
+  { start: { ora: 10, minute: 0 }, end: { ora: 10, minute: 45 } },
+  { start: { ora: 11, minute: 0 }, end: { ora: 11, minute: 45 } },
+  { start: { ora: 12, minute: 0 }, end: { ora: 12, minute: 45 } },
+  { start: { ora: 13, minute: 0 }, end: { ora: 13, minute: 45 } },
+  { start: { ora: 14, minute: 0 }, end: { ora: 14, minute: 45 } },
+  { start: { ora: 15, minute: 0 }, end: { ora: 15, minute: 45 } },
+  { start: { ora: 16, minute: 0 }, end: { ora: 16, minute: 45 } },
+  { start: { ora: 17, minute: 0 }, end: { ora: 17, minute: 45 } },
 ];
 
-var orarClaseleGimnaziale = [
+var orarClasele = [
   {
     clasa: "V-a",
     nrElevi: 28,
@@ -26,7 +27,7 @@ var orarClaseleGimnaziale = [
         "Dezvoltare Personala",
         "Limba Engleza",
       ],
-      Marti: [
+      Marți: [
         "Limba Romana",
         "Limba Romana",
         "Istoria",
@@ -75,7 +76,7 @@ var orarClaseleGimnaziale = [
         "Limba Engleza",
         "Educatia Plastica",
       ],
-      Marti: [
+      Marți: [
         "Matematica",
         "Limba Romana",
         "Istoria",
@@ -122,9 +123,9 @@ var orarClaseleGimnaziale = [
         "Educatia Tehnologica",
         "Educatia Plastica",
       ],
-      Marti: [
+      Marți: [
         "Fizica",
-        "Educatie Fizica",
+        "Educatia Fizica",
         "Limba Romana",
         "Limba Romana",
         "Istoria",
@@ -153,6 +154,14 @@ var orarClaseleGimnaziale = [
         "Educatia Muzicala",
         "Programare Web",
       ],
+      Sâmbătă: [
+        "Fizica",
+        "Educatia Fizica test",
+        "Geografia test",
+        "Limba Franceza test",
+        "Educatia Muzicala test",
+        "Programare Web test",
+      ],
     }, // end orar
   }, // end clasa I-b
   {
@@ -170,7 +179,7 @@ var orarClaseleGimnaziale = [
         "Limba Engleza",
         "Educatia Tehnologica",
       ],
-      Marti: [
+      Marți: [
         "Matematica",
         "Limba Romana",
         "Limba Romana",
@@ -223,7 +232,7 @@ var orarClaseleGimnaziale = [
         "Limba Engleza",
         "Educatia Tehnologica",
       ],
-      Marti: [
+      Marți: [
         "Matematica",
         "Limba Romana",
         "Limba Romana",

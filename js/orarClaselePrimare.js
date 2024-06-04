@@ -1,17 +1,22 @@
-var orarClaselePrimare = [
+const lessonTimes = [
+  { start: { ora: 8, minute: 0 }, end: { ora: 8, minute: 45 } },
+  { start: { ora: 9, minute: 0 }, end: { ora: 9, minute: 45 } },
+  { start: { ora: 10, minute: 0 }, end: { ora: 10, minute: 45 } },
+  { start: { ora: 11, minute: 0 }, end: { ora: 11, minute: 45 } },
+  { start: { ora: 12, minute: 0 }, end: { ora: 12, minute: 45 } },
+  { start: { ora: 13, minute: 0 }, end: { ora: 13, minute: 45 } },
+  { start: { ora: 14, minute: 0 }, end: { ora: 14, minute: 45 } },
+];
+
+var orarClasele = [
   {
     clasa: "I-a",
     nrElevi: 28,
     imagineDiriginte: "./img/img_msg/parinte_1.png",
     numeDiriginte: "Craciun Tatiana",
     orar: {
-      Luni: [
-        "Matematica",
-        "Limba Romana",
-        "Limba Romana",
-        "Matematica",
-      ],
-      Marti: [
+      Luni: ["Matematica", "Limba Romana", "Limba Romana", "Matematica"],
+      Marți: [
         "Limba Romana",
         "Dezvoltarea Personala",
         "Limba Romana",
@@ -23,17 +28,8 @@ var orarClaselePrimare = [
         "Limba Romana",
         "Educatia Tehnologica",
       ],
-      Joi: [
-        "Limba Romana",
-        "Limba Romana",
-        "Educatia Plastica",
-        "Matematica",
-      ],
-      Vineri: [
-        "Matematica",
-        "Matematica",
-        "Educatia Plastica",
-      ],
+      Joi: ["Limba Romana", "Limba Romana", "Educatia Plastica", "Matematica"],
+      Vineri: ["Matematica", "Matematica", "Educatia Plastica"],
     }, // end orar
   }, // end clasa I-a
   {
@@ -49,12 +45,7 @@ var orarClaselePrimare = [
         "Limba Engleza",
         "Educatia Tehnologica",
       ],
-      Marti: [
-        "Limba Romana",
-        "Limba Romana",
-        "Matematica",
-        "Limba Engleza",
-      ],
+      Marți: ["Limba Romana", "Limba Romana", "Matematica", "Limba Engleza"],
       Miercuri: [
         "Matematica",
         "Limba Romana",
@@ -89,7 +80,7 @@ var orarClaselePrimare = [
         "Dezvoltarea Personala",
         "Educatia pentru Sanatate",
       ],
-      Marti: [
+      Marți: [
         "Matematica",
         "Limba Romana",
         "Istoria",
@@ -108,12 +99,7 @@ var orarClaselePrimare = [
         "Dezvoltarea Personala",
         "Matematica",
       ],
-      Vineri: [
-        "Matematica",
-        "Limba Engleza",
-        "Istoria",
-        "Educatia Muzicala",
-      ],
+      Vineri: ["Matematica", "Limba Engleza", "Istoria", "Educatia Muzicala"],
     }, // end orar
   }, // end clasa III-a
   {
@@ -128,9 +114,8 @@ var orarClaselePrimare = [
         "Limba Engleza",
         "Istoria",
         "Educatia Moral-Spirituala",
-
       ],
-      Marti: [
+      Marți: [
         "Limba Romana",
         "Limba Romana",
         "Matematica",
@@ -144,12 +129,7 @@ var orarClaselePrimare = [
         "Dezvoltarea Personala",
         "Matematica",
       ],
-      Joi: [
-        "Limba Engleza",
-        "Istoria",
-        "Educatia Fizica",
-        "Matematica",
-      ],
+      Joi: ["Limba Engleza", "Istoria", "Educatia Fizica", "Matematica"],
       Vineri: [
         "Matematica",
         "Educatia Fizica",

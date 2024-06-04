@@ -35,8 +35,32 @@ document.addEventListener("DOMContentLoaded", function () {
     link.addEventListener("click", smoothScroll);
   });
 
+  $(document).ready(function () {
+    $(".nav-link").click(function (event) {
+      // Prevent default action for dropdown toggle (if applicable)
+      if ($(this).hasClass("dropdown")) {
+        event.preventDefault();
+      }
+
+      // Remove "active" class from all .nav-link elements
+      $(".nav-link").removeClass("active");
+
+      // Add "active" class to the clicked .nav-link element
+      $(this).addClass("active");
+    });
+    // read more
+    $(".read-more-btn").click(function () {
+      var $textContainer = $(this).closest(".text-container");
+      $textContainer.toggleClass("expanded");
+      if ($textContainer.hasClass("expanded")) {
+        $(this).text("Read Less");
+      } else {
+        $(this).text("Read More");
+      }
+    });
+  });
   // -------------------------------------------------------------------------- info-swiper initializare
-  var swiper1 = new Swiper("#info_swiper", {
+  var swiper1 = new Swiper("#swiper_recenzii", {
     effect: "coverflow",
     grabCursor: true,
     centeredSlides: true,

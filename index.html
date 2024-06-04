@@ -3,13 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GMitoc</title>
+    <title>Gimnaziul Mitoc - educație inovatoare</title>
+    <meta
+      name="description"
+      content="Gimnaziul Mitoc, din s.Mitoc , rl. Orhei ,este dedicat excelenței în educație, oferind un mediu inovativ și suportiv pentru dezvoltarea elevilor. Află mai multe despre programul nostru educativ și evenimentele noastre!"
+    />
+    <meta
+      name="keywords"
+      content="Gimnaziul Mitoc, școala Mitoc, școala Orhei, gimnaziul Orhei, evenimente educaționale, educație inovativă, matematică, activități școlare, gimnaziu, școala"
+    />
     <!-- js biblioteca pentru font awesome -->
     <script
       src="https://kit.fontawesome.com/94742d7e37.js"
       crossorigin="anonymous"
     ></script>
     <!-- js biblioteca pentru swiper -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- biblioteca css pentru font awesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -124,15 +133,15 @@
             ></i
           ></a>
           <div class="dropdown-content">
-            <a href="#">I-a</a>
-            <a href="#">II-a</a>
-            <a href="#">III-a</a>
-            <a href="#">IV-a</a>
-            <a href="#">V-a</a>
-            <a href="#">VI-a</a>
+            <a href="./clasa1.html">I-a</a>
+            <a href="./clasa2.html">II-a</a>
+            <a href="./clasa3.html">III-a</a>
+            <a href="./clasa4.html">IV-a</a>
+            <a href="./clasa5.html">V-a</a>
+            <a href="./clasa6.html">VI-a</a>
             <a href="./clasa7.html">VII-a</a>
-            <a href="#">VIII-a</a>
-            <a href="#">IX-a</a>
+            <a href="./clasa8.html">VIII-a</a>
+            <a href="./clasa9.html">IX-a</a>
             <i
               id="close-dropdown-menu"
               class="fa-solid fa-power-off"
@@ -324,14 +333,23 @@
                 <h2>Olimpiada la Matematică</h2>
               </div>
               <div class="date">25 mai 2024</div>
-              <p>
-                Pregătiți-vă pentru olimpiada anuală de matematică. Lorem ipsum
-                dolor sit amet consectetur adipisicing elit. Nulla veritatis
-                fugiat ducimus reiciendis blanditiis recusandae, quas, minima
-                assumenda aut quia quisquam et corporis! Debitis sit odit
-                nostrum ipsum vero ratione.
-              </p>
-              <a class="bnt-more" href="javascript:void(0)">More</a>
+              <div class="text-container">
+                <p class="text">
+                  Dragi elevi și părinți, Suntem încântați să vă anunțăm că
+                  Gimnaziul Mitoc va găzdui Olimpiada Anuală de Matematică, un
+                  eveniment ce încurajează excelența și pasiunea pentru
+                  matematică în rândul elevilor noștri talentați! Această
+                  competiție este deschisă tuturor elevilor de la clasele V-VIII
+                  și va oferi oportunitatea de a testa abilitățile matematice,
+                  rezolvând probleme provocatoare și captivante.Încurajăm toți
+                  elevii pasionați de matematică să se înscrie și să participe
+                  la această competiție minunată. Pentru detalii suplimentare și
+                  pentru a vă înscrie, vă rugăm să vă adresați profesorilor de
+                  matematică. Cu stimă, Echipa Gimnaziului Mitoc
+                </p>
+                <button class="read-more-btn">Read More</button>
+              </div>
+              <a class="bnt-more" href="javascript:void(0)">Detalii</a>
             </div>
           </div>
           <div class="timeline-item">
@@ -342,14 +360,27 @@
                 <h2>Excursie Școlară</h2>
               </div>
               <div class="date">26 mai 2024</div>
-              <p>
-                Excursie la muzeul de științe naturale. Lorem ipsum dolor sit
-                amet, consectetur adipisicing elit. Beatae dolorem sint
-                distinctio provident voluptatibus minus, asperiores saepe
-                delectus! Aspernatur pariatur vel sit harum quod dicta adipisci
-                nesciunt dolor iure perspiciatis!
-              </p>
-              <a class="bnt-more" href="javascript:void(0)">More</a>
+              <div class="text-container">
+                <p class="text">
+                  Dragi elevi și părinți, Suntem încântați să vă invităm să vă
+                  alăturați nouă într-o excursie fascinantă la Muzeul de Științe
+                  Naturale din Chișinău! Acesta este un prilej excelent pentru
+                  noi să explorăm și să descoperim minunile naturii și ale
+                  universului împreună. Muzeul de Științe Naturale oferă o
+                  experiență interactivă și educativă, unde vom putea admira
+                  exponate fascinante, să învățăm despre diversitatea speciilor
+                  de plante și animale, precum și să ne aventurăm în tainele
+                  universului prin expoziții dedicate astronomiei și cosmosului.
+                  Această excursie este deschisă pentru toți elevii și părinții
+                  care doresc să participe și să petreacă o zi memorabilă în
+                  mijlocul naturii și al cunoașterii. Pentru detalii
+                  suplimentare și pentru a vă înscrie, vă rugăm să vă adresați
+                  profesorilor coordonatori sau să consultați afișele de pe
+                  panoul de informații. Cu anticipație, Echipa Gimnaziului Mitoc
+                </p>
+                <button class="read-more-btn">Read More</button>
+              </div>
+              <a class="bnt-more" href="javascript:void(0)">Detalii</a>
             </div>
           </div>
           <div class="timeline-item">
@@ -360,8 +391,23 @@
                 <h2>Test de Geometrie</h2>
               </div>
               <div class="date">30 mai 2024</div>
-              <p>Pregătiți-vă pentru testul de geometrie.</p>
-              <a class="bnt-more" href="javascript:void(0)">More</a>
+              <div class="text-container">
+                <p class="text">
+                  Dragi elevi, Vă informăm că în curând va avea loc un test
+                  important de Geometrie pentru clasele noastre de gimnaziu.
+                  Acest test va evalua cunoștințele voastre în domeniul
+                  geometriei și va fi un moment oportun pentru a vă demonstra
+                  abilitățile și înțelegerea conceptelor studiate. Pentru a vă
+                  pregăti în mod corespunzător pentru acest test, vă recomandăm
+                  să revizuiți materialele și exercițiile din manualul de
+                  geometrie și să participați activ la orele de pregătire. Vă
+                  dorim tuturor mult succes și vă încurajăm să vă dedicați
+                  învățării și să dați tot ce aveți mai bun în timpul acestui
+                  test de Geometrie! Cu stimă, Echipa Gimnaziului Mitoc
+                </p>
+                <button class="read-more-btn">Read More</button>
+              </div>
+              <a class="bnt-more" href="javascript:void(0)">Detalii</a>
             </div>
           </div>
           <div class="timeline-item">
@@ -372,11 +418,21 @@
                 <h2>Seara Talentelor</h2>
               </div>
               <div class="date">15 iunie 2024</div>
-              <p>
-                O oportunitate pentru elevi de a-și prezenta talentele
-                artistice.
-              </p>
-              <a class="bnt-more" href="javascript:void(0)">More</a>
+              <div class="text-container">
+                <p class="text">
+                  Vino să fii martorul unui spectacol extraordinar al talentului
+                  și creativității noastre! Te invităm să te alături nouă într-o
+                  seară plină de emoție și diversitate, unde elevii noștri vor
+                  străluci pe scenă! De la dans la muzică, teatru la poezie și
+                  multe alte surprize, vei fi captivat de talentul excepțional
+                  al elevilor noștri.Intrarea este liberă pentru toți cei care
+                  doresc să se bucure de această seară specială. Vino și
+                  susține-ți colegii într-o atmosferă plină de entuziasm și
+                  admirație! Te așteptăm cu drag!
+                </p>
+                <button class="read-more-btn">Read More</button>
+              </div>
+              <a class="bnt-more" href="javascript:void(0)">Detalii</a>
             </div>
           </div>
           <div class="timeline-item">
@@ -387,119 +443,253 @@
                 <h2>Balul de absolvire</h2>
               </div>
               <div class="date">29 iunie 2024</div>
-              <p>
-                Dragi absolvenți ai clasei a 9-a, părinți, profesori și
-                prieteni, Suntem încântați să vă invităm să vă alăturați nouă
-                într-o seară de sărbătoare și emoție, în cadrul balului de
-                absolvire al clasei a 9-a a Gimnaziului Mitoc. Această ocazie
-                specială marchează sfârșitul unei etape importante în viața
-                noastră școlară și începutul unei noi aventuri. Ne dorim să
-                celebrăm împreună parcursul nostru academic și să creăm amintiri
-                de neuitat în cadrul acestui eveniment deosebit.
-              </p>
-              <a class="bnt-more" href="javascript:void(0)">More</a>
+              <div class="text-container">
+                <p class="text">
+                  Dragi elevi, părinți și cadre didactice, Este momentul să
+                  celebrăm împreună reușita și eforturile depuse în parcursul
+                  nostru școlar! Vă invităm cu căldură să luați parte la Balul
+                  de Absolvire al Clasei a IX-a de la Gimnaziul Mitoc, un
+                  eveniment de neuitat în care vom marca trecerea noastră într-o
+                  nouă etapă a vieții. Îi invităm pe părinți și profesori să ni
+                  se alăture în acest moment de sărbătoare și să ne
+                  împărtășească bucuria reușitei noastre. Vă așteptăm cu drag să
+                  ne împărtășim împreună amintiri și să sărbătorim începutul
+                  unei noi călătorii în viață! Cu respect și recunoștință,
+                  Elevii clasei a IX-a și echipa Gimnaziului Mitoc
+                </p>
+                <button class="read-more-btn">Read More</button>
+              </div>
+              <a class="bnt-more" href="javascript:void(0)">Detalii</a>
             </div>
           </div>
         </div>
       </section>
     </div>
     <!-- -------------------------------------------------------------------------------------------------------------------------------- -->
-    <!--                                                              sectiunea info  swiper                                              -->
+    <!--                                                              sectiunea testimonials                                              -->
     <!-- -------------------------------------------------------------------------------------------------------------------------------- -->
 
-    <div id="info-events" class="container-sectiune flex">
+    <div id="recenzii" class="container-sectiune flex">
       <div class="slider-container">
-        <h2>Evenimente și anunțuri</h2>
-        <div id="info_swiper" class="swiper">
+        <h2>Ce spun alții despre noi</h2>
+        <div id="swiper_recenzii" class="swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
-              <img src="./img/img-upcoming/olimpiada-matematica.png" />
-              <div class="slide-overlay">
-                <h3>Eveniment: Olimpiada de Matematică</h3>
-                <p>Data: 25 mai 2024</p>
-                <p>
-                  Descriere: Pregătiți-vă pentru olimpiada anuală de matematică.
-                </p>
-                <button>Detalii <i class="fa-solid fa-circle-info"></i></button>
+              <div class="recenzie">
+                <div class="recenzie-text">
+                  <p>
+                    Mega mulțumit de ce se întâmplă cu copilul meu la Gimnaziul
+                    Mitoc! Profesorii își știu treaba și fac orele super
+                    interesante, iar copilul meu e mega încântat să meargă la
+                    școală în fiecare zi. Nu vine acasă doar cu teme, ci și cu
+                    povești despre tot felul de proiecte cool pe care le fac la
+                    școală.
+                  </p>
+                  <i class="fas fa-quote-right"></i>
+                </div>
+                <div class="recenzie-info">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/32.jpg"
+                    alt="persoana"
+                  />
+                  <h3>
+                    Alexei -
+                    <span class="functie-persoana-recenzie"
+                      >tată elevă cl.III-a</span
+                    >
+                  </h3>
+                  <h4>școală geniala pentru puștoaica mea!</h4>
+                </div>
               </div>
             </div>
             <div class="swiper-slide">
-              <img src="./img/img-upcoming/test_geometrie.png" />
-              <div class="slide-overlay">
-                <h3>Examen: Test de Geometrie</h3>
-                <p>Data: 30 mai 2024</p>
-                <p>Descriere: Pregătiți-vă pentru testul de geometrie.</p>
-                <button>
-                  Listen Now <i class="fa-solid fa-circle-info"></i>
-                </button>
+              <div class="recenzie">
+                <div class="recenzie-text">
+                  <p>
+                    Sincer, sunt convinsă că la Mitoc puștiul meu are parte de
+                    tot ce îi trebuie ca să ajungă departe. Recomand din toată
+                    inima școala asta oricărui părinte care caută o școală bună
+                    pentru copilul lui.
+                  </p>
+                  <i class="fas fa-quote-right"></i>
+                </div>
+                <div class="recenzie-info">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/44.jpg"
+                    alt="persoana"
+                  />
+                  <h3>
+                    Elena -
+                    <span class="functie-persoana-recenzie"
+                      >mamă elev cl.III-a</span
+                    >
+                  </h3>
+                  <h4>și-a făcut prieteni pe viață!</h4>
+                </div>
               </div>
             </div>
             <div class="swiper-slide">
-              <img src="./img/img-upcoming/muzeu-natural.png" />
-              <div class="slide-overlay">
-                <h3>Anunț: Excursie Școlară</h3>
-                <p>Data: 10 iunie 2024</p>
-                <p>Descriere: Excursie la muzeul de științe naturale.</p>
-                <button>Detalii <i class="fa-solid fa-circle-info"></i></button>
+              <div class="recenzie">
+                <div class="recenzie-text">
+                  <p>
+                    La Mitoc, elevii se simt în siguranță și pot să întrebe
+                    orice fără să îi tragă nimeni la răspundere. Profesorii fac
+                    orele foarte interesante și îi învață pe copii să gândească
+                    singuri, nu doar să zubrească. Programul de la Mitoc e
+                    gândit să îi pregătească pe elevi pentru orice vine după ce
+                    vor termina școala.
+                  </p>
+                  <i class="fas fa-quote-right"></i>
+                </div>
+                <div class="recenzie-info">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/15.jpg"
+                    alt="persoana"
+                  />
+                  <h3>
+                    Tudor -
+                    <span class="functie-persoana-recenzie"
+                      >tată elev cl.VIII-a</span
+                    >
+                  </h3>
+                  <h4>ma bucur pentru fiul meu!</h4>
+                </div>
               </div>
             </div>
             <div class="swiper-slide">
-              <img src="./img/img-upcoming/seara-talentelor.png" />
-              <div class="slide-overlay">
-                <h3>Eveniment: Seara Talentelor</h3>
-                <p>Data: 15 iunie 2024</p>
-                <p>
-                  Descriere: O oportunitate pentru elevi de a-și prezenta
-                  talentele artistice.
-                </p>
-                <button>
-                  Listen Now <i class="fa-solid fa-circle-info"></i>
-                </button>
+              <div class="recenzie">
+                <div class="recenzie-text">
+                  <p>
+                    Copiii mei merg la Mitoc de 2 ani și sunt mega mulțumiți.
+                    Profesorii sunt tari și îi învață tot ce trebuie, dar și fac
+                    orele distractive. Au o grămadă de activități după școală
+                    unde își pot face prieteni și pot învăța tot felul de
+                    chestii noi. Recomand cu drag!
+                  </p>
+                  <i class="fas fa-quote-right"></i>
+                </div>
+                <div class="recenzie-info">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/50.jpg"
+                    alt="persoana"
+                  />
+                  <h3>
+                    Anastasia -
+                    <span class="functie-persoana-recenzie"
+                      >mamă elev cl.III-a si a VI-a</span
+                    >
+                  </h3>
+                  <h4>Super tare!</h4>
+                </div>
               </div>
             </div>
             <div class="swiper-slide">
-              <img src="./img/img-upcoming/seara-talentelor.png" />
-              <div class="slide-overlay">
-                <h3>Eveniment: Seara Talentelor</h3>
-                <p>Data: 15 iunie 2024</p>
-                <p>
-                  Descriere: O oportunitate pentru elevi de a-și prezenta
-                  talentele artistice.
-                </p>
-                <button>
-                  Listen Now <i class="fa-solid fa-circle-info"></i>
-                </button>
+              <div class="recenzie">
+                <div class="recenzie-text">
+                  <p>
+                    Sunt super mulțumită de educația pe care o primește fiica
+                    mea la Mitoc. Profesorii sunt dedicați și o ajută să învețe
+                    tot ce are nevoie pentru a avea succes în viață. Atmosfera e
+                    prietenoasă și elevii se simt în siguranță. Recomand din tot
+                    sufletul!
+                  </p>
+                  <i class="fas fa-quote-right"></i>
+                </div>
+                <div class="recenzie-info">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/41.jpg"
+                    alt="persoana"
+                  />
+                  <h3>
+                    Larisa -
+                    <span class="functie-persoana-recenzie"
+                      >mamă elevă cl.v-a</span
+                    >
+                  </h3>
+                  <h4>O școală de nota 10!</h4>
+                </div>
               </div>
             </div>
             <div class="swiper-slide">
-              <img src="./img/img-upcoming/muzeu-natural.png" />
-              <div class="slide-overlay">
-                <h3>Anunț: Excursie Școlară</h3>
-                <p>Data: 10 iunie 2024</p>
-                <p>Descriere: Excursie la muzeul de științe naturale.</p>
-                <button>Detalii <i class="fa-solid fa-circle-info"></i></button>
+              <div class="recenzie">
+                <div class="recenzie-text">
+                  <p>
+                    Gimnaziul Mitoc nu e doar o școală, e o a doua familie
+                    pentru copilul meu. Aici a învățat nu doar materii, ci și
+                    cum să fie un om bun și cum să își urmeze visurile.
+                    Profesorii sunt minunați, iar elevii se simt apreciați și
+                    încurajați. Recomand cu încredere!
+                  </p>
+                  <i class="fas fa-quote-right"></i>
+                </div>
+                <div class="recenzie-info">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/25.jpg"
+                    alt="persoana"
+                  />
+                  <h3>
+                    Raisa -
+                    <span class="functie-persoana-recenzie"
+                      >mamă elev cl.II-a</span
+                    >
+                  </h3>
+                  <h4>Mai mult decât o școală!</h4>
+                </div>
               </div>
             </div>
             <div class="swiper-slide">
-              <img src="./img/img-upcoming/test_geometrie.png" />
-              <div class="slide-overlay">
-                <h3>Examen: Test de Geometrie</h3>
-                <p>Data: 30 mai 2024</p>
-                <p>Descriere: Pregătiți-vă pentru testul de geometrie.</p>
-                <button>
-                  Listen Now <i class="fa-solid fa-circle-info"></i>
-                </button>
+              <div class="recenzie">
+                <div class="recenzie-text">
+                  <p>
+                    Cel mai important lucru pentru mine e ca fiul meu să fie
+                    fericit, iar la Mitoc e mereu cu zâmbetul pe buze. Îi place
+                    să meargă la școală, are mulți prieteni și învață o grămadă
+                    de lucruri interesante. Nu pot decât să mulțumesc
+                    profesorilor pentru tot ce fac!
+                  </p>
+                  <i class="fas fa-quote-right"></i>
+                </div>
+                <div class="recenzie-info">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/43.jpg"
+                    alt="persoana"
+                  />
+                  <h3>
+                    Andrei -
+                    <span class="functie-persoana-recenzie"
+                      >tată elev cl.VIII-a</span
+                    >
+                  </h3>
+                  <h4>școală geniala pentru puștoaica mea!</h4>
+                </div>
               </div>
             </div>
             <div class="swiper-slide">
-              <img src="./img/img-upcoming/olimpiada-matematica.png" />
-              <div class="slide-overlay">
-                <h3>Eveniment: Olimpiada de Matematică</h3>
-                <p>Data: 25 mai 2024</p>
-                <p>
-                  Descriere: Pregătiți-vă pentru olimpiada anuală de matematică.
-                </p>
-                <button>Detalii <i class="fa-solid fa-circle-info"></i></button>
+              <div class="recenzie">
+                <div class="recenzie-text">
+                  <p>
+                    Am ales Gimnaziul Mitoc pentru educația de calitate pe care
+                    o oferă și nu am regretat nicio clipă. Copilul meu se
+                    dezvoltă armonios, învață cu ușurință și e pregătit pentru
+                    orice provocare. Recomand cu încredere această școală
+                    tuturor părinților care vor tot ce e mai bun pentru copiii
+                    lor!
+                  </p>
+                  <i class="fas fa-quote-right"></i>
+                </div>
+                <div class="recenzie-info">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/55.jpg"
+                    alt="persoana"
+                  />
+                  <h3>
+                    Elena -
+                    <span class="functie-persoana-recenzie"
+                      >mamă elev cl.V-a</span
+                    >
+                  </h3>
+                  <h4>Nu regret alegerea!</h4>
+                </div>
               </div>
             </div>
           </div>
