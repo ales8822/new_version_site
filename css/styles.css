@@ -435,9 +435,7 @@ stiluri butnul de contact
   min-height: 100px;
   max-height: 150px;
 }
-.rotated180 {
-  /* transform: rotate(180deg); */
-}
+
 .rotated180 > .parallax > use {
   animation: none;
 }

@@ -37,18 +37,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   $(document).ready(function () {
     $(".nav-link").click(function (event) {
-      // Prevent default action for dropdown toggle (if applicable)
       if ($(this).hasClass("dropdown")) {
         event.preventDefault();
       }
 
-      // Remove "active" class from all .nav-link elements
+      // Remove "active" class din toate .nav-link elemente
       $(".nav-link").removeClass("active");
 
-      // Add "active" class to the clicked .nav-link element
+      // Adauga "active" class la clicked .nav-link element
       $(this).addClass("active");
     });
-    // read more
+    // citeste mai multe informatii despre un anumit eveniment
     $(".read-more-btn").click(function () {
       var $textContainer = $(this).closest(".text-container");
       $textContainer.toggleClass("expanded");
@@ -155,19 +154,14 @@ const dropdowns = document.querySelectorAll(".dropdown");
 // Selectează link-ul principal din fiecare dropdown
 const mainLink = document.querySelectorAll(".dropdown a");
 
-// Așteaptă ca conținutul DOM să fie complet încărcat
 document.addEventListener("DOMContentLoaded", function () {
   // Parcurge fiecare element dropdown
   dropdowns.forEach((dropdown) => {
-    // Adaugă un ascultător de evenimente de click pentru fiecare dropdown
     dropdown.addEventListener("click", function (event) {
-      // Schimbă culoarea de fundal a dropdown-ului când este apăsat
       dropdown.style.background = "rgba(0, 0, 0, 0.1)";
 
-      // Schimbă bordura de jos a link-ului principal când dropdown-ul este apăsat
       mainLink[0].style.borderBottom = "2px solid rgba(0, 0, 0, 0.1)";
 
-      // Împiedică evenimentul de click să se propage la document
       event.stopPropagation();
 
       // Găsește conținutul dropdown-ului în dropdown-ul apăsat
@@ -175,16 +169,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // Verifică lățimea ferestrei pentru responsivitate
       if (window.innerWidth <= 991) {
-        // Comută afișarea conținutului dropdown-ului pentru ecrane mai mici
         toggleDropdown(dropdownContent);
 
-        // Setează poziția dropdown-ului la static pentru ecrane mai mici
         dropdown.style.position = "static";
       } else {
         // Setează poziția dropdown-ului la relativ pentru ecrane mai mari
         dropdown.style.position = "relative";
 
-        // Comută afișarea conținutului dropdown-ului pentru ecrane mai mari
         if (
           dropdownContent.style.display === "none" ||
           dropdownContent.style.display === ""
@@ -194,10 +185,8 @@ document.addEventListener("DOMContentLoaded", function () {
         } else {
           dropdownContent.style.display = "none";
 
-          // Resetează culoarea de fundal a dropdown-ului când este închis
           dropdown.style.background = "transparent";
 
-          // Resetează bordura de jos a link-ului principal când se închide dropdown-ul
           mainLink[0].style.borderBottom = "none";
         }
       }

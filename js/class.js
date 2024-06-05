@@ -1,25 +1,18 @@
-$(document).ready(function () {
-  // Initialize Swiper
-  var swiper = new Swiper(".mySwiper", {
-    direction: "vertical",
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-  });
-});
-// Get the schedule container element
+$(document).ready(function () {});
+
+// ------------------------------------------------------------------------------------- Orar  -------------------------------------------------------------
+
 var scheduleContainer = $("#schedule-container");
 
-// Get the current date and day
+// obtine data si ziua de azi
 var currentDate = new Date();
 var currentDay = currentDate.toLocaleDateString("ro-RO", { weekday: "long" });
 currentDay = capitalizeFirstLetter(currentDay);
-
+// prima litera sa fie majuscula pentru a coincide cu ziua de azi
 function capitalizeFirstLetter(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
-// Function to check if current time is within a range
+// functie pentru a verifica daca suntem in intervalul de timp necesar
 function isCurrentTimeInRange(start, end) {
   var currentHour = currentDate.getHours();
   var currentMinutes = currentDate.getMinutes();
@@ -29,7 +22,7 @@ function isCurrentTimeInRange(start, end) {
   return currentTime >= startTime && currentTime <= endTime;
 }
 
-// Function to create schedule for a specific class
+// Functie pentru a crea orarul
 function createSchedule(grade) {
   var clasa = orarClasele.filter(function (c) {
     return c.clasa === grade;
@@ -97,5 +90,3 @@ function createSchedule(grade) {
 
   scheduleContainer.append(classDiv);
 }
-//   // Create schedule for a specific class, e.g., "VII-a"
-//   createSchedule("VII-a");
