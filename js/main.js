@@ -1,64 +1,70 @@
-// --------------------------------------------------------------------------------------------------------------------------------------------------------------
+$(document).ready(function () {
+  // ------------------------------------------------------------------------------------- navigarea mobila -------------------------------------------------------------
+  const navMenu = $(".nav-menu");
+  const navToggle = $(".mob-nav-toggle");
+  const navLinks = $(".nav-link");
 
-//                                                                  primary navigation
-
-// --------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-const navMenu = document.querySelector(".nav-menu");
-const navToggle = document.querySelector(".mob-nav-toggle");
-const navLinks = document.querySelectorAll(".nav-link");
-
-navLinks.forEach((link) => {
-  link.addEventListener("click", () => {
-    if (link.id !== "clasa-drop-link") {
-      navMenu.setAttribute("data-visible", "false");
-      navToggle.setAttribute("aria-extended", "false");
+  navLinks.on("click", function () {
+    if (this.id !== "clasa-drop-link") {
+      navMenu.attr("data-visible", "false");
+      navToggle.attr("aria-extended", "false");
     }
   });
-});
 
-navToggle.addEventListener("click", () => {
-  const visibil = navMenu.getAttribute("data-visible");
-  if (visibil === "false") {
-    navMenu.setAttribute("data-visible", "true");
-    navToggle.setAttribute("aria-extended", "true");
-  } else {
-    navMenu.setAttribute("data-visible", "false");
-    navToggle.setAttribute("aria-extended", "false");
+  navToggle.on("click", function () {
+    const visibil = navMenu.attr("data-visible");
+    if (visibil === "false") {
+      navMenu.attr("data-visible", "true");
+      navToggle.attr("aria-extended", "true");
+    } else {
+      navMenu.attr("data-visible", "false");
+      navToggle.attr("aria-extended", "false");
+    }
+  });
+  // ------------------------------------------------------------------------------------- Smooth scroll ptr link-uri --------------------------------------------------------
+  $("nav a").on("click", smoothScroll);
+
+  function smoothScroll(event) {
+    const targetHref = event.currentTarget.getAttribute("href");
+
+    // verifie daca linkul e localizat in afara site-ului
+    if (
+      targetHref.startsWith("#") &&
+      event.currentTarget.id !== "clasa-drop-link"
+    ) {
+      event.preventDefault();
+      const targetId = targetHref.substring(1);
+      const targetSection = document.getElementById(targetId);
+
+      // verifica daca sectiunea cu id-ul dat exista
+      if (targetSection) {
+        const offsetTop = targetSection.offsetTop;
+        window.scrollTo({
+          top: offsetTop,
+          behavior: "smooth",
+        });
+      }
+    }
   }
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const links = document.querySelectorAll("nav a");
-
-  links.forEach((link) => {
-    link.addEventListener("click", smoothScroll);
+  $(".nav-link").click(function (event) {
+    if ($(this).hasClass("dropdown")) {
+      event.preventDefault();
+    }
+    $(".nav-link").removeClass("active");
+    $(this).addClass("active");
   });
 
-  $(document).ready(function () {
-    $(".nav-link").click(function (event) {
-      if ($(this).hasClass("dropdown")) {
-        event.preventDefault();
-      }
-
-      // Remove "active" class din toate .nav-link elemente
-      $(".nav-link").removeClass("active");
-
-      // Adauga "active" class la clicked .nav-link element
-      $(this).addClass("active");
-    });
-    // citeste mai multe informatii despre un anumit eveniment
-    $(".read-more-btn").click(function () {
-      var $textContainer = $(this).closest(".text-container");
-      $textContainer.toggleClass("expanded");
-      if ($textContainer.hasClass("expanded")) {
-        $(this).text("Read Less");
-      } else {
-        $(this).text("Read More");
-      }
-    });
+  $(".read-more-btn").click(function () {
+    var $textContainer = $(this).closest(".text-container");
+    $textContainer.toggleClass("expanded");
+    if ($textContainer.hasClass("expanded")) {
+      $(this).text("Read Less");
+    } else {
+      $(this).text("Read More");
+    }
   });
-  // -------------------------------------------------------------------------- info-swiper initializare
+
+  // ------------------------------------------------------------------------------------- Initializarea swipere-lor --------------------------------------------------------
   var swiper1 = new Swiper("#swiper_recenzii", {
     effect: "coverflow",
     grabCursor: true,
@@ -66,10 +72,6 @@ document.addEventListener("DOMContentLoaded", function () {
     loop: true,
     speed: 400,
     slidesPerView: "auto",
-    // autoplay: {
-    //   delay: 3000,
-    //   disableOnInteraction: false,
-    // },
     coverflowEffect: {
       rotate: 1,
       stretch: 150,
@@ -82,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     on: {
       click(event) {
-        swiper.slideTo(this.clickedIndex);
+        swiper1.slideTo(this.clickedIndex);
       },
     },
     pagination: {
@@ -90,9 +92,7 @@ document.addEventListener("DOMContentLoaded", function () {
       clickable: true,
     },
   });
-  //   end swiper
 
-  //   info-swiper initializare
   var event_swiper = new Swiper(".imagine-eveniment", {
     effect: "slide",
     grabCursor: true,
@@ -101,7 +101,6 @@ document.addEventListener("DOMContentLoaded", function () {
     speed: 400,
     slidesPerView: "auto",
     spaceBetween: 30,
-
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev",
@@ -111,252 +110,160 @@ document.addEventListener("DOMContentLoaded", function () {
       clickable: true,
     },
   });
-  // ---------------------------------------------------------------------------------------------  end swiper
-});
-// smooth scroll pentru linkuri
-function smoothScroll(event) {
-  const targetHref = event.currentTarget.getAttribute("href");
 
-  // Check if the link is an internal link and not the dropdown link
-  if (
-    targetHref.startsWith("#") &&
-    event.currentTarget.id !== "clasa-drop-link"
-  ) {
-    event.preventDefault();
-    const targetId = targetHref.substring(1);
-    const targetSection = document.getElementById(targetId);
+  // ------------------------------------------------------------------------------------- Dropdown menu -------------------------------------------------------------
+  const dropdowns = $(".dropdown");
+  const mainLink = $(".dropdown a");
 
-    // Check if the target section exists
-    if (targetSection) {
-      const offsetTop = targetSection.offsetTop;
-      window.scrollTo({
-        top: offsetTop,
-        behavior: "smooth",
+  dropdowns.on("click", function (event) {
+    $(this).css("background", "rgba(0, 0, 0, 0.1)");
+    mainLink.first().css("borderBottom", "2px solid rgba(0, 0, 0, 0.1)");
+    event.stopPropagation();
+
+    const dropdownContent = $(this).find(".dropdown-content");
+
+    if (window.innerWidth <= 991) {
+      toggleDropdown(dropdownContent);
+      $(this).css("position", "static");
+    } else {
+      $(this).css("position", "relative");
+      if (
+        dropdownContent.css("display") === "none" ||
+        dropdownContent.css("display") === ""
+      ) {
+        closeAllDropdowns();
+        dropdownContent.css("display", "flex");
+      } else {
+        dropdownContent.css("display", "none");
+        $(this).css("background", "transparent");
+        mainLink.first().css("borderBottom", "none");
+      }
+    }
+  });
+
+  function toggleDropdown(dropdownContent) {
+    dropdownContent.css(
+      "display",
+      dropdownContent.css("display") === "flex" ? "none" : "flex"
+    );
+  }
+
+  function closeAllDropdowns() {
+    $(".dropdown-content").css("display", "none");
+  }
+
+  $(window).on("click", function (event) {
+    if (!$(event.target).closest(".dropdown").length) {
+      dropdowns.css("background", "transparent");
+      mainLink.first().css("borderBottom", "none");
+      closeAllDropdowns();
+    }
+  });
+
+  // ------------------------------------------------------------------------------------- Show form -------------------------------------------------------------
+  let formWrapper = $(".form-wrapper").first();
+
+  window.show_form = function () {
+    console.log(formWrapper);
+    formWrapper.css("display", "flex");
+  };
+
+  window.del = function () {
+    formWrapper.css("display", "none");
+  };
+  // validarea formei de contact
+  const name = $("#name");
+  const email = $("#email");
+  const message = $("#message");
+  const contactForm = $("#contact-form");
+  const errorElement = $("#error");
+  const successMsg = $("#success-msg");
+  const submitBtn = $("#submit");
+
+  const validate = (e) => {
+    e.preventDefault();
+
+    if (name.val().length < 3) {
+      errorElement.html("Numele trebuie sa contina cel putin 3 caractere.");
+      return false;
+    }
+
+    if (!(email.val().includes(".") && email.val().includes("@"))) {
+      errorElement.html("Va rugăm introduceți un email valid.");
+      return false;
+    }
+
+    if (!emailIsValid(email.val())) {
+      errorElement.html("Va rugăm introduceți un email valid.");
+      return false;
+    }
+
+    if (message.val().length < 15) {
+      errorElement.html(
+        "Vă rugăm introduceți un mesaj mai lung de 15 caractere."
+      );
+      return false;
+    }
+
+    errorElement.html("");
+    sendEmail(name.val(), email.val(), message.val());
+    return true;
+  };
+
+  const emailIsValid = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
+  const sendEmail = (name, email, message) => {
+    $.ajax({
+      type: "POST",
+      url: "http://school-site.atwebpages.com/send_email.php",
+      data: { name: name, email: email, message: message },
+      success: function (response) {
+        successMsg.html(response);
+        setTimeout(function () {
+          successMsg.html("");
+          contactForm[0].reset();
+        }, 6000);
+      },
+    });
+  };
+
+  submitBtn.on("click", validate);
+
+  // ------------------------------------------------------------------------------------- Sticky navbar --------------------------------------------------------------------- //
+  const navBar = $(".nav-interna");
+  const heroSection = $("#hero");
+
+  function handleScroll() {
+    const heroBottom = heroSection[0].getBoundingClientRect().bottom;
+
+    if (heroBottom <= 0) {
+      navBar.css({
+        position: "fixed",
+        background: "linear-gradient(60deg, #543ab7 0%, #00acc1 100%)",
+      });
+    } else {
+      navBar.css({
+        position: "absolute",
+        background: "transparent",
+        borderBottom: "none",
       });
     }
   }
-}
 
-// Attach smooth scroll to internal links
-document.addEventListener("DOMContentLoaded", function () {
-  const links = document.querySelectorAll("nav a");
-
-  links.forEach((link) => {
-    link.addEventListener("click", smoothScroll);
-  });
-});
-
-// dropdown
-
-// Selectează toate elementele cu clasa "dropdown"
-const dropdowns = document.querySelectorAll(".dropdown");
-
-// Selectează link-ul principal din fiecare dropdown
-const mainLink = document.querySelectorAll(".dropdown a");
-
-document.addEventListener("DOMContentLoaded", function () {
-  // Parcurge fiecare element dropdown
-  dropdowns.forEach((dropdown) => {
-    dropdown.addEventListener("click", function (event) {
-      dropdown.style.background = "rgba(0, 0, 0, 0.1)";
-
-      mainLink[0].style.borderBottom = "2px solid rgba(0, 0, 0, 0.1)";
-
-      event.stopPropagation();
-
-      // Găsește conținutul dropdown-ului în dropdown-ul apăsat
-      const dropdownContent = this.querySelector(".dropdown-content");
-
-      // Verifică lățimea ferestrei pentru responsivitate
-      if (window.innerWidth <= 991) {
-        toggleDropdown(dropdownContent);
-
-        dropdown.style.position = "static";
-      } else {
-        // Setează poziția dropdown-ului la relativ pentru ecrane mai mari
-        dropdown.style.position = "relative";
-
-        if (
-          dropdownContent.style.display === "none" ||
-          dropdownContent.style.display === ""
-        ) {
-          closeAllDropdowns();
-          dropdownContent.style.display = "flex";
-        } else {
-          dropdownContent.style.display = "none";
-
-          dropdown.style.background = "transparent";
-
-          mainLink[0].style.borderBottom = "none";
-        }
-      }
-    });
-  });
-
-  // Funcție pentru a comuta afișarea conținutului dropdown-ului
-  function toggleDropdown(dropdownContent) {
-    dropdownContent.style.display =
-      dropdownContent.style.display === "flex" ? "none" : "flex";
-  }
-
-  // Funcție pentru a închide toate dropdown-urile
-  function closeAllDropdowns() {
-    dropdowns.forEach((dropdown) => {
-      dropdown.querySelector(".dropdown-content").style.display = "none";
-    });
-  }
-
-  // Închide dropdown-urile când se face clic în afara lor
-  window.onclick = function (event) {
-    if (!event.target.matches(".dropdown")) {
-      dropdowns[0].style.background = "transparent";
-      mainLink[0].style.borderBottom = "none";
-      closeAllDropdowns();
-    }
-  };
-});
-
-// --------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-//                                                                  show contact form
-
-// --------------------------------------------------------------------------------------------------------------------------------------------------------------
-let formWrapper = document.getElementsByClassName("form-wrapper")[0];
-
-function show_form() {
-  console.log(formWrapper);
-  formWrapper.style.display = "flex";
-}
-
-// formWrapper.addEventListener("click", function (event) {
-//   // Check if the clicked element is the formWrapper itself
-//   if (event.target === formWrapper) {
-//     del();
-//   } else {
-//     return;
-//   }
-// });
-
-function del() {
-  formWrapper.style.display = "none";
-}
-
-// validarea formei de contact
-
-const name = document.getElementById("name");
-const email = document.getElementById("email");
-const message = document.getElementById("message");
-const contactForm = document.getElementById("contact-form");
-const errorElement = document.getElementById("error");
-const successMsg = document.getElementById("success-msg");
-const submitBtn = document.getElementById("submit");
-
-const validate = (e) => {
-  e.preventDefault();
-
-  if (name.value.length < 3) {
-    errorElement.innerHTML = "Numele trebuie sa contina cel putin 3 caractere.";
-    return false;
-  }
-
-  if (!(email.value.includes(".") && email.value.includes("@"))) {
-    errorElement.innerHTML = "Va rugăm introduceți un email valid.";
-    return false;
-  }
-
-  if (!emailIsValid(email.value)) {
-    errorElement.innerHTML = "Va rugăm introduceți un email valid.";
-    return false;
-  }
-
-  if (message.value.length < 15) {
-    errorElement.innerHTML =
-      "Vă rugăm introduceți un mesaj mai lung de 15 caractere.";
-    return false;
-  }
-
-  errorElement.innerHTML = "";
-  //   successMsg.innerHTML = "Muțumim pentru mesaj! Vom reveni în curând.";
-
-  sendEmail(name.value, email.value, message.value);
-  return true;
-};
-
-const emailIsValid = (email) => {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-};
-
-const sendEmail = (name, email, message) => {
-  const xhr = new XMLHttpRequest();
-  xhr.open("POST", "http://school-site.atwebpages.com/send_email.php", true);
-  xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      successMsg.innerHTML = xhr.responseText;
-      setTimeout(function () {
-        successMsg.innerHTML = "";
-        document.getElementById("contact-form").reset();
-      }, 6000);
-    }
-  };
-  xhr.send(`name=${name}&email=${email}&message=${message}`);
-};
-
-submitBtn.addEventListener("click", validate);
-
-// ------------------------------------------------------------------------ end show contact form --------------------------------------------------------------
-
-// --------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-//                                                                  sticky nav bar
-
-// --------------------------------------------------------------------------------------------------------------------------------------------------------------
-document.addEventListener("DOMContentLoaded", () => {
-  const navBar = document.querySelector(".nav-interna");
-  const heroSection = document.getElementById("hero");
-
-  // Function to handle scroll event
-  function handleScroll() {
-    const heroBottom = heroSection.getBoundingClientRect().bottom;
-
-    if (heroBottom <= 0) {
-      // User has scrolled past the hero section
-      navBar.style.position = "fixed";
-      navBar.style.background =
-        "linear-gradient(60deg, #543ab7 0%, #00acc1 100%)";
-      //   navBar.style.borderBottom = "1px solid #f8f8f8";
-    } else {
-      // User is within the hero section
-      navBar.style.position = "absolute";
-      navBar.style.background = "transparent";
-      navBar.style.borderBottom = "none";
-    }
-  }
-
-  // Add the scroll event listener
-  window.addEventListener("scroll", handleScroll);
-
-  // Initial call to handleScroll to set the initial state correctly
+  $(window).on("scroll", handleScroll);
   handleScroll();
-});
-// ----------------------------------------------------------- end sticky navbar--------------------------------------------------------------------------------
 
-// --------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-//                                                                  time line
-
-// --------------------------------------------------------------------------------------------------------------------------------------------------------------
-document.addEventListener("DOMContentLoaded", function () {
+  // ------------------------------------------------------------------------------------- Timeline animatie -------------------------------------------------------------
   const sr = ScrollReveal();
-
-  const timelineContent = document.querySelectorAll(".timeline-content");
+  const timelineContent = $(".timeline-content");
   const windowWidth = window.innerWidth;
 
   if (windowWidth < 768) {
-    timelineContent.forEach((item) => {
-      if (item.classList.contains("js--fadeInLeft")) {
-        item.classList.remove("js--fadeInLeft");
-        item.classList.add("js--fadeInRight");
+    timelineContent.each(function () {
+      if ($(this).hasClass("js--fadeInLeft")) {
+        $(this).removeClass("js--fadeInLeft").addClass("js--fadeInRight");
       }
     });
 
@@ -395,88 +302,77 @@ document.addEventListener("DOMContentLoaded", function () {
     easing: "ease-in-out",
     duration: 800,
   });
-});
-// ----------------------------------------------------------- end time-line------------------------------------------------------------------------------------
 
-// --------------------------------------------------------------------------------------------------------------------------------------------------------------
+  // ------------------------------------------------------------------------------------- Full screen gallery -------------------------------------------------------------
 
-//                                                                  evenimente trecute
+  let currentSlideIndex = 0;
+  let currentEventIndex = -1;
+  const events = {
+    0: [
+      "./img/img-evenimente/ziua_copiilor.jpg",
+      "./img/img-evenimente/ziua_copiilor2.jpg",
+      "./img/img-evenimente/directoarea.jpg",
+      "./img/img-evenimente/ziua_copiilor3.jpg",
+      "./img/img-evenimente/ziua_copiilor4.jpg",
+    ],
+    1: [
+      "./img/img-evenimente/stiinta.jpg",
+      "./img/img-evenimente/stiinta2.jpg",
+      "./img/img-evenimente/stiinta3.jpg",
+      "./img/img-evenimente/stiinta4.jpg",
+      "./img/img-evenimente/stiinta5.jpg",
+    ],
+    2: [
+      "./img/img-evenimente/miciiinv.jpg",
+      "./img/img-evenimente/miciiinv2.jpg",
+      "./img/img-evenimente/miciiinv3.jpg",
+      "./img/img-evenimente/miciiinv4.jpg",
+      "./img/img-evenimente/miciiinv5.jpg",
+    ],
+  };
+  window.openFullScreenGallery = function (eventIndex, imageIndex) {
+    console.log(eventIndex, imageIndex);
 
-// --------------------------------------------------------------------------------------------------------------------------------------------------------------
-// full screen gallery
+    currentEventIndex = eventIndex;
+    currentSlideIndex = imageIndex;
+    const gallery = $("#fullScreenGallery");
+    const galleryImage = $("#galleryImage");
 
-let currentSlideIndex = 0;
-let currentEventIndex = -1;
-const events = {
-  0: [
-    "./img/img-evenimente/ziua_copiilor.jpg",
-    "./img/img-evenimente/ziua_copiilor2.jpg",
-    "./img/img-evenimente/directoarea.jpg",
-    "./img/img-evenimente/ziua_copiilor3.jpg",
-    "./img/img-evenimente/ziua_copiilor4.jpg",
-  ],
-  1: [
-    "./img/img-evenimente/stiinta.jpg",
-    "./img/img-evenimente/stiinta2.jpg",
-    "./img/img-evenimente/stiinta3.jpg",
-    "./img/img-evenimente/stiinta4.jpg",
-    "./img/img-evenimente/stiinta5.jpg",
-  ],
-  2: [
-    "./img/img-evenimente/miciiinv.jpg",
-    "./img/img-evenimente/miciiinv2.jpg",
-    "./img/img-evenimente/miciiinv3.jpg",
-    "./img/img-evenimente/miciiinv4.jpg",
-    "./img/img-evenimente/miciiinv5.jpg",
-  ],
-};
-function openFullScreenGallery(eventIndex, imageIndex) {
-  console.log(eventIndex, imageIndex);
+    gallery.css("display", "block");
+    galleryImage.attr("src", events[currentEventIndex][currentSlideIndex]);
+    console.log(events[currentEventIndex][currentSlideIndex]);
+  };
 
-  currentEventIndex = eventIndex;
+  window.closeFullScreenGallery = function () {
+    const gallery = $("#fullScreenGallery");
+    gallery.css("display", "none");
+    currentEventIndex = -1;
+  };
 
-  currentSlideIndex = imageIndex;
-  const gallery = document.getElementById("fullScreenGallery");
-  const galleryImage = document.getElementById("galleryImage");
+  window.changeSlide = function (n) {
+    currentSlideIndex += n;
 
-  gallery.style.display = "block";
-  galleryImage.src = events[currentEventIndex][currentSlideIndex];
-  console.log(events[currentEventIndex][currentSlideIndex]);
-}
+    if (currentSlideIndex >= events[currentEventIndex].length) {
+      currentSlideIndex = 0;
+    } else if (currentSlideIndex < 0) {
+      currentSlideIndex = events[currentEventIndex].length - 1;
+    }
 
-function closeFullScreenGallery() {
-  const gallery = document.getElementById("fullScreenGallery");
-  gallery.style.display = "none";
-  currentEventIndex = -1;
-}
+    const galleryImage = $("#galleryImage");
+    galleryImage.attr("src", events[currentEventIndex][currentSlideIndex]);
+  };
 
-function changeSlide(n) {
-  currentSlideIndex += n;
-
-  if (currentSlideIndex >= events[currentEventIndex].length) {
-    currentSlideIndex = 0;
-  } else if (currentSlideIndex < 0) {
-    currentSlideIndex = events[currentEventIndex].length - 1;
-  }
-
-  const galleryImage = document.getElementById("galleryImage");
-  galleryImage.src = events[currentEventIndex][currentSlideIndex];
-}
-
-// svg waves not loading until touch of the screen problem
-// selectam valurile, punem temporar ddisplay none si apoi iarasi display block]
-// deoarece este o problema cu valurile care nu se pornesc pina nu atingi ecranul
-document.addEventListener("DOMContentLoaded", function () {
+  // ------------------------------------------------------------------------------------- waves problem -------------------------------------------------------------
+  //   uneori waves nu se afiseaza corect
+  //  de aceia dam ca un fel de reload la svg
   function forceSVGRerenderById(id) {
-    const svg = document.getElementById(id);
+    const svg = $("#" + id);
     if (svg) {
-      svg.style.display = "none";
-      svg.getBoundingClientRect();
-      svg.style.display = "block";
+      svg.css("display", "none");
+      svg[0].getBoundingClientRect();
+      svg.css("display", "block");
     }
   }
 
-  // Call the function with the ID of the SVG you want to re-render
   forceSVGRerenderById("wave1");
 });
-// orarul lectiilor
