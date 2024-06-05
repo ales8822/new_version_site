@@ -91,6 +91,7 @@ $(document).ready(function () {
       el: ".swiper-pagination",
       clickable: true,
     },
+    lazy: true,
   });
 
   var event_swiper = new Swiper(".imagine-eveniment", {
@@ -109,6 +110,7 @@ $(document).ready(function () {
       el: ".swiper-pagination",
       clickable: true,
     },
+    lazy: true,
   });
 
   // ------------------------------------------------------------------------------------- Dropdown menu -------------------------------------------------------------
