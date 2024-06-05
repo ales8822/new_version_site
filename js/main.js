@@ -238,18 +238,25 @@ $(document).ready(function () {
   const heroSection = $("#hero");
 
   function handleScroll() {
-    const heroBottom = heroSection[0].getBoundingClientRect().bottom;
+    if (heroSection.length) {
+      const heroBottom = heroSection[0].getBoundingClientRect().bottom;
 
-    if (heroBottom <= 0) {
+      if (heroBottom <= 0) {
+        navBar.css({
+          position: "fixed",
+          background: "linear-gradient(60deg, #543ab7 0%, #00acc1 100%)",
+        });
+      } else {
+        navBar.css({
+          position: "absolute",
+          background: "transparent",
+          borderBottom: "none",
+        });
+      }
+    } else {
       navBar.css({
         position: "fixed",
         background: "linear-gradient(60deg, #543ab7 0%, #00acc1 100%)",
-      });
-    } else {
-      navBar.css({
-        position: "absolute",
-        background: "transparent",
-        borderBottom: "none",
       });
     }
   }
@@ -369,10 +376,12 @@ $(document).ready(function () {
   //  de aceia dam ca un fel de reload la svg
   function forceSVGRerenderById(id) {
     const svg = $("#" + id);
-    if (svg) {
+    if (svg.length) {
       svg.css("display", "none");
       svg[0].getBoundingClientRect();
       svg.css("display", "block");
+    } else {
+      return;
     }
   }
 

@@ -50,8 +50,6 @@ function createSchedule(grade) {
 
     $.each(subjects, function (index, subject) {
       var li = $("<li>").text(subject);
-      console.log(day);
-      console.log(currentDay);
 
       if (day === currentDay) {
         var nextLessonStartTime = lessonTimes[index + 1]
