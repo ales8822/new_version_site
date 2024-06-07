@@ -69,6 +69,22 @@
       defer
     ></script>
     <script src="./js/main.js" defer></script>
+    <!-- link spre FB group deoarece pe telefoane mobile linkul se deschide in aplicatie si trebuie de accesat diferit-->
+    <script type="text/javascript">
+      function openFacebookGroup() {
+        var groupId = "451088663032706";
+        var deepLink = "fb://group/" + groupId;
+        var webLink = "https://www.facebook.com/groups/" + groupId;
+
+        // Attempt to open the deep link
+        window.location.href = deepLink;
+
+        // accesam FB deep link, asteptam 1s daca nu merge inseamna ca se deschide ca pe desktop
+        setTimeout(function () {
+          window.location.href = webLink;
+        }, 1000);
+      }
+    </script>
   </head>
 
   <body>
@@ -184,10 +200,7 @@
         <div class="corrector-header"></div>
         <!-- linkuri sociale -->
         <div class="linkuri-sociale-hero flex-column">
-          <a
-            href="http://www.facebook.com/groups/451088663032706/?locale=ro_RO"
-            title=""
-            class="mob-square-btn flex"
+          <a href="javascript:void(0);" onclick="openFacebookGroup()"
             ><i class="fa-brands fa-facebook"></i
           ></a>
           <a
@@ -1070,10 +1083,7 @@
             <i class="fa-brands fa-instagram fa-lg" aria-hidden="true"></i
             >&nbspInstagram</a
           >
-          <a
-            href="http://www.facebook.com/groups/451088663032706/?locale=ro_RO"
-            class="footer-link"
-          >
+          <a href="javascript:void(0);" onclick="openFacebookGroup()">
             <!-- iconita FB -->
             <i class="fa-brands fa-facebook" aria-hidden="true"></i
             >&nbspFacebook</a
