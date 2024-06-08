@@ -76,7 +76,7 @@
         var deepLink = "fb://group/" + groupId;
         var webLink = "https://www.facebook.com/groups/" + groupId;
 
-        // Attempt to open the deep link
+        // Incercam sa deschidem FB deep link, daca nu merge inseamna ca se deschide ca pe desktop
         window.location.href = deepLink;
 
         // accesam FB deep link, asteptam 1s daca nu merge inseamna ca se deschide ca pe desktop
@@ -125,7 +125,7 @@
           />
           <label for="message">Mesajul</label>
           <textarea
-            rows="6"
+            rows="3"
             placeholder="Mesajul Dvs."
             id="message"
             name="message"

@@ -1,5 +1,5 @@
 <?php
-// Enable error reporting and display errors
+// Erori raportare PHP
 ini_set('error_reporting', E_ALL);
 ini_set('display_errors', 1);
 
@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = htmlspecialchars($_POST['email']);
     $message = htmlspecialchars($_POST['message']);
 
-    $to = "your-email@example.com"; // Replace with your email address
+    $to = "my-email@example.com"; // adresa de email
     $subject = "New Contact Form Submission";
     $headers = "From: " . $email . "\r\n" .
                "Reply-To: " . $email . "\r\n" .
@@ -23,18 +23,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $error_details = $error_message['message'];
             echo "A apărut o eroare la trimiterea mesajului. Vă rugăm încercați din nou mai târziu. Detalii eroare: " . $error_details;
             
-            // Log the error to a file
+            // Log erori
             file_put_contents('error.log', date('Y-m-d H:i:s') . ' - ' . $error_details . PHP_EOL, FILE_APPEND);
         } else {
-            // If no specific error message is available, log a generic error message
+            // daca nu sunt erori de raportat , eroare generala
             $generic_error_message = "A apărut o eroare la trimiterea mesajului. Vă rugăm încercați din nou mai târziu.";
             echo $generic_error_message;
             
-            // Log the generic error message to a file
+            // scrim erorile in log file
             file_put_contents('error.log', date('Y-m-d H:i:s') . ' - ' . $generic_error_message . PHP_EOL, FILE_APPEND);
         }
     }
-    exit; // Stop further execution
+    exit; // oprim executia
 }
 ?>
 

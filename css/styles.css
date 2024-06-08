@@ -6,18 +6,18 @@
 
 /* tipografie */
 html {
-  font-size: 16px; /* This is typically the default size in browsers */
+  font-size: 16px; /* MARIME DEFAULT */
 }
 body {
   font-family: "Open Sans", Arial, sans-serif;
-  font-size: 1rem; /* Equals the base font size, e.g., 16px */
-  line-height: 1.6; /* Adjusts the spacing between lines of text */
+  font-size: 1rem; /* Egala cu marimea de baza 16px */
+  line-height: 1.6; /*Spatiu dintre rindurile de  text*/
   overflow-x: hidden;
   background: #f5f5f5;
 }
 
 h1 {
-  font-size: 2.5rem; /* Larger for headings */
+  font-size: 2.5rem; /* mai mare ptr headings */
 }
 
 h2 {
@@ -25,7 +25,7 @@ h2 {
 }
 
 p {
-  font-size: 1rem; /* Regular text size */
+  font-size: 1rem; /* Regular ptr text */
 }
 ul,
 ol {
@@ -48,7 +48,7 @@ button,
 
   border: 0;
 }
-/* for informal sections like student quotes or bulletin boards. */
+/* ptr text informal (nu am folosit) */
 
 .special-text {
   font-family: "Lobster", cursive;
@@ -685,7 +685,7 @@ section {
 }
 .text {
   overflow: hidden;
-  max-height: 200px; /* Adjust as needed */
+  max-height: 200px;
   transition: max-height 0.5s ease;
 }
 
@@ -885,11 +885,11 @@ section {
   position: relative;
   overflow: hidden;
   height: auto;
-  background: url("../img/bg_past_events.png") no-repeat center center fixed; /* Adjust the path to your background image */
+  background: url("../img/bg_past_events.png") no-repeat center center fixed;
   background-size: cover;
 }
 
-/* Apply parallax scrolling effect */
+/* Aplicam parallax scrolling efect */
 .parallax-container::before {
   content: "";
   position: absolute;
@@ -905,7 +905,7 @@ section {
   transform: translateZ(-1px) scale(2);
 }
 
-/* Ensure the section's content stays on top */
+/* Ne asiguram ca layerul este deasura celorlalte */
 #evenimente {
   position: relative;
   z-index: 99;
@@ -1002,7 +1002,7 @@ section {
   opacity: 0.7;
   z-index: 300;
 }
-/* Full-screen gallery styles */
+/* Full-screen galerie */
 .full-screen-gallery {
   display: none;
   position: fixed;
